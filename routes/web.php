@@ -5,8 +5,19 @@ use App\Http\Controllers\AuthController;
 
 
 // Route - Landing Page
+// Route index landing page 
 Route::get('/', function () {
-    return view('landingpage.layouts.main');
+    return view(
+        'landingpage.index',
+        ['hero' => 'index']
+    );
+});
+// Route gallery landing page
+Route::get('/gallery', function () {
+    return view(
+        'landingpage.gallery',
+        ['hero' => 'Gallery']
+    );
 });
 
 // Route - Login
