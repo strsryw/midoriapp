@@ -16,11 +16,11 @@
     <link href="/assets/admin/dist/css/demo.min.css?1692870487" rel="stylesheet" />
 
     {{-- Style Font --}}
-    <link rel="stylesheet" href="/assets/admin/assets/web/style.css">
+    <link rel="stylesheet" href="/assets/web/css/style.css">
 </head>
 
 <body class=" d-flex flex-column">
-    <script src="/dist/js/demo-theme.min.js?1692870487"></script>
+    <script src="assets/admin/dist/js/demo-theme.min.js?1692870487"></script>
     <div class="page page-center">
         <div class="container container-tight py-4">
             <div class="card card-md">
@@ -65,8 +65,8 @@
     <!-- Tabler Core -->
     <script src="/assets/admin/dist/js/tabler.min.js"></script>
     <script src="/assets/admin/dist/js/demo.min.js"></script>
-    <script src="/assets/admin/assets/web/jquery-3.7.1.min.js"></script>
-    <script src="/assets/admin/assets/web/script.js"></script>
+    <script src="/assets/web/js/jquery-3.7.1.min.js"></script>
+    <script src="/assets/web/js/script.js"></script>
     <script>
         $(document).ready(function() {
 

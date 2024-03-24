@@ -15,7 +15,7 @@
     <link href="/assets/admin/dist/css/demo.min.css" rel="stylesheet" />
 
     {{-- Style Font --}}
-    <link rel="stylesheet" href="/assets/web/style.css">
+    <link rel="stylesheet" href="/assets/web/css/style.css">
 
     {{-- CSS Addon --}}
     @stack('css')
