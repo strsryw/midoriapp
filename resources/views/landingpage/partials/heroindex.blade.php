@@ -1,5 +1,5 @@
 <div class="hero overlay">
-    <img src="/assets/images/blob.svg" alt="" class="img-fluid blob">
+    <img src="/assets/landing_page/images/blob.svg" alt="" class="img-fluid blob">
     <div class="container">
         <div class="row align-items-center justify-content-between pt-5">
             <div class="col-lg-6 text-center text-lg-start pe-lg-5">
@@ -14,7 +14,7 @@
             </div>
             <div class="col-lg-6" data-aos="fade-up" data-aos-delay="300">
                 <div class="img-wrap">
-                    <img src="/assets/images/img-1.jpg" alt="Image" class="img-fluid rounded">
+                    <img src="/assets/landing_page/images/img-1.jpg" alt="Image" class="img-fluid rounded">
                 </div>
             </div>
         </div>

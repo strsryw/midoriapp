@@ -1,9 +1,3 @@
-<!-- /*
-* Template Name: Financing
-* Template Author: Untree.co
-* Template URI: https://untree.co/
-* License: https://creativecommons.org/licenses/by/3.0/
-*/ -->
 <!doctype html>
 <html lang="en">
 
@@ -21,17 +15,17 @@
     <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;600;700&display=swap" rel="stylesheet">
 
 
-    <link rel="stylesheet" href="/assets/fonts/icomoon/style.css">
-    <link rel="stylesheet" href="/assets/fonts/flaticon/font/flaticon.css">
+    <link rel="stylesheet" href="/assets/landing_page/fonts/icomoon/style.css">
+    <link rel="stylesheet" href="/assets/landing_page/fonts/flaticon/font/flaticon.css">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
 
-    <link rel="stylesheet" href="/assets/css/tiny-slider.css">
-    <link rel="stylesheet" href="/assets/css/aos.css">
-    <link rel="stylesheet" href="/assets/css/glightbox.min.css">
-    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="/assets/landing_page/css/tiny-slider.css">
+    <link rel="stylesheet" href="/assets/landing_page/css/aos.css">
+    <link rel="stylesheet" href="/assets/landing_page/css/glightbox.min.css">
+    <link rel="stylesheet" href="/assets/landing_page/css/style.css">
 
-    <link rel="stylesheet" href="/assets/css/flatpickr.min.css">
+    <link rel="stylesheet" href="/assets/landing_page/css/flatpickr.min.css">
 
 
     <title>Financing &mdash; Free Bootstrap 5 Website Template by Untree.co</title>
@@ -60,18 +54,14 @@
         </div>
     </div>
 
-
-    <script src="/assets/js/bootstrap.bundle.min.js"></script>
-    <script src="/assets/js/tiny-slider.js"></script>
-
-    <script src="/assets/js/flatpickr.min.js"></script>
-
-
-    <script src="/assets/js/aos.js"></script>
-    <script src="/assets/js/glightbox.min.js"></script>
-    <script src="/assets/js/navbar.js"></script>
-    <script src="/assets/js/counter.js"></script>
-    <script src="/assets/js/custom.js"></script>
+    <script src="/assets/landing_page/js/bootstrap.bundle.min.js"></script>
+    <script src="/assets/landing_page/js/tiny-slider.js"></script>
+    <script src="/assets/landing_page/js/flatpickr.min.js"></script>
+    <script src="/assets/landing_page/js/aos.js"></script>
+    <script src="/assets/landing_page/js/glightbox.min.js"></script>
+    <script src="/assets/landing_page/js/navbar.js"></script>
+    <script src="/assets/landing_page/js/counter.js"></script>
+    <script src="/assets/landing_page/js/custom.js"></script>
 </body>
 
 </html>

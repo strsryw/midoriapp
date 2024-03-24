@@ -9,14 +9,14 @@
     <title>MIDORI - Login</title>
 
     <!-- CSS files -->
-    <link href="/dist/css/tabler.min.css?1692870487" rel="stylesheet" />
-    <link href="/dist/css/tabler-flags.min.css?1692870487" rel="stylesheet" />
-    <link href="/dist/css/tabler-payments.min.css?1692870487" rel="stylesheet" />
-    <link href="/dist/css/tabler-vendors.min.css?1692870487" rel="stylesheet" />
-    <link href="/dist/css/demo.min.css?1692870487" rel="stylesheet" />
+    <link href="/assets/admin/dist/css/tabler.min.css?1692870487" rel="stylesheet" />
+    <link href="/assets/admin/dist/css/tabler-flags.min.css?1692870487" rel="stylesheet" />
+    <link href="/assets/admin/dist/css/tabler-payments.min.css?1692870487" rel="stylesheet" />
+    <link href="/assets/admin/dist/css/tabler-vendors.min.css?1692870487" rel="stylesheet" />
+    <link href="/assets/admin/dist/css/demo.min.css?1692870487" rel="stylesheet" />
 
     {{-- Style Font --}}
-    <link rel="stylesheet" href="/assets/web/style.css">
+    <link rel="stylesheet" href="/assets/admin/assets/web/style.css">
 </head>
 
 <body class=" d-flex flex-column">
@@ -63,10 +63,10 @@
     <!-- Libs JS -->
 
     <!-- Tabler Core -->
-    <script src="/dist/js/tabler.min.js"></script>
-    <script src="/dist/js/demo.min.js"></script>
-    <script src="/assets/web/jquery-3.7.1.min.js"></script>
-    <script src="/assets/web/script.js"></script>
+    <script src="/assets/admin/dist/js/tabler.min.js"></script>
+    <script src="/assets/admin/dist/js/demo.min.js"></script>
+    <script src="/assets/admin/assets/web/jquery-3.7.1.min.js"></script>
+    <script src="/assets/admin/assets/web/script.js"></script>
     <script>
         $(document).ready(function() {
 

@@ -4,7 +4,7 @@
         <div class="container">
             <div class="row justify-content-between">
                 <div class="col-lg-7 mb-4 mb-lg-0">
-                    <img src="/assets/images/img-3.jpg" alt="Image" class="img-fluid rounded
+                    <img src="/assets/landing_page/images/img-3.jpg" alt="Image" class="img-fluid rounded
                 ">
                 </div>
                 <div class="col-lg-4 ps-lg-2">
@@ -82,7 +82,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-7 order-lg-2 mb-4 mb-lg-0">
-                    <img src="/assets/images/img-1.jpg" alt="Image" class="img-fluid">
+                    <img src="/assets/landing_page/images/img-1.jpg" alt="Image" class="img-fluid">
                 </div>
                 <div class="col-lg-5 pe-lg-5">
                     <div class="mb-5">
@@ -255,7 +255,7 @@
             <div id="post-slider" class="post-slider">
                 <div class="item">
                     <a href="case-study.html" class="card d-block">
-                        <img src="/assets/images/img-1.jpg" class="card-img-top" alt="Image">
+                        <img src="/assets/landing_page/images/img-1.jpg" class="card-img-top" alt="Image">
                         <div class="card-body">
                             <h5 class="card-title">Behind the word mountains</h5>
                             <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia,
@@ -266,7 +266,7 @@
 
                 <div class="item">
                     <a href="case-study.html" class="card">
-                        <img src="/assets/images/img-2.jpg" class="card-img-top" alt="Image">
+                        <img src="/assets/landing_page/images/img-2.jpg" class="card-img-top" alt="Image">
                         <div class="card-body">
                             <h5 class="card-title">Behind the word mountains</h5>
                             <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia,
@@ -277,7 +277,7 @@
 
                 <div class="item">
                     <a href="case-study.html" class="card">
-                        <img src="/assets/images/img-3.jpg" class="card-img-top" alt="Image">
+                        <img src="/assets/landing_page/images/img-3.jpg" class="card-img-top" alt="Image">
                         <div class="card-body">
                             <h5 class="card-title">Behind the word mountains</h5>
                             <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia,
@@ -288,7 +288,7 @@
 
                 <div class="item">
                     <a href="case-study.html" class="card">
-                        <img src="/assets/images/img-4.jpg" class="card-img-top" alt="Image">
+                        <img src="/assets/landing_page/images/img-4.jpg" class="card-img-top" alt="Image">
                         <div class="card-body">
                             <h5 class="card-title">Behind the word mountains</h5>
                             <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia,
@@ -299,7 +299,7 @@
 
                 <div class="item">
                     <a href="case-study.html" class="card">
-                        <img src="/assets/images/img-1.jpg" class="card-img-top" alt="Image">
+                        <img src="/assets/landing_page/images/img-1.jpg" class="card-img-top" alt="Image">
                         <div class="card-body">
                             <h5 class="card-title">Behind the word mountains</h5>
                             <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia,
@@ -327,7 +327,7 @@
                 <div class="testimonial-slider" id="testimonial-slider">
                     <div class="item">
                         <div class="testimonial-half d-lg-flex bg-white">
-                            <div class="img" style="background-image: url('/assets/images/img-4.jpg')">
+                            <div class="img" style="background-image: url('/assets/landing_page/images/img-4.jpg')">
 
                             </div>
                             <div class="text">
@@ -346,7 +346,7 @@
 
                     <div class="item">
                         <div class="testimonial-half d-lg-flex bg-white">
-                            <div class="img" style="background-image: url('/assets/images/img-3.jpg')">
+                            <div class="img" style="background-image: url('/assets/landing_page/images/img-3.jpg')">
 
                             </div>
                             <div class="text">
@@ -365,7 +365,7 @@
 
                     <div class="item">
                         <div class="testimonial-half d-lg-flex bg-white">
-                            <div class="img" style="background-image: url('/assets/images/img-2.jpg')">
+                            <div class="img" style="background-image: url('/assets/landing_page/images/img-2.jpg')">
 
                             </div>
                             <div class="text">
@@ -399,7 +399,7 @@
             <div class="row">
                 <div class="col-lg-4">
                     <div class="card post-entry">
-                        <a href="single.html"><img src="/assets/images/img-1.jpg" class="card-img-top"
+                        <a href="single.html"><img src="/assets/landing_page/images/img-1.jpg" class="card-img-top"
                                 alt="Image"></a>
                         <div class="card-body">
                             <div><span class="text-uppercase font-weight-bold date">Jan 20, 2021</span></div>
@@ -413,7 +413,7 @@
 
                 <div class="col-lg-4">
                     <div class="card post-entry">
-                        <a href="single.html"><img src="/assets/images/img-2.jpg" class="card-img-top"
+                        <a href="single.html"><img src="/assets/landing_page/images/img-2.jpg" class="card-img-top"
                                 alt="Image"></a>
                         <div class="card-body">
                             <div><span class="text-uppercase font-weight-bold date">Jan 20, 2021</span></div>
@@ -427,7 +427,7 @@
 
                 <div class="col-lg-4">
                     <div class="card post-entry">
-                        <a href="single.html"><img src="/assets/images/img-3.jpg" class="card-img-top"
+                        <a href="single.html"><img src="/assets/landing_page/images/img-3.jpg" class="card-img-top"
                                 alt="Image"></a>
                         <div class="card-body">
                             <div><span class="text-uppercase font-weight-bold date">Jan 20, 2021</span></div>

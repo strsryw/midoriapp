@@ -6,7 +6,8 @@
             <div class="row">
                 <div class="col-md-6 col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="0">
                     <div class="card post-entry">
-                        <a href="single.html"><img src="/assets/images/img-1.jpg" class="card-img-top" alt="Image"></a>
+                        <a href="single.html"><img src="/assets/landing_page/images/img-1.jpg" class="card-img-top"
+                                alt="Image"></a>
                         <div class="card-body">
                             <div><span class="text-uppercase font-weight-bold date">Jan 20, 2021</span></div>
                             <h5 class="card-title"><a href="single.html">Behind the word mountains</a></h5>
@@ -19,7 +20,8 @@
 
                 <div class="col-md-6 col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="100">
                     <div class="card post-entry">
-                        <a href="single.html"><img src="/assets/images/img-2.jpg" class="card-img-top" alt="Image"></a>
+                        <a href="single.html"><img src="/assets/landing_page/images/img-2.jpg" class="card-img-top"
+                                alt="Image"></a>
                         <div class="card-body">
                             <div><span class="text-uppercase font-weight-bold date">Jan 20, 2021</span></div>
                             <h5 class="card-title"><a href="single.html">Behind the word mountains</a></h5>
@@ -32,7 +34,8 @@
 
                 <div class="col-md-6 col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="200">
                     <div class="card post-entry">
-                        <a href="single.html"><img src="/assets/images/img-3.jpg" class="card-img-top" alt="Image"></a>
+                        <a href="single.html"><img src="/assets/landing_page/images/img-3.jpg" class="card-img-top"
+                                alt="Image"></a>
                         <div class="card-body">
                             <div><span class="text-uppercase font-weight-bold date">Jan 20, 2021</span></div>
                             <h5 class="card-title"><a href="single.html">Behind the word mountains</a></h5>
@@ -45,7 +48,8 @@
 
                 <div class="col-md-6 col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="0">
                     <div class="card post-entry">
-                        <a href="single.html"><img src="/assets/images/img-1.jpg" class="card-img-top" alt="Image"></a>
+                        <a href="single.html"><img src="/assets/landing_page/images/img-1.jpg" class="card-img-top"
+                                alt="Image"></a>
                         <div class="card-body">
                             <div><span class="text-uppercase font-weight-bold date">Jan 20, 2021</span></div>
                             <h5 class="card-title"><a href="single.html">Behind the word mountains</a></h5>
@@ -58,7 +62,8 @@
 
                 <div class="col-md-6 col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="100">
                     <div class="card post-entry">
-                        <a href="single.html"><img src="/assets/images/img-2.jpg" class="card-img-top" alt="Image"></a>
+                        <a href="single.html"><img src="/assets/landing_page/images/img-2.jpg" class="card-img-top"
+                                alt="Image"></a>
                         <div class="card-body">
                             <div><span class="text-uppercase font-weight-bold date">Jan 20, 2021</span></div>
                             <h5 class="card-title"><a href="single.html">Behind the word mountains</a></h5>
@@ -71,7 +76,8 @@
 
                 <div class="col-md-6 col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="200">
                     <div class="card post-entry">
-                        <a href="single.html"><img src="/assets/images/img-3.jpg" class="card-img-top" alt="Image"></a>
+                        <a href="single.html"><img src="/assets/landing_page/images/img-3.jpg" class="card-img-top"
+                                alt="Image"></a>
                         <div class="card-body">
                             <div><span class="text-uppercase font-weight-bold date">Jan 20, 2021</span></div>
                             <h5 class="card-title"><a href="single.html">Behind the word mountains</a></h5>

@@ -8,11 +8,11 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>MIDORI - {{ isset($title) ?? 'Title' }}</title>
     <!-- CSS files -->
-    <link href="/dist/css/tabler.min.css" rel="stylesheet" />
-    <link href="/dist/css/tabler-flags.min.css" rel="stylesheet" />
-    <link href="/dist/css/tabler-payments.min.css" rel="stylesheet" />
-    <link href="/dist/css/tabler-vendors.min.css" rel="stylesheet" />
-    <link href="/dist/css/demo.min.css" rel="stylesheet" />
+    <link href="/assets/admin/dist/css/tabler.min.css" rel="stylesheet" />
+    <link href="/assets/admin/dist/css/tabler-flags.min.css" rel="stylesheet" />
+    <link href="/assets/admin/dist/css/tabler-payments.min.css" rel="stylesheet" />
+    <link href="/assets/admin/dist/css/tabler-vendors.min.css" rel="stylesheet" />
+    <link href="/assets/admin/dist/css/demo.min.css" rel="stylesheet" />
 
     {{-- Style Font --}}
     <link rel="stylesheet" href="/assets/web/style.css">
@@ -23,7 +23,7 @@
 </head>
 
 <body>
-    <script src="/dist/js/demo-theme.min.js"></script>
+    <script src="assets/admin/dist/js/demo-theme.min.js"></script>
     <div class="page">
         <!-- Header -->
         @include('admin.layouts.header')
@@ -39,13 +39,13 @@
     </div>
 
     <!-- Libs JS -->
-    <script src="/dist/libs/apexcharts/dist/apexcharts.min.js"></script>
-    <script src="/dist/libs/jsvectormap/dist/js/jsvectormap.min.js"></script>
-    <script src="/dist/libs/jsvectormap/dist/maps/world.js"></script>
-    <script src="/dist/libs/jsvectormap/dist/maps/world-merc.js"></script>
+    <script src="/assets/admin/dist/libs/apexcharts/dist/apexcharts.min.js"></script>
+    <script src="/assets/admin/dist/libs/jsvectormap/dist/js/jsvectormap.min.js"></script>
+    <script src="/assets/admin/dist/libs/jsvectormap/dist/maps/world.js"></script>
+    <script src="/assets/admin/dist/libs/jsvectormap/dist/maps/world-merc.js"></script>
     <!-- Tabler Core -->
-    <script src="/dist/js/tabler.min.js"></script>
-    <script src="/dist/js/demo.min.js"></script>
+    <script src="/assets/admin/dist/js/tabler.min.js"></script>
+    <script src="/assets/admin/dist/js/demo.min.js"></script>
 
     @stack('script')
 </body>
