@@ -19,7 +19,7 @@ class GalleriesFactory extends Factory
         return [
             'title' => $this->faker->sentence(6),
             'description' => $this->faker->sentence(20),
-            'image' => $this->faker->imageUrl($width = 640, $height = 480, 'cats', true, 'Faker', true)
+            'image' => 'default.jpg'
         ];
     }
 }

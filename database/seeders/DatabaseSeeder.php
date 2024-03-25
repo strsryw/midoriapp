@@ -18,11 +18,11 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // User::create([
-        //     'name' => 'Developer Ganteng',
-        //     'email' => 'admin@gmail.com',
-        //     'password' => Hash::make('password'),
-        // ]);
+        User::create([
+            'name' => 'Developer Ganteng',
+            'email' => 'admin@gmail.com',
+            'password' => Hash::make('password'),
+        ]);
         Galleries::factory(30)->create();
     }
 }
