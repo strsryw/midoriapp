@@ -34,3 +34,11 @@ Route::middleware('auth')->prefix('/admin')->name('admin.')->group(function () {
         return view('admin.dashboard');
     })->name('dashboard');
 });
+
+// Route - admin gallery
+Route::get('admin/gallery', function () {
+    return view(
+        'admin.layouts.main',
+        ['title' => 'gallery']
+    );
+});

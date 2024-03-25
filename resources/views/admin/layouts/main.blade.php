@@ -23,7 +23,7 @@
 </head>
 
 <body>
-    <script src="assets/admin/dist/js/demo-theme.min.js"></script>
+    <script src="/assets/admin/dist/js/demo-theme.min.js"></script>
     <div class="page">
         <!-- Header -->
         @include('admin.layouts.header')
@@ -38,11 +38,6 @@
         </div>
     </div>
 
-    <!-- Libs JS -->
-    <script src="/assets/admin/dist/libs/apexcharts/dist/apexcharts.min.js"></script>
-    <script src="/assets/admin/dist/libs/jsvectormap/dist/js/jsvectormap.min.js"></script>
-    <script src="/assets/admin/dist/libs/jsvectormap/dist/maps/world.js"></script>
-    <script src="/assets/admin/dist/libs/jsvectormap/dist/maps/world-merc.js"></script>
     <!-- Tabler Core -->
     <script src="/assets/admin/dist/js/tabler.min.js"></script>
     <script src="/assets/admin/dist/js/demo.min.js"></script>
