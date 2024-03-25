@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\admin\GalleryController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 
@@ -38,7 +39,9 @@ Route::middleware('auth')->prefix('/admin')->name('admin.')->group(function () {
 // Route - admin gallery
 Route::get('admin/gallery', function () {
     return view(
-        'admin.layouts.main',
-        ['title' => 'gallery']
+        'admin.gallery',
+        ['title' => 'Gallery']
     );
 });
+
+Route::resource('/admin/gallery/ajax', GalleryController::class);

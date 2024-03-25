@@ -19,84 +19,102 @@
 @section('content')
     <!-- START FORM -->
 
-    <div class="my-3 p-3 card rounded shadow-sm">
-        <h1 class="text-center my-3 p-3">Tambah Gallery</h1>
-        <div class="card-body">
-            <div class="mb-3 row">
-                <div class="col-md-2 col-sm-12">
-                    <label for="nama" class="form-label">Judul</label>
+    <div class="page-header d-print-none">
+        <div class="container-xl">
+            <div class="row g-2 align-items-center">
+                <div class="col">
+                    <!-- Page pre-title -->
+                    <h2 class="page-title">
+                        {{ $title }}
+                    </h2>
                 </div>
-                <div class="col-md-10 col-sm-12">
-                    <input type="text" class="form-control" name='judul' id="judul">
-                </div>
-            </div>
-
-
-            <div class="mb-3 row">
-                <div class="col-md-2 col-sm-12">
-                    <label for="foto" class="form-label">Foto</label>
-                </div>
-                <div class="col-md-10 col-sm-12">
-                    <input class="form-control" type="file" id="foto">
-                </div>
-            </div>
-
-            <div class="mb-3 row">
-                <div class="col-md-2 col-sm-12">
-                    <label for="deskripsi" class="form-label">Deskripsi</label>
-                </div>
-                <div class="col-md-10 col-sm-12">
-                    <textarea type="text" class="form-control" name='deskripsi' id="deskripsi"></textarea>
-                </div>
-            </div>
-            <div class="mb-3">
-                <button type="button" class="btn btn-primary" name="button" onclick="simpanData()"><i
-                        class="ti ti-device-floppy"></i>
-                    Simpan</button>
+                <!-- Page title actions -->
             </div>
         </div>
     </div>
-    <!-- AKHIR FORM -->
+    <div class="page-body">
+        <div class="container">
+            <div class="my-3 p-3 card rounded shadow-sm">
+                <h1 class="text-center my-3 p-3">Tambah Gallery</h1>
+                <div class="card-body">
+                    <div class="mb-3 row">
+                        <div class="col-md-2 col-sm-12">
+                            <label for="nama" class="form-label">Judul</label>
+                        </div>
+                        <div class="col-md-10 col-sm-12">
+                            <input type="text" class="form-control" name='judul' id="judul">
+                        </div>
+                    </div>
 
-    <!-- START DATA -->
-    <div class="my-3 p-3 card">
-        <h1 class="text-center my-3 p-3">Daftar Gallery</h1>
-        <div class="card-body">
-            <!-- TOMBOL TAMBAH DATA -->
-            {{-- <div class="pb-3">
-                <button class="btn btn-primary" onclick="showModal()"><i class="ti ti-user-plus"></i>Tambah
-                    Data</button>
-            </div> --}}
-            <div class="table-responsive p-1">
-                <div class="alert alert-success alert-dismissible fade show d-none" role="alert" id="alert">
-                    <i class="ti ti-checks"></i> <strong id="alertText">Data inserted successfully</strong>
-                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+
+                    <div class="mb-3 row">
+                        <div class="col-md-2 col-sm-12">
+                            <label for="foto" class="form-label">Foto</label>
+                        </div>
+                        <div class="col-md-10 col-sm-12">
+                            <input class="form-control" type="file" id="foto">
+                        </div>
+                    </div>
+
+                    <div class="mb-3 row">
+                        <div class="col-md-2 col-sm-12">
+                            <label for="deskripsi" class="form-label">Deskripsi</label>
+                        </div>
+                        <div class="col-md-10 col-sm-12">
+                            <textarea type="text" class="form-control" name='deskripsi' id="deskripsi"></textarea>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <button type="button" class="btn btn-primary" name="button" onclick="simpanData()"><i
+                                class="ti ti-device-floppy"></i>
+                            Simpan</button>
+                    </div>
                 </div>
-                <table class="table table-striped table-bordered" id="myTable" style="width: 100%;">
-                    <thead>
-                        <tr>
-                            <th class="text-center">No</th>
-                            <th class="text-center col-md-3">Judul</th>
-                            <th class="text-center col-md-3">Foto</th>
-                            <th class="text-center col-md-3">Deskripsi</th>
-                            <th class="text-center col-md-2">Aksi</th>
-                        </tr>
-                    </thead>
-                    {{-- <tbody>
-                        <tr>
-                            <td>1.</td>
-                            <td>Anton</td>
-                            <td>anton@gmail.com</td>
-                            <td class="text-center">
-                                <button type="button" class="btn btn-warning"><i class="ti ti-edit"></i></button>
-                                <button type="button" class="btn btn-danger"><i class="ti ti-trash"></i></button>
-                            </td>
-                        </tr>
-                    </tbody> --}}
-                </table>
+            </div>
+            <!-- AKHIR FORM -->
+
+            <!-- START DATA -->
+            <div class="my-3 p-3 card">
+                <h1 class="text-center my-3 p-3">Daftar Gallery</h1>
+                <div class="card-body">
+                    <!-- TOMBOL TAMBAH DATA -->
+                    {{-- <div class="pb-3">
+                        <button class="btn btn-primary" onclick="showModal()"><i class="ti ti-user-plus"></i>Tambah
+                            Data</button>
+                    </div> --}}
+                    <div class="table-responsive p-1">
+                        <div class="alert alert-success alert-dismissible fade show d-none" role="alert" id="alert">
+                            <i class="ti ti-checks"></i> <strong id="alertText">Data inserted successfully</strong>
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
+                        <table class="table table-striped table-bordered" id="myTable" style="width: 100%;">
+                            <thead>
+                                <tr>
+                                    <th class="text-center">No</th>
+                                    <th class="text-center col-md-3">Judul</th>
+                                    <th class="text-center col-md-3">Foto</th>
+                                    <th class="text-center col-md-3">Deskripsi</th>
+                                    <th class="text-center col-md-2">Aksi</th>
+                                </tr>
+                            </thead>
+                            {{-- <tbody>
+                                <tr>
+                                    <td>1.</td>
+                                    <td>Anton</td>
+                                    <td>anton@gmail.com</td>
+                                    <td class="text-center">
+                                        <button type="button" class="btn btn-warning"><i class="ti ti-edit"></i></button>
+                                        <button type="button" class="btn btn-danger"><i class="ti ti-trash"></i></button>
+                                    </td>
+                                </tr>
+                            </tbody> --}}
+                        </table>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
+
     <!-- AKHIR DATA -->
 
 
@@ -142,5 +160,78 @@
     <script src="https://cdn.datatables.net/2.0.2/js/dataTables.bootstrap5.js"></script>
     <script src="https://cdn.datatables.net/responsive/3.0.0/js/dataTables.responsive.js"></script>
     <script src=" https://cdn.datatables.net/responsive/3.0.0/js/responsive.dataTables.js"></script>
-    {{-- <script src="/js/script.js"></script> --}}
+    <script>
+        $(document).ready(function() {
+            $("#myTable").dataTable({
+                responsive: true,
+                rowReorder: {
+                    selector: "td:nth-child(2)",
+                },
+                language: {
+                    lengthMenu: "Tampil _MENU_ data",
+                    search: "Cari",
+                    emptyTable: "Tidak ada data",
+                    info: "Tampilkan _START_ ke _END_ dari _TOTAL_ data",
+                },
+                processing: true,
+                serverside: true,
+                ajax: "/admin/gallery/ajax",
+                columns: [{
+                        data: "DT_RowIndex",
+                        name: "DT_RowIndex",
+                        orderable: false,
+                        searchable: false,
+                    },
+                    {
+                        data: "title",
+                        name: "Title",
+                    },
+                    {
+                        data: "image",
+                        name: "Image",
+                    },
+                    {
+                        data: "description",
+                        name: "Description",
+                    },
+                    {
+                        data: "action",
+                        name: "Action",
+                    },
+                ],
+            });
+            $("#myTable_filter").addClass("pb-3");
+            document.getElementById("dt-search-0").classList.remove("form-control-sm");
+            document.getElementById("dt-length-0").classList.remove("form-select-sm");
+        });
+
+        function simpanData() {
+            var csrfToken = document.head.querySelector(
+                'meta[name="csrf-token"]'
+            ).content;
+            var judul = document.getElementById("judul").value;
+            var deskripsi = document.getElementById("deskripsi").value;
+            var foto = document.getElementById("foto").files[0]; // Mendapatkan file foto yang dipilih
+            var formData = new FormData(); // Buat objek FormData
+            formData.append("_token", csrfToken);
+            formData.append("judul", judul);
+            formData.append("deskripsi", deskripsi);
+            formData.append("foto", foto);
+
+            $.ajax({
+                url: "/admin/gallery/ajax",
+                type: "post",
+                data: formData,
+                contentType: false,
+                processData: false, // Set processData menjadi false agar FormData tidak diproses secara otomatis
+                success: function(response) {
+                    console.log(response);
+                    // Tindakan setelah permintaan berhasil
+                },
+                error: function(xhr, status, error) {
+                    // Tindakan jika terjadi kesalahan
+                },
+            });
+        }
+    </script>
 @endpush
