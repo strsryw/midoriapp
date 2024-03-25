@@ -3,7 +3,7 @@
 use App\Http\Controllers\admin\GalleryController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
-
+use App\Http\Controllers\landingpage\GalleryController as galleryLandingPage;
 
 // Route - Landing Page
 // Route index landing page 
@@ -13,13 +13,9 @@ Route::get('/', function () {
         ['hero' => 'index']
     );
 });
+
 // Route gallery landing page
-Route::get('/gallery', function () {
-    return view(
-        'landingpage.gallery',
-        ['hero' => 'Gallery']
-    );
-});
+Route::get('/gallery', [galleryLandingPage::class, 'index']);
 
 // Route - Login
 Route::middleware('guest')->group(function () {

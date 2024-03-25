@@ -26,6 +26,7 @@
     <link rel="stylesheet" href="/assets/landing_page/css/style.css">
 
     <link rel="stylesheet" href="/assets/landing_page/css/flatpickr.min.css">
+    @stack('style')
 
 
     <title>Financing &mdash; Free Bootstrap 5 Website Template by Untree.co</title>
