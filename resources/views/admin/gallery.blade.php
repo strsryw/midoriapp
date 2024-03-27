@@ -35,8 +35,9 @@
     <div class="page-body">
         <div class="container">
             <div class="my-3 p-3 card rounded shadow-sm">
-                <h1 class="text-center my-3 p-3">Tambah Gallery</h1>
+                <h1 class="text-center my-3 p-3" id="titleForm">Tambah Gallery</h1>
                 <div class="card-body">
+                    <input type="hidden" name="idGallery" id="idGallery">
                     <div class="mb-3 row">
                         <div class="col-md-2 col-sm-12">
                             <label for="nama" class="form-label">Judul</label>
@@ -45,17 +46,24 @@
                             <input type="text" class="form-control" name='judul' id="judul">
                         </div>
                     </div>
-
-
                     <div class="mb-3 row">
                         <div class="col-md-2 col-sm-12">
                             <label for="foto" class="form-label">Foto</label>
                         </div>
                         <div class="col-md-10 col-sm-12">
+                            <input type="hidden" id="oldImage">
                             <input class="form-control" type="file" id="foto">
                         </div>
                     </div>
+                    <div class="mb-3 row d-none" id="rowRiviewImg">
+                        <div class="col-md-2 col-sm-12">
 
+                        </div>
+                        <div class="col-md-10 col-sm-12">
+                            <img src="" class="img-thumbnail" alt="Image" id="reviewImg"
+                                style="max-height: 300px; width:auto;">
+                        </div>
+                    </div>
                     <div class="mb-3 row">
                         <div class="col-md-2 col-sm-12">
                             <label for="deskripsi" class="form-label">Deskripsi</label>
@@ -65,9 +73,16 @@
                         </div>
                     </div>
                     <div class="mb-3">
-                        <button type="button" class="btn btn-primary" name="button" onclick="simpanData()"><i
-                                class="ti ti-device-floppy"></i>
-                            Simpan</button>
+                        <button type="button" class="btn btn-primary d-none" id="btnUpdate" name="button"
+                            onclick="updateData()">
+                            <i class="ti ti-device-floppy"></i>
+                            Update
+                        </button>
+
+                        <button type="button" class="btn btn-primary" id="btnInsert" name="button" onclick="simpanData()">
+                            <i class="ti ti-device-floppy"></i>
+                            Simpan
+                        </button>
                     </div>
                 </div>
             </div>
@@ -116,59 +131,6 @@
     </div>
 
     <!-- AKHIR DATA -->
-
-
-
-    <!-- Modal -->
-    <div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="myModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="myModalLabel">Modal title</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <div class="mb-3 row">
-                        <input type="hidden" id="tampungId">
-                        <label for="modalJudul" class="col-sm-2 col-form-label">Judul</label>
-                        <div class="col-sm-10">
-                            <input type="text" class="form-control" name='modalJudul' id="modalJudul">
-                        </div>
-                    </div>
-                    <div class="mb-3 row">
-                        <div class="col-md-2 col-sm-12">
-
-                        </div>
-                        <div class="col-md-10 col-sm-12">
-                            <img src="" class="img-thumbnail" alt="Image" id="modalPreviewFoto"
-                                style="max-height: 300px; width:auto;">
-                        </div>
-                    </div>
-                    <div class="mb-3 row">
-                        <div class="col-md-2 col-sm-12">
-                            <label for="modalFoto" class="form-label">Foto</label>
-                        </div>
-                        <div class="col-md-10 col-sm-12">
-                            <input class="form-control" type="file" id="modalFoto">
-                        </div>
-                    </div>
-                    <div class="mb-3 row">
-                        <div class="col-md-2 col-sm-12">
-                            <label for="modalDeskripsi" class="form-label">Deskripsi</label>
-                        </div>
-                        <div class="col-md-10 col-sm-12">
-                            <textarea type="text" class="form-control" name='modalDeskripsi' id="modalDeskripsi"></textarea>
-                        </div>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary" onclick="updateData()" id="updateBtn">Save
-                        changes</button>
-                </div>
-            </div>
-        </div>
-    </div>
 @endsection
 @push('script')
     {{-- <script src="//cdn.datatables.net/2.0.2/js/dataTables.min.js"></script> --}}
@@ -179,11 +141,6 @@
     <script src=" https://cdn.datatables.net/responsive/3.0.0/js/responsive.dataTables.js"></script>
     <script>
         $(document).ready(function() {
-            $.ajaxSetup({
-                headers: {
-                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                }
-            });
 
             $("#myTable").dataTable({
                 responsive: true,
@@ -253,36 +210,29 @@
         }
 
         function editData(id) {
-            // alert(id);
-            document.getElementById('tampungId').value = id;
-            $('#myModalLabel').text('Edit Gallery');
-            $('#myModal').modal('show');
-
             $.ajax({
                 url: '/admin/gallery/ajax/' + id + '/edit',
                 type: 'get',
                 success: function(response) {
-                    // console.log(response);
-                    var modalJudul = document.getElementById("modalJudul").value = response.result.title;
-                    var modalDeskripsi = document.getElementById("modalDeskripsi").value = response.result
-                        .description;
-                    document.getElementById('modalPreviewFoto').setAttribute('src', '/storage/fotogallery/' +
-                        response.result.image);
-                    var modalPreviewFoto = document.getElementById('modalPreviewFoto');
-                    var modalFoto = document.getElementById('modalFoto');
-                    // Ketika gambar yang dipilih diubah
-                    modalFoto.addEventListener('change', function() {
-                        // Memeriksa apakah ada file yang dipilih
-                        if (modalFoto.files && modalFoto.files[0]) {
-                            const reader = new FileReader();
+                    $('#rowRiviewImg').removeClass('d-none');
+                    $('#btnInsert').addClass('d-none');
+                    $('#btnUpdate').removeClass('d-none');
 
-                            // Ketika pembacaan file selesai
+                    $('#idGallery').val(response.data.id);
+                    $('#titleForm').text('Edit Form');
+                    $('#judul').val(response.data.title);
+                    $('#deskripsi').val(response.data.description);
+                    $('#oldImage').val(response.data.image);
+                    var reviewImg = $('#reviewImg').attr('src', '/storage/fotogallery/' + response.data
+                        .image);
+                    $('#foto').change(function() {
+                        if (this.files && this.files[0]) {
+                            var reader = new FileReader();
                             reader.onload = function(e) {
-                                // Menetapkan sumber gambar pratinjau
-                                modalPreviewFoto.src = e.target.result;
+                                $('#reviewImg').attr('src', e.target.result);
                             }
-                            // Membaca file gambar sebagai URL data
-                            reader.readAsDataURL(modalFoto.files[0]);
+                            reader.readAsDataURL(this.files[0]);
+                            console.log($('#foto')[0].files[0]);
                         }
                     });
                 }
@@ -290,26 +240,33 @@
         }
 
         function updateData() {
-            var id = document.getElementById('tampungId').value;
-            var modalJudul = document.getElementById('modalJudul').value;
-            var modalDeskripsi = document.getElementById('modalDeskripsi').value;
-            var modalFoto = document.getElementById("modalFoto").files[0];
+            const id = $('#idGallery').val();
+
+            var formData = new FormData();
+            formData.append('id', id);
+            formData.append('title', $('#judul').val());
+            formData.append('description', $('#deskripsi').val());
+            formData.append('oldImage', $('#oldImage').val());
+            // if ($('#foto')[0].files[0]) {
+            formData.append('image', document.getElementById("foto").files[0]);
+            // } else {
+            //     var image = $('#foto')[0].src;
+            //     var result = image.split('/');
+            //     var dataImg = result[8];
+            //     formData.append('image', dataImg);
+            // }
 
             $.ajax({
-                url: "/admin/gallery/ajax/" + id,
-                type: "put",
-                data: {
-                    id,
-                    modalJudul,
-                    modalDeskripsi
-                },
+                url: "/admin/gallery/update",
+                type: "POST",
+                data: formData,
+                contentType: false,
+                processData: false,
                 success: function(response) {
                     console.log(response);
                     return
-                    $('#exampleModal').modal('hide');
                 }
             });
-
         }
     </script>
 @endpush

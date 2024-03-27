@@ -44,7 +44,7 @@ Route::middleware('auth')->prefix('/admin')->name('admin.')->group(function () {
         return view('admin.dashboard');
     })->name('dashboard');
 
-    Route::resource('/setting', [SettingController::class]);
+    Route::resource('/setting', SettingController::class);
 });
 
 Route::get('admin/berita', function () {
@@ -70,3 +70,5 @@ Route::get('admin/gallery', function () {
 
 
 Route::resource('/admin/gallery/ajax', GalleryController::class);
+
+Route::post('/admin/gallery/update', [GalleryController::class, 'updateGallery']);

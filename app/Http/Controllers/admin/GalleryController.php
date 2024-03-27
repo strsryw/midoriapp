@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers\admin;
 
-use App\Http\Controllers\Controller;
 use App\Models\Galleries;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Storage;
 use Yajra\DataTables\Facades\DataTables;
 
 class GalleryController extends Controller
@@ -95,7 +97,14 @@ class GalleryController extends Controller
     {
         //
         $data = Galleries::where('id', $id)->first();
-        return response()->json(['result' => $data]);
+        return response()->json(
+            [
+                'status' => true,
+                'message' => 'Data Berhasil didapat',
+                'data' => $data
+            ],
+            200
+        );
     }
 
     /**
@@ -107,15 +116,27 @@ class GalleryController extends Controller
      */
     public function update(Request $request, $id)
     {
-        Galleries::where('id', $id)->update([
-            'title' => $request->modalJudul,
-            'description' => $request->modalDeskripsi
-        ]);
 
-        return response()->json([
-            'message' => 'Data updated successfully',
-            'status' => 'Success'
-        ]);
+        $foto = $request->file('foto');
+        $namaFoto = $foto->getClientOriginalName(); // Mendapatkan nama asli file
+        $foto->storeAs('public/fotogallery', $namaFoto); // Simpan foto ke penyimpanan
+
+        // Simpan data ke database
+        $gallery = new Galleries;
+        $gallery->title = $request->judul;
+        $gallery->description = $request->deskripsi;
+        $gallery->image = $namaFoto; // Simpan nama foto ke dalam kolom 'foto' di tabel
+        $gallery->save();
+
+        // Galleries::where('id', $id)->update([
+        //     'title' => $request->modalJudul,
+        //     'description' => $request->modalDeskripsi
+        // ]);
+
+        // return response()->json([
+        //     'message' => 'Data updated successfully',
+        //     'status' => 'Success'
+        // ]);
     }
 
     /**
@@ -127,5 +148,42 @@ class GalleryController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function updateGallery(Request $request)
+    {
+        $data = [];
+        $foto = $request->file('image');
+
+        if ($foto) {
+            if ($request->input('oldImage')) {
+                Storage::delete('public/fotogallery/' . $request->input('oldImage'));
+            }
+
+            // Simpan file dengan nama unik menggunakan storeAs()
+            $imageName = time() . '_' . $foto->getClientOriginalName();
+            $foto->storeAs('public/fotogallery/', $imageName);
+
+            // Simpan nama file ke dalam $data
+            $data['image'] = $imageName;
+        }
+
+        // Buat array baru dengan data yang diperbarui
+        $data['title'] = $request->input('title');
+        $data['description'] = $request->input('description');
+
+        $gallery = Galleries::where('id', $request->input('id'))->update($data);
+
+        if ($gallery) {
+            return response()->json([
+                'status' => true,
+                'message' => 'Data Berhasil di Update'
+            ], 200);
+        }
+
+        return response()->json([
+            'status' => false,
+            'message' => 'Gagal memperbarui data'
+        ], 400);
     }
 }

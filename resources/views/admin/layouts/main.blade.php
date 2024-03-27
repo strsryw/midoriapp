@@ -42,6 +42,7 @@
     <script src="/assets/admin/dist/js/tabler.min.js"></script>
     <script src="/assets/admin/dist/js/demo.min.js"></script>
     <script src="/assets/web/js/jquery-3.7.1.min.js"></script>
+    <script src="/assets/web/js/script.js"></script>
 
     @stack('script')
 </body>
