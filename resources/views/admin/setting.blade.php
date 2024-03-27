@@ -12,6 +12,10 @@
             </div>
         </div>
     </div>
+
+    <div class="page-body">
+
+    </div>
 @endsection
 
 @push('css')

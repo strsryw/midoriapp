@@ -16,6 +16,18 @@ Route::get('/', function () {
 });
 
 // Route gallery landing page
+Route::get('/berita', function () {
+    return view(
+        'landingpage.berita',
+        ['hero' => 'Berita']
+    );
+});
+Route::get('/artikel', function () {
+    return view(
+        'landingpage.artikel',
+        ['hero' => 'Artikel']
+    );
+});
 Route::get('/gallery', [galleryLandingPage::class, 'index']);
 
 // Route - Login
@@ -35,6 +47,19 @@ Route::middleware('auth')->prefix('/admin')->name('admin.')->group(function () {
     Route::resource('/setting', [SettingController::class]);
 });
 
+Route::get('admin/berita', function () {
+    return view(
+        'admin.berita',
+        ['title' => 'Berita']
+    );
+});
+
+Route::get('admin/artikel', function () {
+    return view(
+        'admin.artikel',
+        ['title' => 'Artikel']
+    );
+});
 // Route - admin gallery
 Route::get('admin/gallery', function () {
     return view(
@@ -42,5 +67,6 @@ Route::get('admin/gallery', function () {
         ['title' => 'Gallery']
     );
 });
+
 
 Route::resource('/admin/gallery/ajax', GalleryController::class);

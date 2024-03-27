@@ -120,50 +120,33 @@
 
 
     <!-- Modal -->
-    <div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="myModalLabel">Modal title</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
                     <div class="mb-3 row">
                         <input type="hidden" id="tampungId">
-                        <label for="modalJudul" class="col-sm-2 col-form-label">Judul</label>
+                        <label for="nama" class="col-sm-2 col-form-label">Nama</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" name='modalJudul' id="modalJudul">
+                            <input type="text" class="form-control" name='nama' id="nama">
                         </div>
                     </div>
                     <div class="mb-3 row">
-                        <div class="col-md-2 col-sm-12">
-
-                        </div>
-                        <div class="col-md-10 col-sm-12">
-                            <img src="" class="img-thumbnail" alt="Image" id="modalPreviewFoto"
-                                style="max-height: 300px; width:auto;">
-                        </div>
-                    </div>
-                    <div class="mb-3 row">
-                        <div class="col-md-2 col-sm-12">
-                            <label for="modalFoto" class="form-label">Foto</label>
-                        </div>
-                        <div class="col-md-10 col-sm-12">
-                            <input class="form-control" type="file" id="modalFoto">
-                        </div>
-                    </div>
-                    <div class="mb-3 row">
-                        <div class="col-md-2 col-sm-12">
-                            <label for="modalDeskripsi" class="form-label">Deskripsi</label>
-                        </div>
-                        <div class="col-md-10 col-sm-12">
-                            <textarea type="text" class="form-control" name='modalDeskripsi' id="modalDeskripsi"></textarea>
+                        <label for="email" class="col-sm-2 col-form-label">Email</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" name='email' id="email">
                         </div>
                     </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary" onclick="updateData()" id="updateBtn">Save
+                    <button type="button" class="btn btn-primary" onclick="insertData()" id="insertBtn">Save
+                        changes</button>
+                    <button type="button" class="btn btn-primary d-none" onclick="updateData()" id="updateBtn">Save
                         changes</button>
                 </div>
             </div>
@@ -179,12 +162,6 @@
     <script src=" https://cdn.datatables.net/responsive/3.0.0/js/responsive.dataTables.js"></script>
     <script>
         $(document).ready(function() {
-            $.ajaxSetup({
-                headers: {
-                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                }
-            });
-
             $("#myTable").dataTable({
                 responsive: true,
                 rowReorder: {
@@ -229,13 +206,18 @@
         });
 
         function simpanData() {
+            var csrfToken = document.head.querySelector(
+                'meta[name="csrf-token"]'
+            ).content;
             var judul = document.getElementById("judul").value;
             var deskripsi = document.getElementById("deskripsi").value;
             var foto = document.getElementById("foto").files[0]; // Mendapatkan file foto yang dipilih
             var formData = new FormData(); // Buat objek FormData
+            formData.append("_token", csrfToken);
             formData.append("judul", judul);
             formData.append("deskripsi", deskripsi);
             formData.append("foto", foto);
+
             $.ajax({
                 url: "/admin/gallery/ajax",
                 type: "post",
@@ -250,66 +232,6 @@
                     // Tindakan jika terjadi kesalahan
                 },
             });
-        }
-
-        function editData(id) {
-            // alert(id);
-            document.getElementById('tampungId').value = id;
-            $('#myModalLabel').text('Edit Gallery');
-            $('#myModal').modal('show');
-
-            $.ajax({
-                url: '/admin/gallery/ajax/' + id + '/edit',
-                type: 'get',
-                success: function(response) {
-                    // console.log(response);
-                    var modalJudul = document.getElementById("modalJudul").value = response.result.title;
-                    var modalDeskripsi = document.getElementById("modalDeskripsi").value = response.result
-                        .description;
-                    document.getElementById('modalPreviewFoto').setAttribute('src', '/storage/fotogallery/' +
-                        response.result.image);
-                    var modalPreviewFoto = document.getElementById('modalPreviewFoto');
-                    var modalFoto = document.getElementById('modalFoto');
-                    // Ketika gambar yang dipilih diubah
-                    modalFoto.addEventListener('change', function() {
-                        // Memeriksa apakah ada file yang dipilih
-                        if (modalFoto.files && modalFoto.files[0]) {
-                            const reader = new FileReader();
-
-                            // Ketika pembacaan file selesai
-                            reader.onload = function(e) {
-                                // Menetapkan sumber gambar pratinjau
-                                modalPreviewFoto.src = e.target.result;
-                            }
-                            // Membaca file gambar sebagai URL data
-                            reader.readAsDataURL(modalFoto.files[0]);
-                        }
-                    });
-                }
-            })
-        }
-
-        function updateData() {
-            var id = document.getElementById('tampungId').value;
-            var modalJudul = document.getElementById('modalJudul').value;
-            var modalDeskripsi = document.getElementById('modalDeskripsi').value;
-            var modalFoto = document.getElementById("modalFoto").files[0];
-
-            $.ajax({
-                url: "/admin/gallery/ajax/" + id,
-                type: "put",
-                data: {
-                    id,
-                    modalJudul,
-                    modalDeskripsi
-                },
-                success: function(response) {
-                    console.log(response);
-                    return
-                    $('#exampleModal').modal('hide');
-                }
-            });
-
         }
     </script>
 @endpush

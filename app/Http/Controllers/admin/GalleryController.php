@@ -94,6 +94,8 @@ class GalleryController extends Controller
     public function edit($id)
     {
         //
+        $data = Galleries::where('id', $id)->first();
+        return response()->json(['result' => $data]);
     }
 
     /**
@@ -105,7 +107,15 @@ class GalleryController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        Galleries::where('id', $id)->update([
+            'title' => $request->modalJudul,
+            'description' => $request->modalDeskripsi
+        ]);
+
+        return response()->json([
+            'message' => 'Data updated successfully',
+            'status' => 'Success'
+        ]);
     }
 
     /**
