@@ -7,16 +7,15 @@
                     <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia,
                         there live the
                         blind texts.</p>
-                </div> <!-- /.widget -->
+                </div>
                 <div class="widget">
                     <address>43 Raymouth Rd. Baltemoer, <br> London 3910</address>
                     <ul class="list-unstyled links">
-                        <li><a href="tel://11234567890">+1(123)-456-7890</a></li>
-                        <li><a href="tel://11234567890">+1(123)-456-7890</a></li>
+                        <li><a href="http://">081299459042</a></li>
                         <li><a href="mailto:info@mydomain.com">info@mydomain.com</a></li>
                     </ul>
-                </div> <!-- /.widget -->
-            </div> <!-- /.col-lg-4 -->
+                </div>
+            </div>
             <div class="col-lg-4">
                 <div class="widget">
                     <h3>Company</h3>

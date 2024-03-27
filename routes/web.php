@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\admin\GalleryController;
+use App\Http\Controllers\admin\SettingController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\landingpage\GalleryController as galleryLandingPage;
@@ -30,6 +31,8 @@ Route::middleware('auth')->prefix('/admin')->name('admin.')->group(function () {
     Route::get('/dashboard', function () {
         return view('admin.dashboard');
     })->name('dashboard');
+
+    Route::resource('/setting', [SettingController::class]);
 });
 
 // Route - admin gallery
