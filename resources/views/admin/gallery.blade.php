@@ -7,6 +7,9 @@
     <link rel="stylesheet" href="https://cdn.datatables.net/rowreorder/1.5.0/css/rowReorder.dataTables.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/responsive/3.0.0/css/responsive.dataTables.css">
 
+    <link href="
+    https://cdn.jsdelivr.net/npm/sweetalert2@11.10.7/dist/sweetalert2.min.css
+    " rel="stylesheet">
     <style>
         /* Override CSS Paging DataTables */
         .dataTables_paginate .paginate_button:hover {
@@ -133,6 +136,11 @@
     <!-- AKHIR DATA -->
 @endsection
 @push('script')
+    <script
+        src="
+                                                                                                                                            https://cdn.jsdelivr.net/npm/sweetalert2@11.10.7/dist/sweetalert2.all.min.js
+                                                                                                                                            ">
+    </script>
     {{-- <script src="//cdn.datatables.net/2.0.2/js/dataTables.min.js"></script> --}}
     <script src="https://cdn.datatables.net/v/bs5/dt-2.0.2/datatables.min.js"></script>
     {{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script> --}}
@@ -141,7 +149,6 @@
     <script src=" https://cdn.datatables.net/responsive/3.0.0/js/responsive.dataTables.js"></script>
     <script>
         $(document).ready(function() {
-
             $("#myTable").dataTable({
                 responsive: true,
                 rowReorder: {
@@ -200,8 +207,25 @@
                 contentType: false,
                 processData: false, // Set processData menjadi false agar FormData tidak diproses secara otomatis
                 success: function(response) {
-                    console.log(response);
+                    $("#judul").val('');
+                    $("#deskripsi").val('');
+                    $('#foto').val('');
+                    if (response.status == true) {
+                        Swal.fire({
+                            icon: "success",
+                            title: "Data berhasil disimpan",
+                            showConfirmButton: false,
+                            timer: 1500
+                        });
+                    } else {
+                        Swal.fire({
+                            icon: "error",
+                            title: "Data gagal disimnpan",
+                            timer: 1500
+                        });
+                    }
                     // Tindakan setelah permintaan berhasil
+                    $('#myTable').DataTable().ajax.reload();
                 },
                 error: function(xhr, status, error) {
                     // Tindakan jika terjadi kesalahan
@@ -263,8 +287,61 @@
                 contentType: false,
                 processData: false,
                 success: function(response) {
-                    console.log(response);
-                    return
+                    if (response.status == true) {
+                        Swal.fire({
+                            icon: "success",
+                            title: "Data berhasil diupdate",
+                            showConfirmButton: false,
+                            timer: 1500
+                        });
+                    } else {
+                        Swal.fire({
+                            icon: "error",
+                            title: "Data gagal diupdate",
+                            timer: 1500
+                        });
+                    }
+                    $('#myTable').DataTable().ajax.reload();
+                }
+            });
+        }
+
+        function deleteData(id) {
+            Swal.fire({
+                title: "Apakah anda yakin ingin menghapus ?",
+                showDenyButton: true,
+                showCancelButton: true,
+                confirmButtonText: "Iya",
+                denyButtonText: `Tidak`
+            }).then((result) => {
+                /* Read more about isConfirmed, isDenied below */
+                if (result.isConfirmed) {
+                    $.ajax({
+                        url: '/admin/gallery/ajax/' + id,
+                        type: 'delete',
+                        data: {},
+                        success: function(response) {
+                            console.log(response);
+                            if (response.status == '1') {
+                                Swal.fire({
+                                    icon: "success",
+                                    title: "Data berhasil dihapus",
+                                    showConfirmButton: false,
+                                    timer: 1500
+                                });
+
+                            } else if (response.status = '0') {
+                                Swal.fire({
+                                    icon: "error",
+                                    title: "Data gagal dihapus",
+                                    timer: 1500
+                                });
+                            }
+                            $('#myTable').DataTable().ajax.reload();
+                        }
+                    });
+                } else if (result.isDenied) {
+                    Swal.fire("Changes are not saved", "", "info");
                 }
             });
         }

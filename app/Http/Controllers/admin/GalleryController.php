@@ -73,6 +73,13 @@ class GalleryController extends Controller
         $gallery->image = $namaFoto; // Simpan nama foto ke dalam kolom 'foto' di tabel
         $gallery->save();
 
+        if ($gallery) {
+            return response()->json([
+                'status' => true,
+                'message' => 'Data Berhasil di Insert'
+            ], 200);
+        }
+
         // Tindakan setelah berhasil menyimpan data
     }
 
@@ -116,27 +123,6 @@ class GalleryController extends Controller
      */
     public function update(Request $request, $id)
     {
-
-        $foto = $request->file('foto');
-        $namaFoto = $foto->getClientOriginalName(); // Mendapatkan nama asli file
-        $foto->storeAs('public/fotogallery', $namaFoto); // Simpan foto ke penyimpanan
-
-        // Simpan data ke database
-        $gallery = new Galleries;
-        $gallery->title = $request->judul;
-        $gallery->description = $request->deskripsi;
-        $gallery->image = $namaFoto; // Simpan nama foto ke dalam kolom 'foto' di tabel
-        $gallery->save();
-
-        // Galleries::where('id', $id)->update([
-        //     'title' => $request->modalJudul,
-        //     'description' => $request->modalDeskripsi
-        // ]);
-
-        // return response()->json([
-        //     'message' => 'Data updated successfully',
-        //     'status' => 'Success'
-        // ]);
     }
 
     /**
@@ -147,7 +133,19 @@ class GalleryController extends Controller
      */
     public function destroy($id)
     {
-        //
+        // Hapus data dari database
+        $gallery = Galleries::find($id);
+        if (!$gallery) {
+            return response()->json(['status' => '0'], 404);
+        }
+
+        // Hapus foto dari direktori
+        Storage::delete('public/fotogallery/' . $gallery->image);
+
+        // Hapus entri dari database
+        $gallery->delete();
+
+        return response()->json(['status' => '1']);
     }
 
     public function updateGallery(Request $request)
