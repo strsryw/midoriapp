@@ -15,7 +15,7 @@
                     </div>
                     <div class="d-flex mb-3 service-alt">
                         <div>
-                            <span class="bi-wallet-fill me-4"></span>
+                            <span class="bi-wallet-fill text-success me-4"></span>
                         </div>
                         <div>
                             <h3>Build financial</h3>
@@ -26,7 +26,7 @@
 
                     <div class="d-flex mb-3 service-alt">
                         <div>
-                            <span class="bi-pie-chart-fill me-4"></span>
+                            <span class="bi-pie-chart-fill text-success me-4"></span>
                         </div>
                         <div>
                             <h3>Invest for the future</h3>
@@ -46,7 +46,7 @@
             <div class="row g-5">
                 <div class="col-12 col-sm-6 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="0">
                     <div class="feature d-flex">
-                        <span class="bi-bag-check-fill"></span>
+                        <span class="bi-bag-check-fill text-success"></span>
                         <div>
                             <h3>Build financial</h3>
                             <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia,
@@ -56,7 +56,7 @@
                 </div>
                 <div class="col-12 col-sm-6 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
                     <div class="feature d-flex">
-                        <span class="bi-wallet-fill"></span>
+                        <span class="bi-wallet-fill text-success"></span>
                         <div>
                             <h3>Invest for the future</h3>
                             <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia,
@@ -66,7 +66,7 @@
                 </div>
                 <div class="col-12 col-sm-6 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
                     <div class="feature d-flex">
-                        <span class="bi-pie-chart-fill"></span>
+                        <span class="bi-pie-chart-fill text-success"></span>
                         <div>
                             <h3>Responsible banking</h3>
                             <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia,
@@ -90,7 +90,7 @@
                     </div>
                     <div class="d-flex mb-3 service-alt">
                         <div>
-                            <span class="bi-wallet-fill me-4"></span>
+                            <span class="bi-wallet-fill text-success me-4"></span>
                         </div>
                         <div>
                             <h3>Build financial</h3>
@@ -101,7 +101,7 @@
 
                     <div class="d-flex mb-3 service-alt">
                         <div>
-                            <span class="bi-pie-chart-fill me-4"></span>
+                            <span class="bi-pie-chart-fill text-success me-4"></span>
                         </div>
                         <div>
                             <h3>Invest for the future</h3>
@@ -112,7 +112,7 @@
 
                     <div class="d-flex mb-3 service-alt">
                         <div>
-                            <span class="bi-bag-check-fill me-4"></span>
+                            <span class="bi-bag-check-fill text-success me-4"></span>
                         </div>
                         <div>
                             <h3>Responsible banking</h3>
@@ -131,7 +131,7 @@
         <div class="container">
             <div class="row mb-5">
                 <div class="col-lg-5 mx-auto text-center" data-aos="fade-up">
-                    <h2 class="heading text-primary">Our Services</h2>
+                    <h2 class="heading text-success">Our Services</h2>
                     <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there
                         live the blind texts. </p>
                 </div>
@@ -141,12 +141,12 @@
                 <div class="col-12 col-sm-6 col-md-6 col-lg-4" data-aos="fade-up">
 
                     <div class="service text-center">
-                        <span class="bi-cash-coin"></span>
+                        <span class="bi-cash-coin text-success"></span>
                         <div>
                             <h3>Faster payments</h3>
                             <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia
                                 and Consonantia, there live the blind texts. </p>
-                            <p><a href="#" class="btn btn-outline-primary py-2 px-3">Read more</a></p>
+                            <p><a href="#" class="btn btn-outline-success py-2 px-3">Read more</a></p>
                         </div>
                     </div>
 
@@ -158,7 +158,7 @@
                             <h3>Grow your business</h3>
                             <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia
                                 and Consonantia, there live the blind texts. </p>
-                            <p><a href="#" class="btn btn-outline-primary py-2 px-3">Read more</a></p>
+                            <p><a href="#" class="btn btn-outline-success py-2 px-3">Read more</a></p>
                         </div>
                     </div>
                 </div>
@@ -169,7 +169,7 @@
                             <h3>Investments</h3>
                             <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia
                                 and Consonantia, there live the blind texts. </p>
-                            <p><a href="#" class="btn btn-outline-primary py-2 px-3">Read more</a></p>
+                            <p><a href="#" class="btn btn-outline-success py-2 px-3">Read more</a></p>
                         </div>
                     </div>
                 </div>
@@ -182,7 +182,7 @@
                             <h3>Payment & Cards</h3>
                             <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia
                                 and Consonantia, there live the blind texts. </p>
-                            <p><a href="#" class="btn btn-outline-primary py-2 px-3">Read more</a></p>
+                            <p><a href="#" class="btn btn-outline-success py-2 px-3">Read more</a></p>
                         </div>
                     </div>
 
@@ -194,7 +194,7 @@
                             <h3>Strategic Finance</h3>
                             <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia
                                 and Consonantia, there live the blind texts. </p>
-                            <p><a href="#" class="btn btn-outline-primary py-2 px-3">Read more</a></p>
+                            <p><a href="#" class="btn btn-outline-success py-2 px-3">Read more</a></p>
                         </div>
                     </div>
                 </div>
@@ -205,7 +205,7 @@
                             <h3>Digital Currency</h3>
                             <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia
                                 and Consonantia, there live the blind texts. </p>
-                            <p><a href="#" class="btn btn-outline-primary py-2 px-3">Read more</a></p>
+                            <p><a href="#" class="btn btn-outline-success py-2 px-3">Read more</a></p>
                         </div>
                     </div>
                 </div>
@@ -215,7 +215,7 @@
     </div>
 
 
-    <div class="section sec-cta overlay" style="background-image: url('/assets/images/img-3.jpg')">
+    <div class="section sec-cta overlay">
         <div class="container">
             <div class="row justify-content-between align-items-center">
                 <div class="col-lg-5" data-aos="fade-up" data-aos-delay="0">
@@ -224,7 +224,7 @@
                         live the blind texts. </p>
                 </div>
                 <div class="col-lg-5 text-end" data-aos="fade-up" data-aos-delay="100">
-                    <a href="#" class="btn btn-outline-white-reverse">Contact us</a>
+                    <a href="#" class="btn btn-outline-green-reverse">Contact us</a>
                 </div>
             </div>
         </div>
@@ -235,13 +235,13 @@
         <div class="container">
             <div class="row mb-5">
                 <div class="col-lg-5 mx-auto text-center ">
-                    <h2 class="heading text-primary mb-3" data-aos="fade-up" data-aos-delay="0">Case Studies</h2>
+                    <h2 class="heading text-success mb-3" data-aos="fade-up" data-aos-delay="0">Case Studies</h2>
                     <p class="mb-4" data-aos="fade-up" data-aos-delay="100">Far far away, behind the word
                         mountains, far from the countries Vokalia and Consonantia, there live the blind texts. </p>
 
                     <div id="post-slider-nav" data-aos="fade-up" data-aos-delay="200">
-                        <button class="btn btn-primary py-2" class="prev" data-controls="prev">Prev</button>
-                        <button class="btn btn-primary py-2" class="next" data-controls="next">Next</button>
+                        <button class="btn btn-success py-2" class="prev" data-controls="prev">Prev</button>
+                        <button class="btn btn-success py-2" class="next" data-controls="next">Next</button>
                     </div>
 
                 </div>
@@ -317,7 +317,7 @@
         <div class="container">
             <div class="row mb-5 justify-content-center">
                 <div class="col-lg-6 text-center">
-                    <h2 class="heading text-primary">Testimonials</h2>
+                    <h2 class="heading text-success">Testimonials</h2>
                 </div>
 
             </div>
@@ -392,7 +392,7 @@
         <div class="container">
             <div class="row mb-5">
                 <div class="col-lg-7">
-                    <h2 class="heading text-primary">Latest News</h2>
+                    <h2 class="heading text-success">Latest News</h2>
                 </div>
             </div>
 
@@ -403,10 +403,12 @@
                                 alt="Image"></a>
                         <div class="card-body">
                             <div><span class="text-uppercase font-weight-bold date">Jan 20, 2021</span></div>
-                            <h5 class="card-title"><a href="single.html">Behind the word mountains</a></h5>
+                            <h5 class="card-title"><a class="text-success text-decoration-none" href="single.html">Behind
+                                    the word
+                                    mountains</a></h5>
                             <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia,
                                 there live the blind texts. </p>
-                            <p class="mt-5 mb-0"><a href="#">Read more</a></p>
+                            <a href="#" class="btn btn-outline-success py-2 px-3">Read more</a>
                         </div>
                     </div>
                 </div>
@@ -417,10 +419,12 @@
                                 alt="Image"></a>
                         <div class="card-body">
                             <div><span class="text-uppercase font-weight-bold date">Jan 20, 2021</span></div>
-                            <h5 class="card-title"><a href="single.html">Behind the word mountains</a></h5>
+                            <h5 class="card-title"><a class="text-success text-decoration-none" href="single.html">Behind
+                                    the word
+                                    mountains</a></h5>
                             <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia,
                                 there live the blind texts. </p>
-                            <p class="mt-5 mb-0"><a href="#">Read more</a></p>
+                            <a href="#" class="btn btn-outline-success py-2 px-3">Read more</a>
                         </div>
                     </div>
                 </div>
@@ -431,10 +435,12 @@
                                 alt="Image"></a>
                         <div class="card-body">
                             <div><span class="text-uppercase font-weight-bold date">Jan 20, 2021</span></div>
-                            <h5 class="card-title"><a href="single.html">Behind the word mountains</a></h5>
+                            <h5 class="card-title"><a class="text-success text-decoration-none" href="single.html">Behind
+                                    the word
+                                    mountains</a></h5>
                             <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia,
                                 there live the blind texts. </p>
-                            <p class="mt-5 mb-0"><a href="single.html">Read more</a></p>
+                            <a href="#" class="btn btn-outline-success py-2 px-3">Read more</a>
                         </div>
                     </div>
                 </div>

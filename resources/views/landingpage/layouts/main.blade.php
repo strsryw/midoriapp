@@ -26,8 +26,9 @@
     <link rel="stylesheet" href="/assets/landing_page/css/style.css">
 
     <link rel="stylesheet" href="/assets/landing_page/css/flatpickr.min.css">
-    @stack('style')
+    <link rel="stylesheet" href="/assets/web/css/style.css">
 
+    @stack('style')
 
     <title>Financing &mdash; Free Bootstrap 5 Website Template by Untree.co</title>
 </head>
@@ -50,7 +51,7 @@
     <!-- Preloader -->
     <div id="overlayer"></div>
     <div class="loader">
-        <div class="spinner-border text-primary" role="status">
+        <div class="spinner-border text-success" role="status">
             <span class="visually-hidden">Loading...</span>
         </div>
     </div>

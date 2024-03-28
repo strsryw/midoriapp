@@ -4,6 +4,88 @@
     --tblr-font-sans-serif: 'Poppins', -apple-system, BlinkMacSystemFont, San Francisco, Segoe UI, Roboto, Helvetica Neue, sans-serif;
 }
 
+* {
+    font-family: 'Poppins' !important
+}
+
 body {
     font-feature-settings: "cv03", "cv04", "cv11";
+}
+
+.btn.btn-outline-green-reverse {
+    background-color: #fff;
+    border-color: #fff;
+    color: #73cd79;
+}
+
+.btn.btn-outline-green-reverse:hover {
+    background: transparent;
+    border-color: #fff;
+    color: #fff;
+}
+
+.sec-features {
+    background: #004445;
+    background: -webkit-linear-gradient(302deg, #62c969 0%, #026F48 100%);
+    background: -o-linear-gradient(310deg, #306ee8 0%, #3038e8 100%);
+    background: linear-gradient(106deg, #62c969 0%, #026F48 100%);
+    overflow: hidden;
+}
+
+.hero {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background: #004445;
+    background: -webkit-linear-gradient(302deg, #73cd79 0%, #026F48 100%);
+    background: -o-linear-gradient(310deg, #306ee8 0%, #3038e8 100%);
+    background: linear-gradient(106deg, #73cd79 0%, #026F48 100%);
+    overflow: hidden;
+}
+
+.service [class^="bi-"]:before {
+    color: #198754;
+    z-index: 2;
+    position: relative;
+}
+
+.sec-cta.overlay:before {
+    background: #306ee8;
+    background: -webkit-linear-gradient(302deg, #62c969 0%, #026F48 100%);
+    background: -o-linear-gradient(310deg, #306ee8 0%, #3038e8 100%);
+    background: linear-gradient(106deg, #62c969 0%, #026F48 100%);
+    opacity: .9;
+    overflow: hidden;
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    z-index: 1;
+}
+
+.site-footer {
+    background: #306ee8;
+    background: -webkit-linear-gradient(302deg, #3ecc47 0%, #026F48 100%);
+    background: -o-linear-gradient(310deg, #306ee8 0%, #3038e8 100%);
+    background: linear-gradient(279deg, #48d951 0%, #026F48 100%);
+    font-size: 14px;
+    padding: 70px 0;
+    color: white;
+}
+
+.site-footer .social li a {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    position: relative;
+    background: #026F48;
+    border-radius: 4px;
+    color: #fff;
+}
+
+.site-footer .social li a:hover {
+    background: #fff;
+    color: #3ecc47;
 }

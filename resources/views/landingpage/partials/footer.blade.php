@@ -20,12 +20,12 @@
                 <div class="widget">
                     <h3>Company</h3>
                     <ul class="list-unstyled float-start links">
-                        <li><a href="#">About us</a></li>
-                        <li><a href="#">Services</a></li>
-                        <li><a href="#">Vision</a></li>
-                        <li><a href="#">Mission</a></li>
-                        <li><a href="#">Terms</a></li>
-                        <li><a href="#">Privacy</a></li>
+                        <li><a href="#" class="fw-medium">About us</a></li>
+                        <li><a href="#" class="fw-medium">Services</a></li>
+                        <li><a href="#" class="fw-medium">Vision</a></li>
+                        <li><a href="#" class="fw-medium">Mission</a></li>
+                        <li><a href="#" class="fw-medium">Terms</a></li>
+                        <li><a href="#" class="fw-medium">Privacy</a></li>
                     </ul>
                     <ul class="list-unstyled float-start links">
                         <li><a href="#">Partners</a></li>
@@ -48,7 +48,7 @@
 
                     <h3>Social</h3>
                     <ul class="list-unstyled social">
-                        <li><a href="#"><span class="icon-instagram"></span></a></li>
+                        <li><a href="#"><span class="icon-instagram "></span></a></li>
                         <li><a href="#"><span class="icon-twitter"></span></a></li>
                         <li><a href="#"><span class="icon-facebook"></span></a></li>
                         <li><a href="#"><span class="icon-linkedin"></span></a></li>
