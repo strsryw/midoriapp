@@ -6,6 +6,7 @@ use App\Http\Controllers\admin\SettingController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\BeritasController;
+use App\Http\Controllers\landingpage\BeritaController as LandingpageBeritaController;
 use App\Http\Controllers\landingpage\GalleryController as galleryLandingPage;
 
 // Route - Landing Page
@@ -18,12 +19,9 @@ Route::get('/', function () {
 });
 
 // Route gallery landing page
-Route::get('/berita', function () {
-    return view(
-        'landingpage.berita',
-        ['hero' => 'Berita']
-    );
-});
+Route::get('/berita', [LandingpageBeritaController::class, 'index']);
+Route::get('/berita/{id}', [LandingpageBeritaController::class, 'singlePage']);
+
 Route::get('/artikel', function () {
     return view(
         'landingpage.artikel',
@@ -48,8 +46,6 @@ Route::middleware('auth')->prefix('/admin')->name('admin.')->group(function () {
 
     Route::resource('/setting', SettingController::class);
     //Route backend berita
-    // Route::resource('/berita', BeritaController::class);
-
     Route::get('/berita', [BeritaController::class, 'index'])->name('berita.index');
     Route::get('/berita/create', [BeritaController::class, 'create'])->name('berita.create');
     Route::get('/berita/{id}', [BeritaController::class, 'show'])->name('berita.show');

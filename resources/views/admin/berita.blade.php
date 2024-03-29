@@ -56,22 +56,11 @@
                                 <tr>
                                     <th class="text-center">No</th>
                                     <th class="text-center col-md-3">Judul</th>
-                                    <th class="text-center col-md-3">Foto</th>
+                                    <th class="text-center col-md-3">Thumbnail</th>
                                     <th class="text-center col-md-3">Deskripsi</th>
                                     <th class="text-center col-md-2">Aksi</th>
                                 </tr>
                             </thead>
-                            {{-- <tbody>
-                                <tr>
-                                    <td>1.</td>
-                                    <td>Anton</td>
-                                    <td>anton@gmail.com</td>
-                                    <td class="text-center">
-                                        <button type="button" class="btn btn-warning"><i class="ti ti-edit"></i></button>
-                                        <button type="button" class="btn btn-danger"><i class="ti ti-trash"></i></button>
-                                    </td>
-                                </tr>
-                            </tbody> --}}
                         </table>
                     </div>
                 </div>
@@ -103,7 +92,6 @@
                 },
                 processing: true,
                 serverside: true,
-                // ajax: "/admin/berita/ajax",
                 ajax: "{{ route('admin.berita.index') }}",
                 columns: [{
                         data: "DT_RowIndex",
@@ -117,7 +105,7 @@
                     },
                     {
                         data: "image",
-                        name: "Image",
+                        name: "Thumbnail",
                     },
                     {
                         data: "description",

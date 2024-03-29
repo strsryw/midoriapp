@@ -79,65 +79,17 @@
 @push('script')
     <script>
         $(document).ready(function() {
-            // function example_image_upload_handler(blobInfo, success, failure, progress) {
-            //     var xhr, formData;
-
-            //     xhr = new XMLHttpRequest();
-            //     xhr.withCredentials = false;
-            //     xhr.open('POST', "{{ route('admin.berita.imageUpload') }}");
-
-            //     xhr.upload.onprogress = function(e) {
-            //         progress(e.loaded / e.total * 100);
-            //     };
-
-            //     xhr.onload = function() {
-            //         var json;
-
-            //         if (xhr.status === 403) {
-            //             failure('HTTP Error: ' + xhr.status, {
-            //                 remove: true
-            //             });
-            //             return;
-            //         }
-
-            //         if (xhr.status < 200 || xhr.status >= 300) {
-            //             failure('HTTP Error: ' + xhr.status);
-            //             return;
-            //         }
-
-            //         json = JSON.parse(xhr.responseText);
-
-            //         if (!json || typeof json.location != 'string') {
-            //             failure('Invalid JSON: ' + xhr.responseText);
-            //             return;
-            //         }
-
-            //         success(json.location);
-            //     };
-
-            //     xhr.onerror = function() {
-            //         failure('Image upload failed due to a XHR Transport error. Code: ' + xhr.status);
-            //     };
-
-            //     formData = new FormData();
-            //     formData.append('file', blobInfo.blob(), blobInfo.filename());
-
-            //     xhr.send(formData);
-            // };
-
-
             tinymce.init({
                 selector: '#content',
                 plugins: 'anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount checklist mediaembed casechange export formatpainter pageembed linkchecker a11ychecker tinymcespellchecker permanentpen powerpaste advtable advcode editimage advtemplate ai mentions tinycomments tableofcontents footnotes mergetags autocorrect typography inlinecss markdown',
                 toolbar: 'undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | link image media table mergetags | addcomment showcomments | spellcheckdialog a11ycheck typography | align lineheight | checklist numlist bullist indent outdent | emoticons charmap | removeformat',
                 tinycomments_mode: 'embedded',
                 automatic_uploads: true,
-                images_upload_url: "/admin/berita/image/upload",
+                images_upload_url: "{{ route('admin.berita.imageUpload') }}",
                 file_picker_types: "image",
                 branding: false,
                 tinycomments_author: 'Author name',
                 automatic_uploads: true,
-                // images_upload_handler: example_image_upload_handler,
                 file_picker_callback: (cb, value, meta) => {
                     const input = document.createElement('input');
                     input.setAttribute('type', 'file');
@@ -148,11 +100,6 @@
 
                         const reader = new FileReader();
                         reader.addEventListener('load', () => {
-                            /*
-                              Note: Now we need to register the blob in TinyMCEs image blob
-                              registry. In the next release this part hopefully won't be
-                              necessary, as we are looking to handle it internally.
-                            */
                             const id = 'blobid' + (new Date()).getTime();
                             const blobCache = tinymce.activeEditor.editorUpload
                                 .blobCache;
@@ -177,8 +124,6 @@
 
         function simpanData() {
             var content = tinymce.activeEditor.getContent();
-            // console.log(content);
-            // return
             var judul = document.getElementById("judul").value;
             var deskripsi = document.getElementById("deskripsi").value;
             var foto = document.getElementById("foto").files[0]; // Mendapatkan file foto yang dipilih
