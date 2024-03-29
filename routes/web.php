@@ -28,7 +28,7 @@ Route::get('/artikel', function () {
         ['hero' => 'Artikel']
     );
 });
-Route::get('/gallery', [galleryLandingPage::class, 'index']);
+Route::get('/gallery', [galleryLandingPage::class, 'index'])->name('landingpage.gallery');
 
 // Route - Login
 Route::middleware('guest')->group(function () {

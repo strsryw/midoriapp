@@ -25,7 +25,13 @@
                             <div class="row row-cards">
                                 <div class="col-md-5">
                                     <div class="mb-3">
-                                        <label class="form-label">Nama Website</label>
+                                        <label class="form-label">Logo Website</label>
+                                        <input type="img" class="form-control" id="logo" name="logo">
+                                    </div>
+                                </div>
+                                <div class="col-md-5">
+                                    <div class="mb-3">
+                                        <label class="form-label">About</label>
                                         <input type="text" class="form-control" id="" value="">
                                     </div>
                                 </div>
