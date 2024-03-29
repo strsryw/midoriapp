@@ -10,91 +10,45 @@
                                 alt="Image"></a>
                         <div class="card-body">
                             <div><span class="text-uppercase font-weight-bold date">Jan 20, 2021</span></div>
-                            <h5 class="card-title"><a href="single.html">Behind the word mountains</a></h5>
+                            <h5 class="card-title"><a class="text-success text-decoration-none" href="single.html">Behind
+                                    the word
+                                    mountains</a></h5>
                             <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia,
-                                there live the
-                                blind texts. </p>
-                            <p class="mt-5 mb-0"><a href="#">Read more</a></p>
+                                there live the blind texts. </p>
+                            <a href="#" class="btn btn-outline-success py-2 px-3">Read more</a>
                         </div>
                     </div>
                 </div>
-
-                <div class="col-md-6 col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="100">
-                    <div class="card post-entry">
-                        <a href="single.html"><img src="/assets/landing_page/images/img-2.jpg" class="card-img-top"
-                                alt="Image"></a>
-                        <div class="card-body">
-                            <div><span class="text-uppercase font-weight-bold date">Jan 20, 2021</span></div>
-                            <h5 class="card-title"><a href="single.html">Behind the word mountains</a></h5>
-                            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia,
-                                there live the
-                                blind texts. </p>
-                            <p class="mt-5 mb-0"><a href="#">Read more</a></p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-6 col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="200">
-                    <div class="card post-entry">
-                        <a href="single.html"><img src="/assets/landing_page/images/img-3.jpg" class="card-img-top"
-                                alt="Image"></a>
-                        <div class="card-body">
-                            <div><span class="text-uppercase font-weight-bold date">Jan 20, 2021</span></div>
-                            <h5 class="card-title"><a href="single.html">Behind the word mountains</a></h5>
-                            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia,
-                                there live the
-                                blind texts. </p>
-                            <p class="mt-5 mb-0"><a href="single.html">Read more</a></p>
-                        </div>
-                    </div>
-                </div>
-
                 <div class="col-md-6 col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="0">
                     <div class="card post-entry">
                         <a href="single.html"><img src="/assets/landing_page/images/img-1.jpg" class="card-img-top"
                                 alt="Image"></a>
                         <div class="card-body">
                             <div><span class="text-uppercase font-weight-bold date">Jan 20, 2021</span></div>
-                            <h5 class="card-title"><a href="single.html">Behind the word mountains</a></h5>
+                            <h5 class="card-title"><a class="text-success text-decoration-none" href="single.html">Behind
+                                    the word
+                                    mountains</a></h5>
                             <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia,
-                                there live the
-                                blind texts. </p>
-                            <p class="mt-5 mb-0"><a href="#">Read more</a></p>
+                                there live the blind texts. </p>
+                            <a href="#" class="btn btn-outline-success py-2 px-3">Read more</a>
                         </div>
                     </div>
                 </div>
-
-                <div class="col-md-6 col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="100">
+                <div class="col-md-6 col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="0">
                     <div class="card post-entry">
-                        <a href="single.html"><img src="/assets/landing_page/images/img-2.jpg" class="card-img-top"
+                        <a href="single.html"><img src="/assets/landing_page/images/img-1.jpg" class="card-img-top"
                                 alt="Image"></a>
                         <div class="card-body">
                             <div><span class="text-uppercase font-weight-bold date">Jan 20, 2021</span></div>
-                            <h5 class="card-title"><a href="single.html">Behind the word mountains</a></h5>
+                            <h5 class="card-title"><a class="text-success text-decoration-none" href="single.html">Behind
+                                    the word
+                                    mountains</a></h5>
                             <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia,
-                                there live the
-                                blind texts. </p>
-                            <p class="mt-5 mb-0"><a href="#">Read more</a></p>
+                                there live the blind texts. </p>
+                            <a href="#" class="btn btn-outline-success py-2 px-3">Read more</a>
                         </div>
                     </div>
                 </div>
-
-                <div class="col-md-6 col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="200">
-                    <div class="card post-entry">
-                        <a href="single.html"><img src="/assets/landing_page/images/img-3.jpg" class="card-img-top"
-                                alt="Image"></a>
-                        <div class="card-body">
-                            <div><span class="text-uppercase font-weight-bold date">Jan 20, 2021</span></div>
-                            <h5 class="card-title"><a href="single.html">Behind the word mountains</a></h5>
-                            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia,
-                                there live the
-                                blind texts. </p>
-                            <p class="mt-5 mb-0"><a href="single.html">Read more</a></p>
-                        </div>
-                    </div>
-                </div>
-
-
             </div>
 
             <div class="row">

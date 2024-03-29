@@ -10,7 +10,7 @@ class GalleryController extends Controller
 {
     public function index()
     {
-        $data = Galleries::paginate(9);
+        $data = Galleries::paginate(8);
         // @dd($data);
         return view(
             'landingpage.gallery',
