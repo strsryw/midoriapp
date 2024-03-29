@@ -32,56 +32,20 @@
             </div>
         </div>
     </div>
+
     <div class="page-body">
         <div class="container">
-            <div class="my-3 p-3 card rounded shadow-sm">
-                <h1 class="text-center my-3 p-3">Tambah Gallery</h1>
-                <div class="card-body">
-                    <div class="mb-3 row">
-                        <div class="col-md-2 col-sm-12">
-                            <label for="nama" class="form-label">Judul</label>
-                        </div>
-                        <div class="col-md-10 col-sm-12">
-                            <input type="text" class="form-control" name='judul' id="judul">
-                        </div>
-                    </div>
-
-
-                    <div class="mb-3 row">
-                        <div class="col-md-2 col-sm-12">
-                            <label for="foto" class="form-label">Foto</label>
-                        </div>
-                        <div class="col-md-10 col-sm-12">
-                            <input class="form-control" type="file" id="foto">
-                        </div>
-                    </div>
-
-                    <div class="mb-3 row">
-                        <div class="col-md-2 col-sm-12">
-                            <label for="deskripsi" class="form-label">Deskripsi</label>
-                        </div>
-                        <div class="col-md-10 col-sm-12">
-                            <textarea type="text" class="form-control" name='deskripsi' id="deskripsi"></textarea>
-                        </div>
-                    </div>
-                    <div class="mb-3">
-                        <button type="button" class="btn btn-primary" name="button" onclick="simpanData()"><i
-                                class="ti ti-device-floppy"></i>
-                            Simpan</button>
-                    </div>
+            <div class="my-3 card">
+                <div class="card-header d-flex justify-content-center align-items-center">
+                    <h1 class="text-center my-3">Daftar Berita</h1>
                 </div>
-            </div>
-            <!-- AKHIR FORM -->
-
-            <!-- START DATA -->
-            <div class="my-3 p-3 card">
-                <h1 class="text-center my-3 p-3">Daftar Gallery</h1>
                 <div class="card-body">
                     <!-- TOMBOL TAMBAH DATA -->
-                    {{-- <div class="pb-3">
-                        <button class="btn btn-primary" onclick="showModal()"><i class="ti ti-user-plus"></i>Tambah
-                            Data</button>
-                    </div> --}}
+                    <div class="mb-4 mt-4">
+                        <a href="{{ route('admin.berita.create') }}" class="btn btn-primary"><i
+                                class="ti ti-user-plus"></i>Tambah
+                            Berita</a>
+                    </div>
                     <div class="table-responsive p-1">
                         <div class="alert alert-success alert-dismissible fade show d-none" role="alert" id="alert">
                             <i class="ti ti-checks"></i> <strong id="alertText">Data inserted successfully</strong>
@@ -116,42 +80,6 @@
     </div>
 
     <!-- AKHIR DATA -->
-
-
-
-    <!-- Modal -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <div class="mb-3 row">
-                        <input type="hidden" id="tampungId">
-                        <label for="nama" class="col-sm-2 col-form-label">Nama</label>
-                        <div class="col-sm-10">
-                            <input type="text" class="form-control" name='nama' id="nama">
-                        </div>
-                    </div>
-                    <div class="mb-3 row">
-                        <label for="email" class="col-sm-2 col-form-label">Email</label>
-                        <div class="col-sm-10">
-                            <input type="text" class="form-control" name='email' id="email">
-                        </div>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary" onclick="insertData()" id="insertBtn">Save
-                        changes</button>
-                    <button type="button" class="btn btn-primary d-none" onclick="updateData()" id="updateBtn">Save
-                        changes</button>
-                </div>
-            </div>
-        </div>
-    </div>
 @endsection
 @push('script')
     {{-- <script src="//cdn.datatables.net/2.0.2/js/dataTables.min.js"></script> --}}
@@ -175,7 +103,8 @@
                 },
                 processing: true,
                 serverside: true,
-                ajax: "/admin/gallery/ajax",
+                // ajax: "/admin/berita/ajax",
+                ajax: "{{ route('admin.berita.index') }}",
                 columns: [{
                         data: "DT_RowIndex",
                         name: "DT_RowIndex",
@@ -204,34 +133,5 @@
             document.getElementById("dt-search-0").classList.remove("form-control-sm");
             document.getElementById("dt-length-0").classList.remove("form-select-sm");
         });
-
-        function simpanData() {
-            var csrfToken = document.head.querySelector(
-                'meta[name="csrf-token"]'
-            ).content;
-            var judul = document.getElementById("judul").value;
-            var deskripsi = document.getElementById("deskripsi").value;
-            var foto = document.getElementById("foto").files[0]; // Mendapatkan file foto yang dipilih
-            var formData = new FormData(); // Buat objek FormData
-            formData.append("_token", csrfToken);
-            formData.append("judul", judul);
-            formData.append("deskripsi", deskripsi);
-            formData.append("foto", foto);
-
-            $.ajax({
-                url: "/admin/gallery/ajax",
-                type: "post",
-                data: formData,
-                contentType: false,
-                processData: false, // Set processData menjadi false agar FormData tidak diproses secara otomatis
-                success: function(response) {
-                    console.log(response);
-                    // Tindakan setelah permintaan berhasil
-                },
-                error: function(xhr, status, error) {
-                    // Tindakan jika terjadi kesalahan
-                },
-            });
-        }
     </script>
 @endpush
