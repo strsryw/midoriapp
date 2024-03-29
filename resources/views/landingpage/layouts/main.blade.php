@@ -64,6 +64,8 @@
     <script src="/assets/landing_page/js/navbar.js"></script>
     <script src="/assets/landing_page/js/counter.js"></script>
     <script src="/assets/landing_page/js/custom.js"></script>
+    <script src="/assets/web/js/jquery-3.7.1.min.js"></script>
+    @stack('script')
 </body>
 
 </html>

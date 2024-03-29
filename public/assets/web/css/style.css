@@ -1,11 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
 :root {
-    --tblr-font-sans-serif: 'Poppins', -apple-system, BlinkMacSystemFont, San Francisco, Segoe UI, Roboto, Helvetica Neue, sans-serif;
+    --tblr-font-sans-serif: "Poppins", -apple-system, BlinkMacSystemFont,
+        San Francisco, Segoe UI, Roboto, Helvetica Neue, sans-serif;
 }
 
 * {
-    font-family: 'Poppins' !important
+    font-family: "Poppins" !important;
 }
 
 body {
@@ -26,9 +27,9 @@ body {
 
 .sec-features {
     background: #004445;
-    background: -webkit-linear-gradient(302deg, #62c969 0%, #026F48 100%);
+    background: -webkit-linear-gradient(302deg, #62c969 0%, #026f48 100%);
     background: -o-linear-gradient(310deg, #306ee8 0%, #3038e8 100%);
-    background: linear-gradient(106deg, #62c969 0%, #026F48 100%);
+    background: linear-gradient(106deg, #62c969 0%, #026f48 100%);
     overflow: hidden;
 }
 
@@ -37,9 +38,9 @@ body {
     background-position: center;
     background-repeat: no-repeat;
     background: #004445;
-    background: -webkit-linear-gradient(302deg, #73cd79 0%, #026F48 100%);
+    background: -webkit-linear-gradient(302deg, #73cd79 0%, #026f48 100%);
     background: -o-linear-gradient(310deg, #306ee8 0%, #3038e8 100%);
-    background: linear-gradient(106deg, #73cd79 0%, #026F48 100%);
+    background: linear-gradient(180deg, #84f18b 0%, #026f48 100%);
     overflow: hidden;
 }
 
@@ -51,10 +52,10 @@ body {
 
 .sec-cta.overlay:before {
     background: #306ee8;
-    background: -webkit-linear-gradient(302deg, #62c969 0%, #026F48 100%);
+    background: -webkit-linear-gradient(302deg, #62c969 0%, #026f48 100%);
     background: -o-linear-gradient(310deg, #306ee8 0%, #3038e8 100%);
-    background: linear-gradient(106deg, #62c969 0%, #026F48 100%);
-    opacity: .9;
+    background: linear-gradient(106deg, #62c969 0%, #026f48 100%);
+    opacity: 0.9;
     overflow: hidden;
     content: "";
     position: absolute;
@@ -67,9 +68,9 @@ body {
 
 .site-footer {
     background: #306ee8;
-    background: -webkit-linear-gradient(302deg, #3ecc47 0%, #026F48 100%);
+    background: -webkit-linear-gradient(302deg, #3ecc47 0%, #026f48 100%);
     background: -o-linear-gradient(310deg, #306ee8 0%, #3038e8 100%);
-    background: linear-gradient(279deg, #48d951 0%, #026F48 100%);
+    background: linear-gradient(279deg, #48d951 0%, #026f48 100%);
     font-size: 14px;
     padding: 70px 0;
     color: white;
@@ -80,7 +81,7 @@ body {
     width: 40px;
     height: 40px;
     position: relative;
-    background: #026F48;
+    background: #026f48;
     border-radius: 4px;
     color: #fff;
 }
