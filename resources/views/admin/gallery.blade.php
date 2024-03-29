@@ -6,10 +6,6 @@
     <link rel="stylesheet" href="https://cdn.datatables.net/2.0.2/css/dataTables.bootstrap5.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/rowreorder/1.5.0/css/rowReorder.dataTables.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/responsive/3.0.0/css/responsive.dataTables.css">
-
-    <link href="
-    https://cdn.jsdelivr.net/npm/sweetalert2@11.10.7/dist/sweetalert2.min.css
-    " rel="stylesheet">
     <style>
         /* Override CSS Paging DataTables */
         .dataTables_paginate .paginate_button:hover {
@@ -138,8 +134,8 @@
 @push('script')
     <script
         src="
-                                                                                                                                            https://cdn.jsdelivr.net/npm/sweetalert2@11.10.7/dist/sweetalert2.all.min.js
-                                                                                                                                            ">
+                                                                                                                                                                https://cdn.jsdelivr.net/npm/sweetalert2@11.10.7/dist/sweetalert2.all.min.js
+                                                                                                                                                                ">
     </script>
     {{-- <script src="//cdn.datatables.net/2.0.2/js/dataTables.min.js"></script> --}}
     <script src="https://cdn.datatables.net/v/bs5/dt-2.0.2/datatables.min.js"></script>
@@ -241,7 +237,7 @@
                     $('#rowRiviewImg').removeClass('d-none');
                     $('#btnInsert').addClass('d-none');
                     $('#btnUpdate').removeClass('d-none');
-
+                    document.getElementById('reviewImg').style.display = 'block';
                     $('#idGallery').val(response.data.id);
                     $('#titleForm').text('Edit Form');
                     $('#judul').val(response.data.title);
@@ -287,6 +283,10 @@
                 contentType: false,
                 processData: false,
                 success: function(response) {
+                    $("#judul").val('');
+                    $("#deskripsi").val('');
+                    $('#foto').val('');
+                    document.getElementById('reviewImg').style.display = 'none';
                     if (response.status == true) {
                         Swal.fire({
                             icon: "success",

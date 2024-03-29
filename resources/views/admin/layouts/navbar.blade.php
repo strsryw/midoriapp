@@ -20,8 +20,8 @@
                             </span>
                         </a>
                     </li>
-                    <li class="nav-item {{ Request::is('admin/berita') ? 'active' : '' }}">
-
+                    <li class="nav-item {{ Request::is('admin/berita*', 'admin/berita/action*') ? 'active' : '' }}">
+                        {{-- 'admin/berita/action' --}}
                         <a class="nav-link " href="/admin/berita">
                             <span
                                 class="nav-link-icon d-md-none d-lg-inline-block"><!-- Download SVG icon from http://tabler-icons.io/i/home -->

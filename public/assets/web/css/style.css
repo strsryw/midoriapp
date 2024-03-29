@@ -90,3 +90,12 @@ body {
     background: #fff;
     color: #3ecc47;
 }
+
+.custom-navigation a.active {
+    background: #026f48;
+    color: #fff;
+}
+.custom-navigation a {
+    /* background: #026f48; */
+    color: #026f48;
+}
