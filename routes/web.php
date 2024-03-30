@@ -46,6 +46,7 @@ Route::middleware('auth')->prefix('/admin')->name('admin.')->group(function () {
 
     Route::resource('/setting', SettingController::class);
     //Route backend berita
+
     Route::get('/berita', [BeritaController::class, 'index'])->name('berita.index');
     Route::get('/berita/create', [BeritaController::class, 'create'])->name('berita.create');
     Route::get('/berita/{id}', [BeritaController::class, 'show'])->name('berita.show');

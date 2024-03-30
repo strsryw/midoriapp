@@ -121,5 +121,16 @@
             document.getElementById("dt-search-0").classList.remove("form-control-sm");
             document.getElementById("dt-length-0").classList.remove("form-select-sm");
         });
+
+
+        // function editData(id) {
+        //     $.ajax({
+        //         url: "/admin/berita/" + id + "/edit",
+        //         type: 'GET',
+        //         success: function(response) {
+        //             console.log(response);
+        //         }
+        //     })
+        // }
     </script>
 @endpush
