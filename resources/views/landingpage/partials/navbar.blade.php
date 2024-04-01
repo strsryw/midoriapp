@@ -20,20 +20,13 @@
                     <div class="col-6 text-center ">
                         <ul class="js-clone-nav d-none d-lg-inline-block text-start site-menu mx-auto">
                             <li class="{{ $hero == 'index' ? 'active' : '' }}"><a href="/">Home</a></li>
-                            <li class="has-children">
-                                <a>Profil</a>
-                                <ul class="dropdown">
-                                    <li><a href="/profil">Profil LPK</a></li>
-                                    <li><a href="/struktur">Struktur Organisasi</a></li>
-                                    <li><a href="/sejarah">Sejarah</a></li>
-                                    <li><a href="/visimisi">Visi & Misi</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="/berita">Berita</a></li>
-                            <li><a href="/artikel">Artikel</a></li>
-                            <li class="{{ $hero == 'gallery' ? 'active' : '' }}"><a href="/gallery">Galeri</a></li>
+                            <li class="{{ $hero == 'Profil LPK' ? 'active' : '' }}"><a href="/profil">Profil</a></li>
+                            <li class="{{ $hero == 'Berita' ? 'active' : '' }}"><a href="/berita">Berita</a></li>
+                            <li class="{{ $hero == 'Artikel' ? 'active' : '' }}"><a href="/artikel">Artikel</a></li>
+                            <li class="{{ $hero == 'Gallery' ? 'active' : '' }}"><a href="/gallery">Galeri</a></li>
                             {{-- <li class="{{ $hero == 'About Us' ? 'active' : '' }}"><a href="/about">About</a></li> --}}
-                            <li><a href="/kontak">Kontak Kami</a></li>
+                            <li class="{{ $hero == 'Kontak Kami' ? 'active' : '' }}"><a href="/kontakkami">Kontak
+                                    Kami</a></li>
                         </ul>
                     </div>
                     <div class="col-2 text-end">

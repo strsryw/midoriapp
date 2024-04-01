@@ -18,6 +18,13 @@ Route::get('/', function () {
     );
 });
 
+Route::get('/profil', function () {
+    return view(
+        'landingpage.profil',
+        ['hero' => 'Profil LPK']
+    );
+});
+
 // Route gallery landing page
 Route::get('/berita', [LandingpageBeritaController::class, 'index']);
 Route::get('/berita/{id}', [LandingpageBeritaController::class, 'singlePage']);
@@ -30,6 +37,12 @@ Route::get('/artikel', function () {
 });
 Route::get('/gallery', [galleryLandingPage::class, 'index'])->name('landingpage.gallery');
 
+Route::get('/kontakkami', function () {
+    return view(
+        'landingpage.kontakkami',
+        ['hero' => 'Kontak Kami']
+    );
+});
 // Route - Login
 Route::middleware('guest')->group(function () {
     Route::get('/login', [AuthController::class, 'index'])->name('login');
