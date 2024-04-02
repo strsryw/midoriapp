@@ -3,6 +3,7 @@
 use App\Http\Controllers\admin\BeritaController;
 use App\Http\Controllers\admin\ArtikelController;
 use App\Http\Controllers\admin\GalleryController;
+use App\Http\Controllers\admin\OrganizationController;
 use App\Http\Controllers\admin\SettingController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
@@ -77,6 +78,9 @@ Route::middleware('auth')->prefix('/admin')->name('admin.')->group(function () {
     Route::post('/artikel', [ArtikelController::class, 'store'])->name('artikel.store');
     Route::put('/artikel/{id}', [ArtikelController::class, 'update'])->name('artikel.update');
     Route::post('/artikel/image/upload', [ArtikelController::class, 'imageUpload'])->name('artikel.imageUpload');
+
+
+    Route::resource('/organization', OrganizationController::class);
 });
 
 // Route - admin gallery
