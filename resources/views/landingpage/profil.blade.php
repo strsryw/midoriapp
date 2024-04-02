@@ -28,8 +28,24 @@
             </div>
         </div>
     </div>
+    <div class="section sejarah p-5 " style="padding-top: 120px; padding-bottom: 120px;">
+        <div class="container">
+            <div class="row">
+                <p>Perjalanan MIDORI GAKKOU dimulai pada tahun 2015. Presiden Suwardi, yang kembali ke Indonesia setelah
+                    bekerja selama 15 tahun, menyadari bahwa meskipun banyak perusahaan di Jepang yang kekurangan tenaga
+                    kerja,
+                    terdapat banyak situasi di negara asalnya, Indonesia, yang sulit mendapatkan pekerjaan karena
+                    keterbatasan
+                    perusahaan. jumlah lowongan pekerjaan.. Jadi presiden memutuskan untuk mendirikan lembaga pelatihan
+                    kejuruan bagi orang-orang yang tidak bisa bekerja. Butuh waktu sekitar tiga tahun bagi saya
+                    untuk mewujudkan mimpi itu. Dengan pengalaman tinggal di Jepang selama 15 tahun dan pengalaman
+                    kerja, serta dukungan teman-teman, kami mendapat izin dari pemerintah, dan LPK MIDORI GAKKOU resmi
+                    berdiri pada tahun 2019.</p>
+            </div>
+        </div>
+    </div>
 
-    <div class="section organisasi p-5">
+    <div class="section organisasi p-5 bg-light" style="padding-top: 120px; padding-bottom: 120px;">
         <div class="container">
             <div class="row">
 
@@ -38,7 +54,7 @@
     </div>
 
 
-    <div class="section visimisi bg-light" style="padding-top: 120px; padding-bottom: 120px;">
+    <div class="section visimisi" style="padding-top: 120px; padding-bottom: 120px;">
         <div class="container">
             <div class="col-lg-8 offset-lg-2 col-sm-12">
                 <h2 class="text-center text-success fs-2 fw-bold">VISI</h2>
@@ -51,7 +67,7 @@
         </div>
     </div>
 
-    <div class="section visimisi" style="padding-top: 120px; padding-bottom: 120px;">
+    <div class="section visimisi bg-light" style="padding-top: 120px; padding-bottom: 120px;">
         <div class="container">
             <div class="col-lg-8 offset-lg-2 col-sm-12">
                 <h2 class="text-center text-success fs-2 fw-bold">MISI</h2>

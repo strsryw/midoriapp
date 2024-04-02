@@ -37,14 +37,14 @@
         <div class="container">
             <div class="my-3 card">
                 <div class="card-header d-flex justify-content-center align-items-center">
-                    <h1 class="text-center my-3">Daftar Berita</h1>
+                    <h1 class="text-center my-3">Daftar artikel</h1>
                 </div>
                 <div class="card-body">
                     <!-- TOMBOL TAMBAH DATA -->
                     <div class="mb-4 mt-4">
-                        <a href="{{ route('admin.berita.create') }}" class="btn btn-primary"><i
+                        <a href="{{ route('admin.artikel.create') }}" class="btn btn-primary"><i
                                 class="ti ti-user-plus"></i>Tambah
-                            Berita</a>
+                            Artikel</a>
                     </div>
                     <div class="table-responsive p-1">
                         <div class="alert alert-success alert-dismissible fade show d-none" role="alert" id="alert">
@@ -92,7 +92,7 @@
                 },
                 processing: true,
                 serverside: true,
-                ajax: "{{ route('admin.berita.index') }}",
+                ajax: "{{ route('admin.artikel.index') }}",
                 columns: [{
                         data: "DT_RowIndex",
                         name: "DT_RowIndex",
@@ -123,43 +123,14 @@
         });
 
 
-        function deleteData(id) {
-            Swal.fire({
-                title: "Apakah anda yakin ingin menghapus ?",
-                showDenyButton: true,
-                showCancelButton: true,
-                confirmButtonText: "Iya",
-                denyButtonText: `Tidak`
-            }).then((result) => {
-                /* Read more about isConfirmed, isDenied below */
-                if (result.isConfirmed) {
-                    $.ajax({
-                        url: '/admin/berita/' + id,
-                        type: 'delete',
-                        data: {},
-                        success: function(response) {
-                            if (response.status == '1') {
-                                Swal.fire({
-                                    icon: "success",
-                                    title: "Data berhasil dihapus",
-                                    showConfirmButton: false,
-                                    timer: 1500
-                                });
-
-                            } else if (response.status = '0') {
-                                Swal.fire({
-                                    icon: "error",
-                                    title: "Data gagal dihapus",
-                                    timer: 1500
-                                });
-                            }
-                            $('#myTable').DataTable().ajax.reload();
-                        }
-                    });
-                } else if (result.isDenied) {
-                    Swal.fire("Changes are not saved", "", "info");
-                }
-            });
-        }
+        // function editData(id) {
+        //     $.ajax({
+        //         url: "/admin/artikel/" + id + "/edit",
+        //         type: 'GET',
+        //         success: function(response) {
+        //             console.log(response);
+        //         }
+        //     })
+        // }
     </script>
 @endpush

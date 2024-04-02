@@ -1,11 +1,13 @@
 <?php
 
 use App\Http\Controllers\admin\BeritaController;
+use App\Http\Controllers\admin\ArtikelController;
 use App\Http\Controllers\admin\GalleryController;
 use App\Http\Controllers\admin\SettingController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\BeritasController;
+use App\Http\Controllers\landingpage\ArtikelController as LandingpageArtikelController;
 use App\Http\Controllers\landingpage\BeritaController as LandingpageBeritaController;
 use App\Http\Controllers\landingpage\GalleryController as galleryLandingPage;
 
@@ -29,12 +31,11 @@ Route::get('/profil', function () {
 Route::get('/berita', [LandingpageBeritaController::class, 'index']);
 Route::get('/berita/{id}', [LandingpageBeritaController::class, 'singlePage']);
 
-Route::get('/artikel', function () {
-    return view(
-        'landingpage.artikel',
-        ['hero' => 'Artikel']
-    );
-});
+//routing artikel
+
+Route::get('/artikel', [LandingpageArtikelController::class, 'index']);
+Route::get('/artikel/{id}', [LandingpageArtikelController::class, 'singlePage']);
+
 Route::get('/gallery', [galleryLandingPage::class, 'index'])->name('landingpage.gallery');
 
 Route::get('/kontakkami', function () {
@@ -66,16 +67,18 @@ Route::middleware('auth')->prefix('/admin')->name('admin.')->group(function () {
     Route::get('/berita/{id}/edit', [BeritaController::class, 'edit'])->name('berita.edit');
     Route::post('/berita', [BeritaController::class, 'store'])->name('berita.store');
     Route::put('/berita/{id}', [BeritaController::class, 'update'])->name('berita.update');
+    Route::delete('/berita/{id}', [BeritaController::class, 'destroy'])->name('berita.destroy');
     Route::post('/berita/image/upload', [BeritaController::class, 'imageUpload'])->name('berita.imageUpload');
+
+    Route::get('/artikel', [ArtikelController::class, 'index'])->name('artikel.index');
+    Route::get('/artikel/create', [ArtikelController::class, 'create'])->name('artikel.create');
+    Route::get('/artikel/{id}', [ArtikelController::class, 'show'])->name('artikel.show');
+    Route::get('/artikel/{id}/edit', [ArtikelController::class, 'edit'])->name('artikel.edit');
+    Route::post('/artikel', [ArtikelController::class, 'store'])->name('artikel.store');
+    Route::put('/artikel/{id}', [ArtikelController::class, 'update'])->name('artikel.update');
+    Route::post('/artikel/image/upload', [ArtikelController::class, 'imageUpload'])->name('artikel.imageUpload');
 });
 
-
-Route::get('admin/artikel', function () {
-    return view(
-        'admin.artikel',
-        ['title' => 'Artikel']
-    );
-});
 // Route - admin gallery
 Route::get('admin/gallery', function () {
     return view(
@@ -83,7 +86,6 @@ Route::get('admin/gallery', function () {
         ['title' => 'Gallery']
     );
 });
-
 
 // Route backend gallery
 Route::resource('/admin/gallery/ajax', GalleryController::class);
