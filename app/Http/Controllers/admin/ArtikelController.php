@@ -178,7 +178,19 @@ class ArtikelController extends Controller
      */
     public function destroy($id)
     {
-        //
+        // Hapus data dari database
+        $artikel = Artikels::find($id);
+        if (!$artikel) {
+            return response()->json(['status' => '0'], 404);
+        }
+
+        // Hapus foto dari direktori
+        Storage::delete('public/fotoartikel/' . $artikel->image);
+
+        // Hapus entri dari database
+        $artikel->delete();
+
+        return response()->json(['status' => '1']);
     }
 
     public function imageUpload(Request $request)

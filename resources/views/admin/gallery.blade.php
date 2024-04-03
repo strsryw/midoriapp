@@ -51,7 +51,7 @@
                         </div>
                         <div class="col-md-10 col-sm-12">
                             <input type="hidden" id="oldImage">
-                            <input class="form-control" type="file" id="foto">
+                            <input class="form-control" type="file" id="foto" onchange="selectFoto()">
                         </div>
                     </div>
                     <div class="mb-3 row d-none" id="rowRiviewImg">
@@ -134,8 +134,8 @@
 @push('script')
     <script
         src="
-                                                                                                                                                                https://cdn.jsdelivr.net/npm/sweetalert2@11.10.7/dist/sweetalert2.all.min.js
-                                                                                                                                                                ">
+                                                                                                                                                                                https://cdn.jsdelivr.net/npm/sweetalert2@11.10.7/dist/sweetalert2.all.min.js
+                                                                                                                                                                                ">
     </script>
     {{-- <script src="//cdn.datatables.net/2.0.2/js/dataTables.min.js"></script> --}}
     <script src="https://cdn.datatables.net/v/bs5/dt-2.0.2/datatables.min.js"></script>
@@ -174,7 +174,7 @@
                         name: "Image",
                     },
                     {
-                        data: "description",
+                        data: "limitDescription",
                         name: "Description",
                     },
                     {
@@ -344,6 +344,19 @@
                     Swal.fire("Changes are not saved", "", "info");
                 }
             });
+        }
+
+        function selectFoto() {
+            var input = document.getElementById('foto');
+            var img = document.getElementById('reviewImg');
+            document.getElementById('rowRiviewImg').classList.remove('d-none');
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+                reader.onload = function(e) {
+                    img.src = e.target.result;
+                }
+                reader.readAsDataURL(input.files[0]);
+            }
         }
     </script>
 @endpush

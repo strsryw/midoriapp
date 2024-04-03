@@ -39,7 +39,7 @@
                         </div>
                         <div class="col-md-10 col-sm-12">
                             <input type="hidden" id="oldImage">
-                            <input class="form-control" type="file" id="foto">
+                            <input class="form-control" type="file" id="foto" onchange="selectFoto()">
                         </div>
                     </div>
                     <div class="mb-3 row d-none" id="rowRiviewImg">
@@ -51,20 +51,13 @@
                                 style="max-height: 300px; width:auto;">
                         </div>
                     </div>
+
                     <div class="mb-3 row">
                         <div class="col-md-2 col-sm-12">
-                            <label for="deskripsi" class="form-label">Deskripsi</label>
+                            <label for="content" class="form-label">Deskripsi</label>
                         </div>
                         <div class="col-md-10 col-sm-12">
                             <textarea type="text" class="form-control" name='deskripsi' id="deskripsi"></textarea>
-                        </div>
-                    </div>
-                    <div class="mb-3 row">
-                        <div class="col-md-2 col-sm-12">
-                            <label for="content" class="form-label">Content</label>
-                        </div>
-                        <div class="col-md-10 col-sm-12">
-                            <textarea type="text" class="form-control" name='content' id="content"></textarea>
                         </div>
                     </div>
                 </div>
@@ -80,58 +73,27 @@
     <script>
         $(document).ready(function() {
             tinymce.init({
-                selector: '#content',
-                plugins: 'anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount checklist mediaembed casechange export formatpainter pageembed linkchecker a11ychecker tinymcespellchecker permanentpen powerpaste advtable advcode editimage advtemplate ai mentions tinycomments tableofcontents footnotes mergetags autocorrect typography inlinecss markdown',
-                toolbar: 'undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | link image media table mergetags | addcomment showcomments | spellcheckdialog a11ycheck typography | align lineheight | checklist numlist bullist indent outdent | emoticons charmap | removeformat',
+                selector: '#deskripsi',
+                plugins: 'table lists',
+                toolbar: 'undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | link image media table mergetags | addcomment showcomments | spellcheckdialog a11ycheck typography | align lineheight | checklist numlist bullist indent outdent | emoticons charmap | removeformat | table | insertunorderedlist insertorderedlist', // Menambahkan tombol untuk unordered list (insertunorderedlist) dan ordered list (insertorderedlist)
                 tinycomments_mode: 'embedded',
-                automatic_uploads: true,
-                images_upload_url: "{{ route('admin.berita.imageUpload') }}",
-                file_picker_types: "image",
                 branding: false,
                 tinycomments_author: 'Author name',
                 automatic_uploads: true,
-                file_picker_callback: (cb, value, meta) => {
-                    const input = document.createElement('input');
-                    input.setAttribute('type', 'file');
-                    input.setAttribute('accept', 'image/*');
-
-                    input.addEventListener('change', (e) => {
-                        const file = e.target.files[0];
-
-                        const reader = new FileReader();
-                        reader.addEventListener('load', () => {
-                            const id = 'blobid' + (new Date()).getTime();
-                            const blobCache = tinymce.activeEditor.editorUpload
-                                .blobCache;
-                            const base64 = reader.result.split(',')[1];
-                            const blobInfo = blobCache.create(id, file, base64);
-                            blobCache.add(blobInfo);
-
-                            /* call the callback and populate the Title field with the file name */
-                            cb(blobInfo.blobUri(), {
-                                title: file.name
-                            });
-                        });
-                        reader.readAsDataURL(file);
-                    });
-
-                    input.click();
-                },
-                ai_request: (request, respondWith) => respondWith.string(() => Promise.reject(
-                    "See docs to implement AI Assistant")),
+                height: 500
             });
         })
 
+
         function simpanData() {
-            var content = tinymce.activeEditor.getContent();
+
             var judul = document.getElementById("judul").value;
-            var deskripsi = document.getElementById("deskripsi").value;
-            var foto = document.getElementById("foto").files[0]; // Mendapatkan file foto yang dipilih
+            var foto = document.getElementById("foto").files[0];
+            var deskripsi = tinymce.activeEditor.getContent();
             var formData = new FormData(); // Buat objek FormData
             formData.append("judul", judul);
-            formData.append("deskripsi", deskripsi);
             formData.append("foto", foto);
-            formData.append('content', content);
+            formData.append('deskripsi', deskripsi);
             $.ajax({
                 url: "{{ route('admin.berita.store') }}",
                 type: "post",
@@ -140,7 +102,6 @@
                 processData: false, // Set processData menjadi false agar FormData tidak diproses secara otomatis
                 success: function(response) {
                     $("#judul").val('');
-                    $("#deskripsi").val('');
                     $('#foto').val('');
                     tinyMCE.activeEditor.setContent('');
                     // console.log(response);
@@ -164,6 +125,19 @@
                     // Tindakan jika terjadi kesalahan
                 },
             });
+        }
+
+        function selectFoto() {
+            var input = document.getElementById('foto');
+            var img = document.getElementById('reviewImg');
+            document.getElementById('rowRiviewImg').classList.remove('d-none');
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+                reader.onload = function(e) {
+                    img.src = e.target.result;
+                }
+                reader.readAsDataURL(input.files[0]);
+            }
         }
     </script>
 @endpush

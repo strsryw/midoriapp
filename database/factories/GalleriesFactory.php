@@ -16,10 +16,5 @@ class GalleriesFactory extends Factory
      */
     public function definition()
     {
-        return [
-            'title' => $this->faker->sentence(6),
-            'description' => $this->faker->sentence(20),
-            'image' => 'default.jpg'
-        ];
     }
 }

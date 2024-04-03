@@ -77,6 +77,7 @@ Route::middleware('auth')->prefix('/admin')->name('admin.')->group(function () {
     Route::get('/artikel/{id}/edit', [ArtikelController::class, 'edit'])->name('artikel.edit');
     Route::post('/artikel', [ArtikelController::class, 'store'])->name('artikel.store');
     Route::put('/artikel/{id}', [ArtikelController::class, 'update'])->name('artikel.update');
+    Route::delete('/artikel/{id}', [ArtikelController::class, 'destroy'])->name('artikel.destroy');
     Route::post('/artikel/image/upload', [ArtikelController::class, 'imageUpload'])->name('artikel.imageUpload');
 
 

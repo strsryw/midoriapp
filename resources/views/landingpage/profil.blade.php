@@ -7,7 +7,7 @@
                     <img src="/assets/web/img/lpk.jpeg" alt="" class="img-fluid" style="border-radius: 0.5rem;">
                 </div>
                 <div class="col-lg-5">
-                    <p><span class="fw-bold text-success fs-2">Apa itu LPK Midori Gakkou ?</span>
+                    <p><span class="fw-bold mb-3 text-success fs-2">Apa itu LPK Midori Gakkou ?</span>
                     <p style="text-align: justify;line-height:1.6;font-size:18px;">
                         LPK. Midori Gakkou adalah
                         Lembaga
@@ -28,11 +28,11 @@
             </div>
         </div>
     </div>
-    <div class="section sejarah p-5 bg-light" style="padding-top: 120px; padding-bottom: 120px;">
+    <div class="section sejarah bg-light" style="padding-top: 120px; padding-bottom: 120px;">
         <div class="container">
             <div class="row">
                 <div class="col-lg-10 offset-lg-1 col-sm-12">
-                    <h2 class="text-center text-success fs-2 fw-bold">SEJARAH</h2>
+                    <h2 class="text-center text-success fs-2 fw-bold mb-3">SEJARAH</h2>
                     <p style="font-size: 18px;line-height:1.6;text-align:justify;">Perjalanan MIDORI GAKKOU dimulai pada
                         tahun
                         2015. Presiden
@@ -51,10 +51,11 @@
         </div>
     </div>
 
-    <div class="section organisasi p-5 " style="padding-top: 120px; padding-bottom: 120px;">
+    <div class="section organisasi " style="padding-top: 120px; padding-bottom: 120px;">
         <div class="container">
             <div class="row">
-                <div class="col-lg-10 offset-lg-1 col-sm-12">
+                <div class="col-lg-6 offset-lg-3 col-sm-12">
+                    <h2 class="text-center text-success fs-2 fw-bold mb-3">STRUKTUR ORGANISASI</h2>
                     <img src="/assets/web/img/struktur.png" class="img-fluid">
                 </div>
             </div>
@@ -64,31 +65,35 @@
 
     <div class="section visimisi bg-light" style="padding-top: 120px; padding-bottom: 120px;">
         <div class="container">
-            <div class="col-lg-10 offset-lg-1 col-sm-12">
-                <h2 class="text-center text-success fs-2 fw-bold">VISI</h2>
-                <p class="text-center" style="font-size: 18px;line-height:1.6;">Mewujudkan sumber daya manusia yang
-                    berkualitas berlandasan
-                    iman dan takwa sehingga
-                    dapat memberikan
-                    manfaat bagi masyarakat.</p>
+            <div class="row">
+                <div class="col-lg-10 offset-lg-1 col-sm-12">
+                    <h2 class="text-center text-success fs-2 fw-bold mb-3">VISI</h2>
+                    <p class="text-center" style="font-size: 18px;line-height:1.6;">Mewujudkan sumber daya manusia yang
+                        berkualitas berlandasan
+                        iman dan takwa sehingga
+                        dapat memberikan
+                        manfaat bagi masyarakat.</p>
+                </div>
             </div>
         </div>
     </div>
 
     <div class="section visimisi" style="padding-top: 120px; padding-bottom: 120px;">
         <div class="container">
-            <div class="col-lg-10 offset-lg-1 col-sm-12">
-                <h2 class="text-center text-success fs-2 fw-bold">MISI</h2>
-                <ul class="text-center" style="font-size:18px;line-height:1.6;list-style:none;padding-left:0;">
-                    <li>
-                        Melaksanakan pendidikan dan pelatihan yang bermanfaat bagi masyarakat.
-                    </li>
-                    <li>Turut berperan aktif dalam membantu pemerintah dalam mengatasi pengangguran dengan memberikan
-                        informasi
-                        dan perekrutan program magang ke jepang.</li>
+            <div class="row">
+                <div class="col-lg-10 offset-lg-1 col-sm-12">
+                    <h2 class="text-center text-success fs-2 fw-bold mb-3">MISI</h2>
+                    <ul class="text-center" style="font-size:18px;line-height:1.6;list-style:none;padding-left:0;">
+                        <li>
+                            Melaksanakan pendidikan dan pelatihan yang bermanfaat bagi masyarakat.
+                        </li>
+                        <li>Turut berperan aktif dalam membantu pemerintah dalam mengatasi pengangguran dengan memberikan
+                            informasi
+                            dan perekrutan program magang ke jepang.</li>
 
-                    <li>Membekali peserta didik agar memiliki kepribadian yang mandiri, bermoral, dan berakhlak.</li>
-                </ul>
+                        <li>Membekali peserta didik agar memiliki kepribadian yang mandiri, bermoral, dan berakhlak.</li>
+                    </ul>
+                </div>
             </div>
         </div>
     </div>

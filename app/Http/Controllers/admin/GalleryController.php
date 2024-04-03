@@ -32,6 +32,30 @@ class GalleryController extends Controller
                     </button>
                     </div>
                     ';
+            })->addColumn('limitDescription', function ($data) {
+                // Menghapus tag <h1>, termasuk teks di dalamnya
+                $html_stripped = preg_replace('/<h[1-6]>.*?<\/h[1-6]>/i', '', $data->description);
+
+                // Menghapus tag HTML lainnya dan style dari string
+                $html_stripped = strip_tags($html_stripped);
+                $html_stripped = preg_replace('/\s+/', ' ', $html_stripped); // Menggabungkan spasi berlebih menjadi satu spasi
+                $html_stripped = str_replace('&nbsp;', ' ', $html_stripped); // Mengganti &nbsp; dengan spasi
+
+                // Memotong string jika lebih dari 100 karakter
+                $trimmed_text = mb_substr($html_stripped, 0, 100);
+
+                // Memastikan tidak memotong string di tengah kata
+                $last_space_pos = mb_strrpos($trimmed_text, ' ');
+                $trimmed_text = mb_substr($trimmed_text, 0, $last_space_pos);
+
+                // Jika lebih dari 100 karakter, tambahkan '...'
+                if (mb_strlen($html_stripped) > 100) {
+                    $trimmed_text .= '...';
+                } else {
+                    $trimmed_text = $data->description;
+                }
+
+                return $trimmed_text;
             })
             ->addColumn('image', function ($data) {
                 $url = asset('storage/fotogallery/' . $data->image);

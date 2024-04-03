@@ -108,7 +108,7 @@
                         name: "Thumbnail",
                     },
                     {
-                        data: "description",
+                        data: "limitDescription",
                         name: "Description",
                     },
                     {

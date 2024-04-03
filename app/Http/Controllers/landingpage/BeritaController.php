@@ -10,6 +10,7 @@ class BeritaController extends Controller
 {
     public function index()
     {
+
         $berita = Beritas::paginate(6);
         return view('landingpage.berita', [
             'hero' => 'Berita',

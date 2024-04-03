@@ -3,10 +3,20 @@
     <style>
         .card-img-top {
             /* Tinggi tetap */
-            min-height: 200px;
-            max-height: 200px;
+            min-height: 250px;
+            max-height: 250px;
             object-fit: cover;
             /* Gambar akan mengisi kontainer dan mempertahankan aspek rasio */
+        }
+
+        .card-title {
+            min-height: 40px;
+            max-height: 40px;
+        }
+
+        .card-description {
+            min-height: 70px;
+            max-height: 70px;
         }
     </style>
 @endpush
@@ -18,7 +28,7 @@
                     <div class="col-md-6 col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="0">
                         <div class="card post-entry">
                             <a href="/berita/{{ $data->id }}">
-                                <img src="storage/fotoberita/{{ $data->image }}" class="card-img-top" alt="Image">
+                                <img src="/storage/fotoberita/{{ $data->image }}" class="card-img-top" alt="Image">
                             </a>
                             <div class="card-body">
                                 <div>
@@ -27,9 +37,14 @@
                                     </span>
                                 </div>
                                 <h5 class="card-title">
-                                    <a class="text-success text-decoration-none" href="">{{ $data->title }}</a>
+                                    <a class="text-success text-decoration-none"
+                                        href="/berita/{{ $data->id }}">{{ strlen($data->title) > 50 ? substr($data->title, 0, 50) . '...' : $data->title }}</a>
                                 </h5>
-                                <p>{{ $data->description }} </p>
+                                <div class="card-description mb-3">
+                                    <p>
+                                        {{ App\Helpers\HtmlHelper::strip_tags_and_style($data->description) }}
+                                    </p>
+                                </div>
                                 <a href="/berita/{{ $data->id }}" class="btn btn-outline-success py-2 px-3">Read
                                     more</a>
                             </div>

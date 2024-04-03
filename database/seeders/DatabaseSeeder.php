@@ -24,7 +24,7 @@ class DatabaseSeeder extends Seeder
             'email' => 'admin@gmail.com',
             'password' => Hash::make('password'),
         ]);
-        Galleries::factory(30)->create();
+        // Galleries::factory(30)->create();
 
         // Organization::create([
         //     'name' => 'Suwardi',

@@ -123,14 +123,43 @@
         });
 
 
-        // function editData(id) {
-        //     $.ajax({
-        //         url: "/admin/artikel/" + id + "/edit",
-        //         type: 'GET',
-        //         success: function(response) {
-        //             console.log(response);
-        //         }
-        //     })
-        // }
+        function deleteData(id) {
+            Swal.fire({
+                title: "Apakah anda yakin ingin menghapus ?",
+                showDenyButton: true,
+                showCancelButton: true,
+                confirmButtonText: "Iya",
+                denyButtonText: `Tidak`
+            }).then((result) => {
+                /* Read more about isConfirmed, isDenied below */
+                if (result.isConfirmed) {
+                    $.ajax({
+                        url: '/admin/artikel/' + id,
+                        type: 'delete',
+                        data: {},
+                        success: function(response) {
+                            if (response.status == '1') {
+                                Swal.fire({
+                                    icon: "success",
+                                    title: "Data berhasil dihapus",
+                                    showConfirmButton: false,
+                                    timer: 1500
+                                });
+
+                            } else if (response.status = '0') {
+                                Swal.fire({
+                                    icon: "error",
+                                    title: "Data gagal dihapus",
+                                    timer: 1500
+                                });
+                            }
+                            $('#myTable').DataTable().ajax.reload();
+                        }
+                    });
+                } else if (result.isDenied) {
+                    Swal.fire("Changes are not saved", "", "info");
+                }
+            });
+        }
     </script>
 @endpush
