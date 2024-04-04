@@ -21,9 +21,15 @@ class BeritaController extends Controller
     public function singlePage($id)
     {
         $content = Beritas::findorFail($id);
+        $previous = Beritas::where('id', '<', $content->id)->orderBy('id', 'desc')->first(); // Ambil berita sebelumnya berdasarkan id terbesar
+        $next = Beritas::where('id', '>', $content->id)->orderBy('id', 'asc')->first(); // Ambil berita berikutnya berdasarkan id terkecil
+
+        // dd($previous);
         return view('landingpage.detailBerita', [
             'hero' => 'Berita',
-            'data' => $content
+            'data' => $content,
+            'prev' => $previous,
+            'next' => $next
         ]);
     }
 }

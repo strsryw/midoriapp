@@ -105,6 +105,7 @@
                     $('#foto').val('');
                     tinyMCE.activeEditor.setContent('');
                     // console.log(response);
+                    document.getElementById('rowRiviewImg').classList.add('d-none');
                     // return
                     if (response.status == true) {
                         Swal.fire({

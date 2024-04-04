@@ -134,8 +134,8 @@
 @push('script')
     <script
         src="
-                                                                                                                                                                                https://cdn.jsdelivr.net/npm/sweetalert2@11.10.7/dist/sweetalert2.all.min.js
-                                                                                                                                                                                ">
+                                                                                                                                                                                                        https://cdn.jsdelivr.net/npm/sweetalert2@11.10.7/dist/sweetalert2.all.min.js
+                                                                                                                                                                                                        ">
     </script>
     {{-- <script src="//cdn.datatables.net/2.0.2/js/dataTables.min.js"></script> --}}
     <script src="https://cdn.datatables.net/v/bs5/dt-2.0.2/datatables.min.js"></script>
@@ -203,6 +203,7 @@
                 contentType: false,
                 processData: false, // Set processData menjadi false agar FormData tidak diproses secara otomatis
                 success: function(response) {
+                    document.getElementById('rowRiviewImg').classList.add('d-none');
                     $("#judul").val('');
                     $("#deskripsi").val('');
                     $('#foto').val('');
@@ -239,7 +240,7 @@
                     $('#btnUpdate').removeClass('d-none');
                     document.getElementById('reviewImg').style.display = 'block';
                     $('#idGallery').val(response.data.id);
-                    $('#titleForm').text('Edit Form');
+                    $('#titleForm').text('Edit Gallery');
                     $('#judul').val(response.data.title);
                     $('#deskripsi').val(response.data.description);
                     $('#oldImage').val(response.data.image);

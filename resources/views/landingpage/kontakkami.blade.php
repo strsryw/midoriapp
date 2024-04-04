@@ -17,13 +17,13 @@
                     <div class="contact-info">
 
                         <div class="address mt-2">
-                            <i class="icon-room"></i>
+                            <i class="text-white icon-room"></i>
                             <h4 class="mb-2">Location:</h4>
                             <p>43 Raymouth Rd. Baltemoer,<br> London 3910</p>
                         </div>
 
                         <div class="open-hours mt-4">
-                            <i class="icon-clock-o"></i>
+                            <i class="text-white icon-clock-o"></i>
                             <h4 class="mb-2">Open Hours:</h4>
                             <p>
                                 Sunday-Friday:<br>
@@ -32,13 +32,13 @@
                         </div>
 
                         <div class="email mt-4">
-                            <i class="icon-envelope"></i>
+                            <i class="text-white icon-envelope"></i>
                             <h4 class="mb-2">Email:</h4>
                             <p>info@Untree.co</p>
                         </div>
 
                         <div class="phone mt-4">
-                            <i class="icon-phone"></i>
+                            <i class="text-white icon-phone"></i>
                             <h4 class="mb-2">Call:</h4>
                             <p>+1 1234 55488 55</p>
                         </div>
@@ -62,7 +62,7 @@
                             </div>
 
                             <div class="col-12">
-                                <input type="submit" value="Send Message" class="btn btn-primary">
+                                <input type="submit" value="Send Message" class="btn btn-success">
                             </div>
                         </div>
                     </form>

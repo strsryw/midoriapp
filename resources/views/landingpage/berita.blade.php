@@ -18,6 +18,12 @@
             min-height: 70px;
             max-height: 70px;
         }
+
+        .card-description p {
+            line-height: 28px;
+            letter-spacing: 1px;
+
+        }
     </style>
 @endpush
 @section('content')
@@ -38,7 +44,7 @@
                                 </div>
                                 <h5 class="card-title">
                                     <a class="text-success text-decoration-none"
-                                        href="/berita/{{ $data->id }}">{{ strlen($data->title) > 50 ? substr($data->title, 0, 50) . '...' : $data->title }}</a>
+                                        href="/berita/{{ $data->id }}">{{ strlen($data->title) > 30 ? substr($data->title, 0, 30) . '...' : $data->title }}</a>
                                 </h5>
                                 <div class="card-description mb-3">
                                     <p>

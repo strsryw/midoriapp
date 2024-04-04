@@ -1,4 +1,13 @@
 @extends('landingpage.index')
+@push('style')
+    <style>
+        p,
+        li {
+            line-height: 28px;
+            letter-spacing: 1px;
+        }
+    </style>
+@endpush
 @section('content')
     <div class="section profil" style="padding-top:120px;padding-bottom:120px;">
         <div class="container">
@@ -8,8 +17,8 @@
                 </div>
                 <div class="col-lg-5">
                     <p><span class="fw-bold mb-3 text-success fs-2">Apa itu LPK Midori Gakkou ?</span>
-                    <p style="text-align: justify;line-height:1.6;font-size:18px;">
-                        LPK. Midori Gakkou adalah
+                    <p style="text-align: justify;">
+                        <span class="fw-bold">LPK. Midori Gakkou</span> adalah
                         Lembaga
                         Pendidikan
                         Bahasa Jepang
@@ -18,12 +27,13 @@
                         pendampingan
                         untuk Program Pemagangan ke Jepang yang berdiri sejak Tahun 2018 di Kab.Pati – Jawa Tengah dengan
                         Pemimpin
-                        Bapak suwardi dan <u> sudah memiliki izin dari BINA LATTAS sebagai Lembaga Pengirim atau Sending
-                            Organization
-                            (SO) sejak Tahun 2019</u>, yang berarti kami sudah mendapat kepercayaan dari Pemerintah Daerah
+                        Bapak suwardi dan sudah memiliki izin dari BINA LATTAS sebagai Lembaga Pengirim atau Sending
+                        Organization
+                        (SO) sejak Tahun 2019, yang berarti kami sudah mendapat kepercayaan dari Pemerintah Daerah
                         dan Pusat
                         untuk
-                        melaksanakan program pemagangan ke Jepang.</p>
+                        melaksanakan program pemagangan ke Jepang.
+                    </p>
                 </div>
             </div>
         </div>
@@ -33,7 +43,7 @@
             <div class="row">
                 <div class="col-lg-10 offset-lg-1 col-sm-12">
                     <h2 class="text-center text-success fs-2 fw-bold mb-3">SEJARAH</h2>
-                    <p style="font-size: 18px;line-height:1.6;text-align:justify;">Perjalanan MIDORI GAKKOU dimulai pada
+                    <p style="text-align:justify;">Perjalanan MIDORI GAKKOU dimulai pada
                         tahun
                         2015. Presiden
                         Suwardi, yang kembali ke Indonesia setelah
@@ -41,7 +51,9 @@
                         kerja,
                         terdapat banyak situasi di negara asalnya, Indonesia, yang sulit mendapatkan pekerjaan karena
                         keterbatasan
-                        perusahaan. jumlah lowongan pekerjaan.. Jadi presiden memutuskan untuk mendirikan lembaga pelatihan
+                        perusahaan. jumlah lowongan pekerjaan.. </p>
+                    <p style="text-align:justify;">
+                        Jadi presiden memutuskan untuk mendirikan lembaga pelatihan
                         kejuruan bagi orang-orang yang tidak bisa bekerja. Butuh waktu sekitar tiga tahun bagi saya
                         untuk mewujudkan mimpi itu. Dengan pengalaman tinggal di Jepang selama 15 tahun dan pengalaman
                         kerja, serta dukungan teman-teman, kami mendapat izin dari pemerintah, dan LPK MIDORI GAKKOU resmi
@@ -51,7 +63,8 @@
         </div>
     </div>
 
-    <div class="section organisasi " style="padding-top: 120px; padding-bottom: 120px;">
+    <div class="section
+                        organisasi " style="padding-top: 120px; padding-bottom: 120px;">
         <div class="container">
             <div class="row">
                 <div class="col-lg-6 offset-lg-3 col-sm-12">
@@ -68,7 +81,7 @@
             <div class="row">
                 <div class="col-lg-10 offset-lg-1 col-sm-12">
                     <h2 class="text-center text-success fs-2 fw-bold mb-3">VISI</h2>
-                    <p class="text-center" style="font-size: 18px;line-height:1.6;">Mewujudkan sumber daya manusia yang
+                    <p class="text-center" style="">Mewujudkan sumber daya manusia yang
                         berkualitas berlandasan
                         iman dan takwa sehingga
                         dapat memberikan
@@ -83,7 +96,7 @@
             <div class="row">
                 <div class="col-lg-10 offset-lg-1 col-sm-12">
                     <h2 class="text-center text-success fs-2 fw-bold mb-3">MISI</h2>
-                    <ul class="text-center" style="font-size:18px;line-height:1.6;list-style:none;padding-left:0;">
+                    <ul class="text-center" style="list-style:none;padding-left:0;">
                         <li>
                             Melaksanakan pendidikan dan pelatihan yang bermanfaat bagi masyarakat.
                         </li>

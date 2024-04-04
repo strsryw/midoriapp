@@ -15,7 +15,7 @@
         <div class="container">
             <div class="row">
                 @foreach ($datas as $data)
-                    <div class="col-lg-4 mb-4">
+                    <div class="col-lg-3 mb-4">
                         <div class="card post-entry">
                             <a href="/storage/fotogallery/{{ $data->image }}" class="glightbox">
                                 <img src="/storage/fotogallery/{{ $data->image }}" alt="image" class="card-img-top" />
@@ -25,7 +25,9 @@
                                     {{ date('M d, Y', strtotime($data->created_at)) }}
                                 </span>
                                 <h5 class="card-title">
-                                    <p class="text-success">{{ $data->title }}</p>
+                                    <p class="text-success" title="{{ $data->title }}">
+                                        {{ strlen($data->title) > 30 ? substr($data->title, 0, 30) . '...' : $data->title }}
+                                    </p>
                                 </h5>
                             </div>
                         </div>
