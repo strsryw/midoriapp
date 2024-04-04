@@ -2,33 +2,29 @@
 
 namespace App\Http\Controllers\admin;
 
-use App\Http\Controllers\Controller;
 use App\Models\Artikels;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Storage;
 use Yajra\DataTables\Facades\DataTables;
+use Illuminate\Support\Facades\Validator;
 
 class ArtikelController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function index(Request $request)
     {
-
         if ($request->ajax()) {
             $data = Artikels::latest()->get();
-            // $data = pegawai::all();
             return DataTables::of($data)
                 ->addIndexColumn()
                 ->addColumn('action', function ($data) {
                     return '<div class="text-lg-center">
-                        <button class="btn btn-primary btn-icon" id="btnEdit" data-id="' . $data->id . '" onclick="detailData(' . $data->id . ')">
+                        <a href="' . route('admin.artikel.show', ['id' => $data->id]) . '" class="btn btn-primary btn-icon">
                             <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-eye"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" /><path d="M21 12c-2.4 4 -5.4 6 -9 6c-3.6 0 -6.6 -2 -9 -6c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6" /></svg>
-                        </button>
-                        <a href="/admin/artikel/' . $data->id . '/edit"><button class="btn btn-success btn-icon" id="btnEdit" data-id="' . $data->id . '">
+                        </a>
+                        <a href="' . route('admin.artikel.edit', ['id' => $data->id]) . '"><button class="btn btn-success btn-icon" id="btnEdit" data-id="' . $data->id . '">
                             <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-pencil"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 20h4l10.5 -10.5a2.828 2.828 0 1 0 -4 -4l-10.5 10.5v4" /><path d="M13.5 6.5l4 4" /></svg>
                         </button></a>
                         <button class="btn btn-danger btn-icon" id="btnDelete" data-id="' . $data->id . '" onclick="deleteData(' . $data->id . ')">
@@ -38,23 +34,42 @@ class ArtikelController extends Controller
                         ';
                 })
                 ->addColumn('image', function ($data) {
-                    $url = asset('storage/fotoartikel/' . $data->image);
-                    return '<div class="text-center"><img src="' . $url . '" border="0" width="75" class="img-rounded" /></div>';
+                    $url = asset('storage/foto_artikel/' . $data->image);
+                    return '<div class="text-center"><img src="' . $url . '" border="0" width="150" class="img-rounded" /></div>';
+                })
+                ->addColumn('limitDescription', function ($data) {
+                    // Menghapus tag <h1>, termasuk teks di dalamnya
+                    $html_stripped = preg_replace('/<h[1-6]>.*?<\/h[1-6]>/i', '', $data->description);
+
+                    // Menghapus tag HTML lainnya dan style dari string
+                    $html_stripped = strip_tags($html_stripped);
+                    $html_stripped = preg_replace('/\s+/', ' ', $html_stripped); // Menggabungkan spasi berlebih menjadi satu spasi
+                    $html_stripped = str_replace('&nbsp;', ' ', $html_stripped); // Mengganti &nbsp; dengan spasi
+
+                    // Memotong string jika lebih dari 100 karakter
+                    $trimmed_text = mb_substr($html_stripped, 0, 150);
+
+                    // Memastikan tidak memotong string di tengah kata
+                    $last_space_pos = mb_strrpos($trimmed_text, ' ');
+                    $trimmed_text = mb_substr($trimmed_text, 0, $last_space_pos);
+
+                    // Jika lebih dari 100 karakter, tambahkan '...'
+                    if (mb_strlen($html_stripped) > 150) {
+                        $trimmed_text .= '...';
+                    } else {
+                        $trimmed_text = $html_stripped;
+                    }
+
+                    return $trimmed_text;
                 })
                 ->rawColumns(['action', 'image'])
                 ->make(true);
         }
-        return view(
-            'admin.artikel.artikel',
-            ['title' => 'Artikel']
-        );
+        return view('admin.artikel.artikel', [
+            'title' => 'Artikel'
+        ]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
         return view(
@@ -63,140 +78,117 @@ class ArtikelController extends Controller
         );
     }
 
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
-        $foto = $request->file('foto');
-        $namaFoto = $foto->getClientOriginalName(); // Mendapatkan nama asli file
-        $foto->storeAs('public/fotoartikel', $namaFoto); // Simpan foto ke penyimpanan
+        $validated = Validator::make($request->only('judul', 'deskripsi', 'foto'), [
+            'judul' => 'required|unique:artikels,title',
+            'foto' => 'required|image|mimes:png,jpg,jpeg|max:2048',
+            'deskripsi' => 'required'
+        ]);
 
-        // Simpan data ke database
-        $artikel = new Artikels();
-        $artikel->title = $request->judul;
-        $artikel->description = $request->deskripsi;
-        $artikel->image = $namaFoto;
-        $artikel->content = $request->content;
+        if ($validated->fails()) {
+            return response()->json([
+                'status' => false,
+                'errors' => $validated->errors()
+            ], 400);
+        }
 
-        // Simpan nama foto ke dalam kolom 'foto' di tabel
-        $artikel->save();
+        $nameImage = Str::random(30) . '.' . $request->file('foto')->getClientOriginalExtension();
+        $request->file('foto')->storeAs('public/foto_artikel', $nameImage);
+
+        $artikel = Artikels::create([
+            'title' => $request->input('judul'),
+            'description' => $request->input('deskripsi'),
+            'image' => $nameImage
+        ]);
 
         if ($artikel) {
             return response()->json([
                 'status' => true,
-                'message' => 'Data Berhasil di Insert'
+                'message' => 'Data Berhasil disimpan'
             ], 200);
         }
+
+        return response()->json([
+            'status' => false,
+            'message' => 'Data Gagal disimpan'
+        ], 200);
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function show($id)
     {
-        //
+        $content = Artikels::findOrFail($id);
+        $previous = Artikels::where('id', '<', $content->id)->orderBy('id', 'desc')->first();
+        $next = Artikels::where('id', '>', $content->id)->orderBy('id', 'asc')->first();
+        return view('landingpage.detailArtikel', [
+            'hero' => $content->title,
+            'date' => $content->created_at->format('M d, Y'),
+            'data' => $content,
+            'prev' => $previous,
+            'next' => $next
+        ]);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function edit($id)
     {
         $data = Artikels::find($id);
-        // //
-        // // dd($id);
-        return view(
-            'admin.artikel.edit',
-            [
-                'title' => 'Artikel',
-                'data' => $data
-            ]
-        );
+        return view('admin.artikel.edit', [
+            'title' => 'Artikel',
+            'data' => $data
+        ]);
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, $id)
     {
-        //
-        return $request->all();
         $data = [];
-        $foto = $request->file('image');
-
-        if ($foto) {
-            if ($request->input('oldImage')) {
-                Storage::delete('public/fotoartikel/' . $request->input('oldImage'));
+        if ($request->file('image')) {
+            if ($request->input('old-image')) {
+                Storage::delete('public/foto_artikel/' . $request->input('old-image'));
             }
 
-            // Simpan file dengan nama unik menggunakan storeAs()
-            $imageName = time() . '_' . $foto->getClientOriginalName();
-            $foto->storeAs('public/fotoartikel/', $imageName);
+            $nameImage = Str::random(30) . '.' . $request->file('foto')->getClientOriginalExtension();
+            $request->file('foto')->storeAs('public/foto_artikel', $nameImage);
 
-            // Simpan nama file ke dalam $data
-            $data['image'] = $imageName;
+            $data['image'] = $nameImage;
         }
 
-        // Buat array baru dengan data yang diperbarui
-        $data['title'] = $request->input('title');
-        $data['description'] = $request->input('description');
-        $data['content'] = $request->input('content');
-        $artikel = Artikels::where('id', $request->input('id'))->update($data);
+        $data = [
+            'title' => $request->input('title'),
+            'description' => $request->input('description')
+        ];
+
+        $artikel = Artikels::where('id', $id)->update($data);
 
         if ($artikel) {
             return response()->json([
                 'status' => true,
-                'message' => 'Data Berhasil di Update'
+                'message' => 'Data Berhasil di Update',
+                'redirect' => route('admin.artikel.index')
             ], 200);
         }
+
         return response()->json([
             'status' => false,
             'message' => 'Gagal memperbarui data'
-        ], 400);
+        ], 200);
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function destroy($id)
     {
-        // Hapus data dari database
         $artikel = Artikels::find($id);
         if (!$artikel) {
-            return response()->json(['status' => '0'], 404);
+            return response()->json([
+                'status' => false,
+                'message' => 'Gagal menghapus artikel'
+            ], 404);
         }
 
-        // Hapus foto dari direktori
-        Storage::delete('public/fotoartikel/' . $artikel->image);
-
-        // Hapus entri dari database
+        Storage::delete('public/foto_artikel/' . $artikel->image);
         $artikel->delete();
 
-        return response()->json(['status' => '1']);
-    }
-
-    public function imageUpload(Request $request)
-    {
-        // $foto->storeAs('public/fotoberita', $namaFoto);
-        $imgpath = $request->file('file')->store('content_img_artikel', 'public');
-        return response()->json(['location' => "/storage/$imgpath"]);
+        return response()->json([
+            'status' => true,
+            'message' => 'Berhasil menghapus artikel'
+        ], 200);
     }
 }

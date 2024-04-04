@@ -15,7 +15,7 @@ class ArtikelController extends Controller
      */
     public function index()
     {
-        $artikel = Artikels::paginate(6);
+        $artikel = Artikels::latest()->paginate(6);
         return view('landingpage.artikel', [
             'hero' => 'Artikel',
             'datas' => $artikel
@@ -89,10 +89,15 @@ class ArtikelController extends Controller
     }
     public function singlePage($id)
     {
-        $content = Artikels::findorFail($id);
+        $content = Artikels::findOrFail($id);
+        $previous = Artikels::where('id', '<', $content->id)->orderBy('id', 'desc')->first();
+        $next = Artikels::where('id', '>', $content->id)->orderBy('id', 'asc')->first();
         return view('landingpage.detailArtikel', [
-            'hero' => 'Artikel',
-            'data' => $content
+            'hero' => $content->title,
+            'date' => $content->created_at->format('M d, Y'),
+            'data' => $content,
+            'prev' => $previous,
+            'next' => $next
         ]);
     }
 }

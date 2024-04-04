@@ -23,7 +23,8 @@
                     <div class="col-md-6 col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="0">
                         <div class="card post-entry">
                             <a href="/artikel/{{ $data->id }}">
-                                <img src="storage/fotoartikel/{{ $data->image }}" class="card-img-top" alt="Image">
+                                <img src="{{ asset('storage/foto_artikel/' . $data->image) }}" class="card-img-top"
+                                    alt="Image">
                             </a>
                             <div class="card-body">
                                 <div>
@@ -35,10 +36,11 @@
                                     <a class="text-success text-decoration-none"
                                         href="">{{ strlen($data->description) > 100 ? substr($data->title, 0, 50) . '...' : $data->title }}</a>
                                 </h5>
-                                <p>{{ strlen($data->description) > 100 ? substr($data->description, 0, 100) . '...' : $data->description }}
+                                <p>{{ App\Helpers\HtmlHelper::strip_tags_and_style($data->description) }}
                                 </p>
-                                <a href="/artikel/{{ $data->id }}" class="btn btn-outline-success py-2 px-3">Read
-                                    more</a>
+                                <a href="/artikel/{{ $data->id }}" class="btn btn-outline-success py-2 px-3">
+                                    Read more
+                                </a>
                             </div>
                         </div>
                     </div>

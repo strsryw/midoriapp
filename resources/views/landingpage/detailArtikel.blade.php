@@ -2,32 +2,67 @@
 
 @push('style')
     <style>
-        p {
+        p,
+        li {
             text-align: justify;
+            line-height: 28px;
+            letter-spacing: 1px;
+        }
+
+        img {
+            max-height: 400px;
+            display: block;
+        }
+
+        .bungkus {
+            position: relative;
+        }
+
+        #overlay {
+            position: absolute;
+            right: 12px;
+            bottom: 0;
+            padding: 8px 15px;
+            border-radius: 3px;
+            background-color: #198754;
+
         }
     </style>
 @endpush
+
 @section('content')
     <div class="section">
         <div class="container article">
             <div class="row justify-content-center align-items-stretch">
-
                 <article class="col-lg-8 order-lg-2 px-lg-5">
-                    {!! $data->content !!}
-
-
+                    <div class="row">
+                        <div class="col-lg-6 offset-lg-3 bungkus">
+                            <img src="{{ asset('storage/foto_artikel/' . $data->image) }}" class="img-fluid rounded"
+                                alt="Image">
+                            <div id="overlay">
+                                <a class="text-white">{{ date('d - m - Y', strtotime($data->created_at)) }}</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-5" id="content">
+                        {!! $data->description !!}
+                    </div>
                     <div class="post-single-navigation d-flex align-items-stretch">
-                        <a href="#" class="mr-auto w-50 pr-4">
-                            <span class="d-block">Previous Post</span>
-                            A Mounteering Guide For Beginners
-                        </a>
-                        <a href="#" class="ml-auto w-50 text-right pl-4">
-                            <span class="d-block">Next Post</span>
-                            12 Creative Designers Share Ideas About Web Design
-                        </a>
+                        @if ($prev)
+                            <a href="/berita/{{ $prev->id }}" class="mr-auto w-50 pr-4">
+                                <span class="d-block">Previous Post</span>
+                                {{ $prev->title }}
+                            </a>
+                        @endif
+                        @if ($next)
+                            <a href="/berita/{{ $next->id }}" class="ml-auto w-50 text-right pl-4">
+                                <span class="d-block">Next Post</span>
+                                {{ $next->title }}
+                            </a>
+                        @endif
+
                     </div>
                 </article>
-
                 <div class="col-md-12 col-lg-1 order-lg-1">
                     <div class="share sticky-top">
                         <h3>Share</h3>
@@ -38,7 +73,6 @@
                         </ul>
                     </div>
                 </div>
-
             </div>
         </div>
     </div>

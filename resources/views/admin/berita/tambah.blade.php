@@ -1,9 +1,5 @@
 @extends('admin.layouts.main')
 @section('content')
-    @push('css')
-        <script src="https://cdn.tiny.cloud/1/7zdw7wouyd7q3o67u5jr3miejmlahrnpaocg7kifgdofnyzx/tinymce/7/tinymce.min.js"
-            referrerpolicy="origin"></script>
-    @endpush
     <div class="page-header d-print-none">
         <div class="container-xl">
             <div class="row g-2 align-items-center">
@@ -70,6 +66,8 @@
     </div>
 @endsection
 @push('script')
+    <script src="https://cdn.tiny.cloud/1/7zdw7wouyd7q3o67u5jr3miejmlahrnpaocg7kifgdofnyzx/tinymce/7/tinymce.min.js"
+        referrerpolicy="origin"></script>
     <script>
         $(document).ready(function() {
             tinymce.init({
