@@ -54,7 +54,6 @@
                                 {{ $next->title }}
                             </a>
                         @endif
-
                     </div>
                 </article>
                 <div class="col-md-12 col-lg-1 order-lg-1">

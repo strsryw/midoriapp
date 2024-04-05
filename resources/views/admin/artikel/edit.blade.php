@@ -104,7 +104,7 @@
 
                 $.ajax({
                     type: "POST",
-                    url: "{{ route('admin.artikel.update', ['id' => $data->id]) }}",
+                    url: "{{ route('admin.artikel.update', $data->id) }}",
                     data: formData,
                     dataType: "JSON",
                     contentType: false,

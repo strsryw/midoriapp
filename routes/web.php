@@ -7,7 +7,6 @@ use App\Http\Controllers\admin\OrganizationController;
 use App\Http\Controllers\admin\SettingController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
-use App\Http\Controllers\BeritasController;
 use App\Http\Controllers\landingpage\ArtikelController as LandingpageArtikelController;
 use App\Http\Controllers\landingpage\BeritaController as LandingpageBeritaController;
 use App\Http\Controllers\landingpage\GalleryController as galleryLandingPage;
@@ -60,7 +59,6 @@ Route::middleware('auth')->prefix('/admin')->name('admin.')->group(function () {
     })->name('dashboard');
 
     Route::resource('/setting', SettingController::class);
-    //Route backend berita
 
     Route::get('/berita', [BeritaController::class, 'index'])->name('berita.index');
     Route::get('/berita/create', [BeritaController::class, 'create'])->name('berita.create');
@@ -71,17 +69,12 @@ Route::middleware('auth')->prefix('/admin')->name('admin.')->group(function () {
     Route::delete('/berita/{id}', [BeritaController::class, 'destroy'])->name('berita.destroy');
     Route::post('/berita/image/upload', [BeritaController::class, 'imageUpload'])->name('berita.imageUpload');
 
-    // Route::get('/artikel', [ArtikelController::class, 'index'])->name('artikel.index');
-    // Route::get('/artikel/create', [ArtikelController::class, 'create'])->name('artikel.create');
-    // Route::get('/artikel/{id}', [ArtikelController::class, 'show'])->name('artikel.show');
-    // Route::get('/artikel/{id}/edit', [ArtikelController::class, 'edit'])->name('artikel.edit');
-    // Route::post('/artikel', [ArtikelController::class, 'store'])->name('artikel.store');
-    // Route::put('/artikel/{id}', [ArtikelController::class, 'update'])->name('artikel.update');
-    // Route::delete('/artikel/{id}', [ArtikelController::class, 'destroy'])->name('artikel.destroy');
-    Route::resource('artikel', ArtikelController::class);
+    Route::resource('/artikel', ArtikelController::class)->except(['show']);
 
     Route::resource('/organization', OrganizationController::class);
 });
+
+Route::get('/artikel/{id}', [ArtikelController::class, 'show'])->name('artikel.show');
 
 // Route - admin gallery
 Route::get('admin/gallery', function () {

@@ -4,7 +4,7 @@
         <div class="container">
             <div class="row">
                 <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15838.976119273268!2d110.46051716226974!3d-7.039340029305968!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e708dba152b3919%3A0x1688a5a92fb80d1f!2sGardenia%20Swimming%20Pool!5e0!3m2!1sid!2sid!4v1712038873626!5m2!1sid!2sid"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1981.0801377457315!2d111.02630303435639!3d-6.750299014854017!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e70d24945b1c719%3A0x41941cd5d44e9d79!2sJl.%20RonggoWarsito%20No.6%2C%20Puri%2C%20Kec.%20Pati%2C%20Kabupaten%20Pati%2C%20Jawa%20Tengah%2059113!5e0!3m2!1sid!2sid!4v1712329574107!5m2!1sid!2sid"
                     width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
                     referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>

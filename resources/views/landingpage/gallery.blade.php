@@ -28,7 +28,7 @@
                                         <div class="fw-bold">
                                             {{ strlen($data->title) > 25 ? substr($data->title, 0, 25) . '...' : $data->title }}
                                         </div>
-                                        <div class="text-secondary">3 days ago</div>
+                                        <div class="text-secondary">{{ $data->created_at->diffForHumans() }}</div>
                                     </div>
                                     <div class="ms-auto">
                                         <a href="#" class="text-secondary">
