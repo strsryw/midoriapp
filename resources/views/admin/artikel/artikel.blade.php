@@ -120,11 +120,11 @@
             $('#dt-search-1').removeClass('form-control-sm').addClass('form-control-md');
         });
 
-        $(document).on('click', 'btnDelete', function(e) {
-            e.prevenDefault();
-
+        $(document).on('click', '#btnDelete', function(e) {
+            e.preventDefault();
             var id = $(this).data('id');
-            var url = "{{ route('admin.artikel.destroy', ['id' => ':id']) }}".replace(':id', id);
+            // var url = '/admin/artikel/' + $id;
+            var url = "{{ route('admin.artikel.destroy', ':id') }}".replace(':id', id);
 
             Swal.fire({
                 title: "Apakah anda yakin ingin menghapus?",
@@ -159,41 +159,5 @@
                 }
             });
         })
-
-        // function deleteData(id) {
-        //     Swal.fire({
-        //         title: "Apakah anda yakin ingin menghapus ?",
-        //         showCancelButton: true,
-        //         confirmButtonText: "Iya",
-        //     }).then((result) => {
-        //         if (result.isConfirmed) {
-        //             $.ajax({
-        //                 url: '/admin/artikel/' + id,
-        //                 type: 'delete',
-        //                 data: {},
-        //                 success: function(response) {
-        //                     if (response.status == '1') {
-        //                         Swal.fire({
-        //                             icon: "success",
-        //                             title: "Data berhasil dihapus",
-        //                             showConfirmButton: false,
-        //                             timer: 1500
-        //                         });
-
-        //                     } else if (response.status = '0') {
-        //                         Swal.fire({
-        //                             icon: "error",
-        //                             title: "Data gagal dihapus",
-        //                             timer: 1500
-        //                         });
-        //                     }
-        //                     $('#myTable').DataTable().ajax.reload();
-        //                 }
-        //             });
-        //         } else if (result.isDenied) {
-        //             Swal.fire("Changes are not saved", "", "info");
-        //         }
-        //     });
-        // }
     </script>
 @endpush

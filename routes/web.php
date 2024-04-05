@@ -71,15 +71,14 @@ Route::middleware('auth')->prefix('/admin')->name('admin.')->group(function () {
     Route::delete('/berita/{id}', [BeritaController::class, 'destroy'])->name('berita.destroy');
     Route::post('/berita/image/upload', [BeritaController::class, 'imageUpload'])->name('berita.imageUpload');
 
-    Route::get('/artikel', [ArtikelController::class, 'index'])->name('artikel.index');
-    Route::get('/artikel/create', [ArtikelController::class, 'create'])->name('artikel.create');
-    Route::get('/artikel/{id}', [ArtikelController::class, 'show'])->name('artikel.show');
-    Route::get('/artikel/{id}/edit', [ArtikelController::class, 'edit'])->name('artikel.edit');
-    Route::post('/artikel', [ArtikelController::class, 'store'])->name('artikel.store');
-    Route::put('/artikel/{id}', [ArtikelController::class, 'update'])->name('artikel.update');
-    Route::delete('/artikel/{id}', [ArtikelController::class, 'destroy'])->name('artikel.destroy');
-    Route::post('/artikel/image/upload', [ArtikelController::class, 'imageUpload'])->name('artikel.imageUpload');
-
+    // Route::get('/artikel', [ArtikelController::class, 'index'])->name('artikel.index');
+    // Route::get('/artikel/create', [ArtikelController::class, 'create'])->name('artikel.create');
+    // Route::get('/artikel/{id}', [ArtikelController::class, 'show'])->name('artikel.show');
+    // Route::get('/artikel/{id}/edit', [ArtikelController::class, 'edit'])->name('artikel.edit');
+    // Route::post('/artikel', [ArtikelController::class, 'store'])->name('artikel.store');
+    // Route::put('/artikel/{id}', [ArtikelController::class, 'update'])->name('artikel.update');
+    // Route::delete('/artikel/{id}', [ArtikelController::class, 'destroy'])->name('artikel.destroy');
+    Route::resource('artikel', ArtikelController::class);
 
     Route::resource('/organization', OrganizationController::class);
 });
