@@ -1,7 +1,7 @@
 <div class="hero overlay inner-page">
     <div class="container">
         <div class="row align-items-center justify-content-center text-center pt-5">
-            <div class="col-lg-6">
+            <div class="col-lg-8">
                 @isset($date)
                     <p data-aos="fade-up" class="meta aos-init aos-animate text-center">
                         <a href="#">{{ $date }}</a>

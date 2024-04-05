@@ -26,7 +26,8 @@ class BeritaController extends Controller
 
         // dd($previous);
         return view('landingpage.detailBerita', [
-            'hero' => 'Berita',
+            'hero' => $content->title,
+            'date' => $content->created_at->format('M d, Y'),
             'data' => $content,
             'prev' => $previous,
             'next' => $next

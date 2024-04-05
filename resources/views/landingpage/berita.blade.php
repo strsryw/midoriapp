@@ -9,11 +9,6 @@
             /* Gambar akan mengisi kontainer dan mempertahankan aspek rasio */
         }
 
-        .card-title {
-            min-height: 40px;
-            max-height: 40px;
-        }
-
         .card-description {
             min-height: 70px;
             max-height: 70px;
@@ -42,11 +37,11 @@
                                         {{ $data->created_at->diffForHumans() }}
                                     </span>
                                 </div>
-                                <h5 class="card-title">
-                                    <a class="text-success text-decoration-none"
-                                        href="/berita/{{ $data->id }}">{{ strlen($data->title) > 30 ? substr($data->title, 0, 30) . '...' : $data->title }}</a>
+                                <h5 class="card-title mb-3">
+                                    <a class="text-success text-decoration-none" title="{{ $data->title }}"
+                                        href="/berita/{{ $data->id }}">{{ strlen($data->title) > 26 ? substr($data->title, 0, 26) . '...' : $data->title }}</a>
                                 </h5>
-                                <div class="card-description mb-3">
+                                <div class="card-description mb-5">
                                     <p>
                                         {{ App\Helpers\HtmlHelper::strip_tags_and_style($data->description) }}
                                     </p>

@@ -33,7 +33,8 @@
                                 </div>
                                 <div class="col-md-10 col-sm-12">
                                     <input type="hidden" id="oldImage" name="oldImage">
-                                    <input class="form-control" type="file" id="foto" name="foto">
+                                    <input class="form-control" type="file" id="foto" name="foto"
+                                        onchange="selectFoto()">
                                 </div>
                             </div>
                             <div class="mb-3 row d-none" id="rowRiviewImg">
@@ -102,6 +103,7 @@
                     contentType: false,
                     processData: false,
                     success: function(response) {
+                        document.getElementById('rowRiviewImg').classList.add('d-none');
                         $("#judul").val('');
                         $("#deskripsi").val('');
                         $('#foto').val('');
@@ -128,5 +130,18 @@
                 });
             });
         });
+
+        function selectFoto() {
+            var input = document.getElementById('foto');
+            var img = document.getElementById('reviewImg');
+            document.getElementById('rowRiviewImg').classList.remove('d-none');
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+                reader.onload = function(e) {
+                    img.src = e.target.result;
+                }
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
     </script>
 @endpush
