@@ -137,96 +137,104 @@
                 </div>
             </div>
 
-            <section style="background-color: #F0F2F5;">
-                <div class="container py-5">
-                    <div class="main-timeline">
-                        <div class="timeline left">
-                            <div class="card">
-                                <div class="card-body p-4">
-                                    <h3>2017</h3>
-                                    <p class="mb-0">Lorem ipsum dolor sit amet, quo ei simul congue exerci, ad nec admodum
-                                        perfecto
-                                        mnesarchum, vim ea mazim fierent detracto. Ea quis iuvaret expetendis his, te elit
-                                        voluptua
-                                        dignissim per, habeo iusto primis ea eam.</p>
-                                </div>
-                            </div>
+            <div class="container-fluid py-5">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="horizontal-timeline mb-5">
+
+                            <ul class="list-inline items">
+                                <li class="list-inline-item items-list">
+                                    <div class="px-4">
+                                        <div class="event-date badge bg-info">2 June</div>
+                                        <h5 class="pt-2">Event One</h5>
+                                        <p class="text-muted">It will be as simple as occidental in fact it will be
+                                            Occidental Cambridge
+                                            friend</p>
+
+                                    </div>
+                                </li>
+                                <li class="list-inline-item items-list">
+                                    <div class="px-4">
+                                        <div class="event-date badge bg-success">5 June</div>
+                                        <h5 class="pt-2">Event Two</h5>
+                                        <p class="text-muted">Everyone realizes why a new common language one could refuse
+                                            translators.
+                                        </p>
+
+                                    </div>
+                                </li>
+                                <li class="list-inline-item items-list">
+                                    <div class="px-4">
+                                        <div class="event-date badge bg-danger">7 June</div>
+                                        <h5 class="pt-2">Event Three</h5>
+                                        <p class="text-muted">If several languages coalesce the grammar of the resulting
+                                            simple and
+                                            regular</p>
+
+                                    </div>
+                                </li>
+                                <li class="list-inline-item items-list">
+                                    <div class="px-4">
+                                        <div class="event-date badge bg-warning">8 June</div>
+                                        <h5 class="pt-2">Event Four</h5>
+                                        <p class="text-muted">Languages only differ in their pronunciation and their most
+                                            common words.
+                                        </p>
+
+                                    </div>
+                                </li>
+                            </ul>
+
                         </div>
-                        <div class="timeline right">
-                            <div class="card">
-                                <div class="card-body p-4">
-                                    <h3>2016</h3>
-                                    <p class="mb-0">Lorem ipsum dolor sit amet, quo ei simul congue exerci, ad nec admodum
-                                        perfecto
-                                        mnesarchum, vim ea mazim fierent detracto. Ea quis iuvaret expetendis his, te elit
-                                        voluptua
-                                        dignissim per, habeo iusto primis ea eam.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="timeline left">
-                            <div class="card">
-                                <div class="card-body p-4">
-                                    <h3>2015</h3>
-                                    <p class="mb-0">Lorem ipsum dolor sit amet, quo ei simul congue exerci, ad nec admodum
-                                        perfecto
-                                        mnesarchum, vim ea mazim fierent detracto. Ea quis iuvaret expetendis his, te elit
-                                        voluptua
-                                        dignissim per, habeo iusto primis ea eam.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="timeline right">
-                            <div class="card">
-                                <div class="card-body p-4">
-                                    <h3>2012</h3>
-                                    <p class="mb-0">Lorem ipsum dolor sit amet, quo ei simul congue exerci, ad nec admodum
-                                        perfecto
-                                        mnesarchum, vim ea mazim fierent detracto. Ea quis iuvaret expetendis his, te elit
-                                        voluptua
-                                        dignissim per, habeo iusto primis ea eam.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="timeline left">
-                            <div class="card">
-                                <div class="card-body p-4">
-                                    <h3>2011</h3>
-                                    <p class="mb-0">Lorem ipsum dolor sit amet, quo ei simul congue exerci, ad nec admodum
-                                        perfecto
-                                        mnesarchum, vim ea mazim fierent detracto. Ea quis iuvaret expetendis his, te elit
-                                        voluptua
-                                        dignissim per, habeo iusto primis ea eam.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="timeline right">
-                            <div class="card">
-                                <div class="card-body p-4">
-                                    <h3>2007</h3>
-                                    <p class="mb-0">Lorem ipsum dolor sit amet, quo ei simul congue exerci, ad nec admodum
-                                        perfecto
-                                        mnesarchum, vim ea mazim fierent detracto. Ea quis iuvaret expetendis his, te elit
-                                        voluptua
-                                        dignissim per, habeo iusto primis ea eam.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="timeline left">
-                            <div class="card">
-                                <div class="card-body p-4">
-                                    <h3>2016</h3>
-                                    <p class="mb-0">Lorem ipsum dolor sit amet, quo ei simul congue exerci, ad nec admodum
-                                        perfecto
-                                        mnesarchum, vim ea mazim fierent detracto. Ea quis iuvaret expetendis his, te elit
-                                        voluptua
-                                        dignissim per, habeo iusto primis ea eam.</p>
-                                </div>
-                            </div>
+                        <div class="horizontal-timeline mb-5">
+                            <ul class="list-inline items">
+                                <li class="list-inline-item items-list">
+                                    <div class="px-4">
+                                        <div class="event-date badge bg-info">2 June</div>
+                                        <h5 class="pt-2">Event One</h5>
+                                        <p class="text-muted">It will be as simple as occidental in fact it will be
+                                            Occidental Cambridge
+                                            friend</p>
+
+                                    </div>
+                                </li>
+                                <li class="list-inline-item items-list">
+                                    <div class="px-4">
+                                        <div class="event-date badge bg-success">5 June</div>
+                                        <h5 class="pt-2">Event Two</h5>
+                                        <p class="text-muted">Everyone realizes why a new common language one could refuse
+                                            translators.
+                                        </p>
+
+                                    </div>
+                                </li>
+                                <li class="list-inline-item items-list">
+                                    <div class="px-4">
+                                        <div class="event-date badge bg-danger">7 June</div>
+                                        <h5 class="pt-2">Event Three</h5>
+                                        <p class="text-muted">If several languages coalesce the grammar of the resulting
+                                            simple and
+                                            regular</p>
+
+                                    </div>
+                                </li>
+                                <li class="list-inline-item items-list">
+                                    <div class="px-4">
+                                        <div class="event-date badge bg-warning">8 June</div>
+                                        <h5 class="pt-2">Event Four</h5>
+                                        <p class="text-muted">Languages only differ in their pronunciation and their most
+                                            common words.
+                                        </p>
+
+                                    </div>
+                                </li>
+                            </ul>
+
                         </div>
                     </div>
                 </div>
-            </section>
+
+            </div>
         </div>
     </div>
 
@@ -469,121 +477,46 @@
 
 @push('style')
     <style>
-        /* The actual timeline (the vertical ruler) */
-        .main-timeline {
-            position: relative;
+        .horizontal-timeline .items {
+            border-top: 3px solid #e9ecef;
         }
 
-        /* The actual timeline (the vertical ruler) */
-        .main-timeline::after {
+        .horizontal-timeline .items .items-list {
+            display: block;
+            position: relative;
+            text-align: center;
+            padding-top: 70px;
+            margin-right: 0;
+        }
+
+        .horizontal-timeline .items .items-list:before {
             content: "";
             position: absolute;
-            width: 6px;
-            background-color: #939597;
+            height: 36px;
+            border-right: 2px dashed #dee2e6;
             top: 0;
-            bottom: 0;
-            left: 50%;
-            margin-left: -3px;
         }
 
-        /* Container around content */
-        .timeline {
-            position: relative;
-            background-color: inherit;
-            width: 50%;
-        }
-
-        /* The circles on the timeline */
-        .timeline::after {
-            content: "";
+        .horizontal-timeline .items .items-list .event-date {
             position: absolute;
-            width: 25px;
-            height: 25px;
-            right: -13px;
-            background-color: #939597;
-            border: 5px solid #f5df4d;
-            top: 15px;
-            border-radius: 50%;
-            z-index: 1;
-        }
-
-        /* Place the container to the left */
-        .left {
-            padding: 0px 40px 20px 0px;
+            top: 36px;
             left: 0;
+            right: 0;
+            width: 75px;
+            margin: 0 auto;
+            font-size: 0.9rem;
+            padding-top: 8px;
         }
 
-        /* Place the container to the right */
-        .right {
-            padding: 0px 0px 20px 40px;
-            left: 50%;
-        }
-
-        /* Add arrows to the left container (pointing right) */
-        .left::before {
-            content: " ";
-            position: absolute;
-            top: 18px;
-            z-index: 1;
-            right: 30px;
-            border: medium solid white;
-            border-width: 10px 0 10px 10px;
-            border-color: transparent transparent transparent white;
-        }
-
-        /* Add arrows to the right container (pointing left) */
-        .right::before {
-            content: " ";
-            position: absolute;
-            top: 18px;
-            z-index: 1;
-            left: 30px;
-            border: medium solid white;
-            border-width: 10px 10px 10px 0;
-            border-color: transparent white transparent transparent;
-        }
-
-        /* Fix the circle for containers on the right side */
-        .right::after {
-            left: -12px;
-        }
-
-        /* Media queries - Responsive timeline on screens less than 600px wide */
-        @media screen and (max-width: 600px) {
-
-            /* Place the timelime to the left */
-            .main-timeline::after {
-                left: 31px;
+        @media (min-width: 1140px) {
+            .horizontal-timeline .items .items-list {
+                display: inline-block;
+                width: 24%;
+                padding-top: 45px;
             }
 
-            /* Full-width containers */
-            .timeline {
-                width: 100%;
-                padding-left: 70px;
-                padding-right: 25px;
-            }
-
-            /* Make sure that all arrows are pointing leftwards */
-            .timeline::before {
-                left: 60px;
-                border: medium solid white;
-                border-width: 10px 10px 10px 0;
-                border-color: transparent white transparent transparent;
-            }
-
-            /* Make sure all circles are at the same spot */
-            .left::after,
-            .right::after {
-                left: 18px;
-            }
-
-            .left::before {
-                right: auto;
-            }
-
-            /* Make all right containers behave like the left ones */
-            .right {
-                left: 0%;
+            .horizontal-timeline .items .items-list .event-date {
+                top: -40px;
             }
         }
     </style>
