@@ -4,9 +4,9 @@
             <div class="col-lg-4">
                 <div class="widget">
                     <h3>About</h3>
-                    <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia,
-                        there live the
-                        blind texts.</p>
+                    <p>Di LPK kami, kami menawarkan pelatihan
+                        bahasa Jepang yang mendalam dan terfokus untuk membantu Anda
+                        mencapai tujuan karir Anda.</p>
                 </div>
                 <div class="widget">
                     <address>43 Raymouth Rd. Baltemoer, <br> London 3910</address>
@@ -20,20 +20,16 @@
                 <div class="widget">
                     <h3>Company</h3>
                     <ul class="list-unstyled float-start links">
-                        <li><a href="#" class="fw-medium">About us</a></li>
-                        <li><a href="#" class="fw-medium">Services</a></li>
-                        <li><a href="#" class="fw-medium">Vision</a></li>
-                        <li><a href="#" class="fw-medium">Mission</a></li>
-                        <li><a href="#" class="fw-medium">Terms</a></li>
-                        <li><a href="#" class="fw-medium">Privacy</a></li>
+                        <li><a href="/profil?#profil" class="fw-medium">Tentang Kami</a></li>
+                        <li><a href="/?#program" class="fw-medium">Services</a></li>
+                        <li><a href="/profil?#visi" class="fw-medium">Visi</a></li>
+                        <li><a href="/profil?#misi" class="fw-medium">Misi</a></li>
                     </ul>
                     <ul class="list-unstyled float-start links">
-                        <li><a href="#">Partners</a></li>
-                        <li><a href="#">Business</a></li>
-                        <li><a href="#">Careers</a></li>
-                        <li><a href="#">Blog</a></li>
-                        <li><a href="#">FAQ</a></li>
-                        <li><a href="#">Creative</a></li>
+
+                        <li><a href="#">Career</a></li>
+                        <li><a href="/berita">Berita</a></li>
+                        <li><a href="/artikel">Artikel</a></li>
                     </ul>
                 </div> <!-- /.widget -->
             </div> <!-- /.col-lg-4 -->
@@ -41,9 +37,7 @@
                 <div class="widget">
                     <h3>Navigation</h3>
                     <ul class="list-unstyled links mb-4">
-                        <li><a href="#">Our Vision</a></li>
-                        <li><a href="#">About us</a></li>
-                        <li><a href="#">Contact us</a></li>
+                        <li><a href="#">Kontak Kami</a></li>
                     </ul>
 
                     <h3>Social</h3>

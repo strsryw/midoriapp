@@ -10,15 +10,11 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\landingpage\ArtikelController as LandingpageArtikelController;
 use App\Http\Controllers\landingpage\BeritaController as LandingpageBeritaController;
 use App\Http\Controllers\landingpage\GalleryController as galleryLandingPage;
+use App\Http\Controllers\LandingPageController;
 
 // Route - Landing Page
 // Route index landing page 
-Route::get('/', function () {
-    return view(
-        'landingpage.index',
-        ['hero' => 'index']
-    );
-});
+Route::get('/', [LandingPageController::class, 'index']);
 
 Route::get('/profil', function () {
     return view(

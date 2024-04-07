@@ -1,4 +1,26 @@
 @extends('landingpage.layouts.main')
+@push('style')
+    <style>
+        .card-img-top {
+            /* Tinggi tetap */
+            min-height: 250px;
+            max-height: 250px;
+            object-fit: cover;
+            /* Gambar akan mengisi kontainer dan mempertahankan aspek rasio */
+        }
+
+        .card-description {
+            min-height: 70px;
+            max-height: 70px;
+        }
+
+        .card-description p {
+            line-height: 28px;
+            letter-spacing: 1px;
+
+        }
+    </style>
+@endpush
 @section('content')
     <div class="section">
         <div class="container">
@@ -9,18 +31,21 @@
                 </div>
                 <div class="col-lg-4 ps-lg-2">
                     <div class="mb-5">
-                        <h2 class="text-black h4">Make payment fast and smooth.</h2>
-                        <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia,
-                            there live the blind texts.</p>
+                        <h2 class="text-black h4">Kenapa Harus LPK Midori Gakkou ?</h2>
+                        <p style="text-align: justify">Di LPK kami, kami menawarkan pelatihan bahasa Jepang yang mendalam
+                            dan terfokus untuk membantu
+                            Anda mencapai tujuan karir Anda. Berikut adalah beberapa alasan mengapa kami adalah pilihan
+                            terbaik:</p>
                     </div>
                     <div class="d-flex mb-3 service-alt">
                         <div>
                             <span class="bi-wallet-fill text-success me-4"></span>
                         </div>
                         <div>
-                            <h3>Build financial</h3>
-                            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia,
-                                there live the blind texts.</p>
+                            <h3>Kurikulum Terstuktur</h3>
+                            <p style="text-align: justify">Kami memiliki kurikulum terstruktur yang dirancang untuk
+                                memaksimalkan pemahaman Anda tentang
+                                bahasa Jepang, dari tingkat pemula hingga mahir.</p>
                         </div>
                     </div>
 
@@ -29,56 +54,29 @@
                             <span class="bi-pie-chart-fill text-success me-4"></span>
                         </div>
                         <div>
-                            <h3>Invest for the future</h3>
-                            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia,
-                                there live the blind texts.</p>
+                            <h3>Kesempatan Kerja</h3>
+                            <p style="text-align: justify">Kami memiliki jaringan luas dengan perusahaan-perusahaan Jepang
+                                di berbagai industri,
+                                memberikan Anda kesempatan untuk mencari pekerjaan yang sesuai setelah menyelesaikan
+                                pelatihan.</p>
                         </div>
                     </div>
-
-                </div>
-
-            </div>
-        </div>
-    </div>
-
-    <div class="section sec-features">
-        <div class="container">
-            <div class="row g-5">
-                <div class="col-12 col-sm-6 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="0">
-                    <div class="feature d-flex">
-                        <span class="bi-bag-check-fill text-success"></span>
+                    <div class="d-flex mb-3 service-alt">
                         <div>
-                            <h3>Build financial</h3>
-                            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia,
-                                there live the blind texts. </p>
+                            <span class="bi-chat-text-fill text-success me-4"></span>
                         </div>
-                    </div>
-                </div>
-                <div class="col-12 col-sm-6 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
-                    <div class="feature d-flex">
-                        <span class="bi-wallet-fill text-success"></span>
                         <div>
-                            <h3>Invest for the future</h3>
-                            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia,
-                                there live the blind texts. </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-sm-6 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
-                    <div class="feature d-flex">
-                        <span class="bi-pie-chart-fill text-success"></span>
-                        <div>
-                            <h3>Responsible banking</h3>
-                            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia,
-                                there live the blind texts. </p>
+                            <h3>Pengajar Professional</h3>
+                            <p style="text-align: justify">Pengajar kami adalah para ahli dalam bahasa Jepang dengan
+                                pengalaman luas dalam mengajar dan
+                                memberdayakan para siswa.</p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
-    <div class="section">
+    <div class="section bg-light" id="program">
         <div class="container">
             <div class="row">
                 <div class="col-lg-7 order-lg-2 mb-4 mb-lg-0">
@@ -86,48 +84,79 @@
                 </div>
                 <div class="col-lg-5 pe-lg-5">
                     <div class="mb-5">
-                        <h2 class="text-black h4">Straight-forward way of financing</h2>
+                        <h2 class="text-black h4">Program LPK Midori Gakkou</h2>
                     </div>
                     <div class="d-flex mb-3 service-alt">
                         <div>
-                            <span class="bi-wallet-fill text-success me-4"></span>
+                            <span class="bi- text-success me-4">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    class="icon icon-tabler icons-tabler-outline icon-tabler-briefcase">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                    <path
+                                        d="M3 7m0 2a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v9a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2z" />
+                                    <path d="M8 7v-2a2 2 0 0 1 2 -2h4a2 2 0 0 1 2 2v2" />
+                                    <path d="M12 12l0 .01" />
+                                    <path d="M3 13a20 20 0 0 0 18 0" />
+                                </svg>
+                            </span>
                         </div>
                         <div>
-                            <h3>Build financial</h3>
-                            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia,
-                                there live the blind texts.</p>
+                            <h3>Kursus Bahasa Jepang</h3>
+                            <p>Dari dasar hingga tingkat lanjutan, kami menawarkan kursus yang sesuai dengan kebutuhan dan
+                                tingkat kemampuan Anda.</p>
                         </div>
                     </div>
 
                     <div class="d-flex mb-3 service-alt">
                         <div>
-                            <span class="bi-pie-chart-fill text-success me-4"></span>
+                            <span class="bi- text-success me-4">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    class="icon icon-tabler icons-tabler-outline icon-tabler-messages">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                    <path d="M21 14l-3 -3h-7a1 1 0 0 1 -1 -1v-6a1 1 0 0 1 1 -1h9a1 1 0 0 1 1 1v10" />
+                                    <path d="M14 15v2a1 1 0 0 1 -1 1h-7l-3 3v-10a1 1 0 0 1 1 -1h2" />
+                                </svg>
+                            </span>
                         </div>
                         <div>
-                            <h3>Invest for the future</h3>
-                            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia,
-                                there live the blind texts.</p>
+                            <h3>Kelas Konversasi</h3>
+                            <p>Belajarlah berbicara bahasa Jepang secara lancar melalui kelas konversasi interaktif kami.
+                            </p>
                         </div>
                     </div>
 
                     <div class="d-flex mb-3 service-alt">
                         <div>
-                            <span class="bi-bag-check-fill text-success me-4"></span>
+                            <span class="bi- text-success me-4"><svg xmlns="http://www.w3.org/2000/svg" width="24"
+                                    height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round"
+                                    class="icon icon-tabler icons-tabler-outline icon-tabler-vocabulary">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                    <path
+                                        d="M10 19h-6a1 1 0 0 1 -1 -1v-14a1 1 0 0 1 1 -1h6a2 2 0 0 1 2 2a2 2 0 0 1 2 -2h6a1 1 0 0 1 1 1v14a1 1 0 0 1 -1 1h-6a2 2 0 0 0 -2 2a2 2 0 0 0 -2 -2z" />
+                                    <path d="M12 5v16" />
+                                    <path d="M7 7h1" />
+                                    <path d="M7 11h1" />
+                                    <path d="M16 7h1" />
+                                    <path d="M16 11h1" />
+                                    <path d="M16 15h1" />
+                                </svg></span>
                         </div>
                         <div>
-                            <h3>Responsible banking</h3>
-                            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia,
-                                there live the blind texts.</p>
+                            <h3>Persiapan Ujian</h3>
+                            <p>Kami membantu Anda mempersiapkan diri untuk ujian sertifikasi bahasa Jepang yang diakui
+                                secara internasional.</p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
-
-
-    <div class="section sec-services">
+    <div class="section">
         <div class="container">
             <div class="row mb-5">
                 <div class="col-lg-5 mx-auto text-center" data-aos="fade-up">
@@ -243,9 +272,9 @@
         <div class="container">
             <div class="row justify-content-between align-items-center">
                 <div class="col-lg-5" data-aos="fade-up" data-aos-delay="0">
-                    <h2 class="heading">Wanna Talk To Us?</h2>
-                    <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there
-                        live the blind texts. </p>
+                    <h2 class="heading">Hubungi Kami Sekarang!</h2>
+                    <p>Jika ada pertanyaan, jangan ragu untuk menghubungi
+                        kami</p>
                 </div>
                 <div class="col-lg-5 text-end" data-aos="fade-up" data-aos-delay="100">
                     <a href="#" class="btn btn-outline-green-reverse">Contact us</a>
@@ -253,164 +282,6 @@
             </div>
         </div>
     </div>
-
-
-    <div class="section sec-portfolio bg-light pb-5	">
-        <div class="container">
-            <div class="row mb-5">
-                <div class="col-lg-5 mx-auto text-center ">
-                    <h2 class="heading text-success mb-3" data-aos="fade-up" data-aos-delay="0">Case Studies</h2>
-                    <p class="mb-4" data-aos="fade-up" data-aos-delay="100">Far far away, behind the word
-                        mountains, far from the countries Vokalia and Consonantia, there live the blind texts. </p>
-
-                    <div id="post-slider-nav" data-aos="fade-up" data-aos-delay="200">
-                        <button class="btn btn-success py-2" class="prev" data-controls="prev">Prev</button>
-                        <button class="btn btn-success py-2" class="next" data-controls="next">Next</button>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-
-        <div class="post-slider-wrap" data-aos="fade-up" data-aos-delay="300">
-
-
-
-            <div id="post-slider" class="post-slider">
-                <div class="item">
-                    <a href="case-study.html" class="card d-block">
-                        <img src="/assets/landing_page/images/img-1.jpg" class="card-img-top" alt="Image">
-                        <div class="card-body">
-                            <h5 class="card-title">Behind the word mountains</h5>
-                            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia,
-                                there live the blind texts. </p>
-                        </div>
-                    </a>
-                </div>
-
-                <div class="item">
-                    <a href="case-study.html" class="card">
-                        <img src="/assets/landing_page/images/img-2.jpg" class="card-img-top" alt="Image">
-                        <div class="card-body">
-                            <h5 class="card-title">Behind the word mountains</h5>
-                            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia,
-                                there live the blind texts. </p>
-                        </div>
-                    </a>
-                </div>
-
-                <div class="item">
-                    <a href="case-study.html" class="card">
-                        <img src="/assets/landing_page/images/img-3.jpg" class="card-img-top" alt="Image">
-                        <div class="card-body">
-                            <h5 class="card-title">Behind the word mountains</h5>
-                            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia,
-                                there live the blind texts. </p>
-                        </div>
-                    </a>
-                </div>
-
-                <div class="item">
-                    <a href="case-study.html" class="card">
-                        <img src="/assets/landing_page/images/img-4.jpg" class="card-img-top" alt="Image">
-                        <div class="card-body">
-                            <h5 class="card-title">Behind the word mountains</h5>
-                            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia,
-                                there live the blind texts. </p>
-                        </div>
-                    </a>
-                </div>
-
-                <div class="item">
-                    <a href="case-study.html" class="card">
-                        <img src="/assets/landing_page/images/img-1.jpg" class="card-img-top" alt="Image">
-                        <div class="card-body">
-                            <h5 class="card-title">Behind the word mountains</h5>
-                            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia,
-                                there live the blind texts. </p>
-                        </div>
-                    </a>
-                </div>
-            </div>
-        </div>
-
-
-    </div>
-
-    <div class="section sec-testimonial bg-light">
-        <div class="container">
-            <div class="row mb-5 justify-content-center">
-                <div class="col-lg-6 text-center">
-                    <h2 class="heading text-success">Testimonials</h2>
-                </div>
-
-            </div>
-
-
-            <div class="testimonial-slider-wrap">
-                <div class="testimonial-slider" id="testimonial-slider">
-                    <div class="item">
-                        <div class="testimonial-half d-lg-flex bg-white">
-                            <div class="img" style="background-image: url('/assets/landing_page/images/img-4.jpg')">
-
-                            </div>
-                            <div class="text">
-                                <blockquote>
-                                    <p>Far far away, behind the word mountains, far from the countries Vokalia and
-                                        Consonantia, there live the blind texts. Separated they live in Bookmarksgrove
-                                        right at the coast of the Semantics, a large language ocean.</p>
-                                </blockquote>
-                                <div class="author">
-                                    <strong class="d-block text-black">John Campbell</strong>
-                                    <span>CEO & Co-founder</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="item">
-                        <div class="testimonial-half d-lg-flex bg-white">
-                            <div class="img" style="background-image: url('/assets/landing_page/images/img-3.jpg')">
-
-                            </div>
-                            <div class="text">
-                                <blockquote>
-                                    <p>Far far away, behind the word mountains, far from the countries Vokalia and
-                                        Consonantia, there live the blind texts. Separated they live in Bookmarksgrove
-                                        right at the coast of the Semantics, a large language ocean.</p>
-                                </blockquote>
-                                <div class="author">
-                                    <strong class="d-block text-black">John Campbell</strong>
-                                    <span>CEO & Co-founder</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="item">
-                        <div class="testimonial-half d-lg-flex bg-white">
-                            <div class="img" style="background-image: url('/assets/landing_page/images/img-2.jpg')">
-
-                            </div>
-                            <div class="text">
-                                <blockquote>
-                                    <p>Far far away, behind the word mountains, far from the countries Vokalia and
-                                        Consonantia, there live the blind texts. Separated they live in Bookmarksgrove
-                                        right at the coast of the Semantics, a large language ocean.</p>
-                                </blockquote>
-                                <div class="author">
-                                    <strong class="d-block text-black">John Campbell</strong>
-                                    <span>CEO & Co-founder</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
 
     <div class="section sec-news">
         <div class="container">
@@ -421,55 +292,33 @@
             </div>
 
             <div class="row">
-                <div class="col-lg-4">
-                    <div class="card post-entry">
-                        <a href="single.html"><img src="/assets/landing_page/images/img-1.jpg" class="card-img-top"
-                                alt="Image"></a>
-                        <div class="card-body">
-                            <div><span class="text-uppercase font-weight-bold date">Jan 20, 2021</span></div>
-                            <h5 class="card-title"><a class="text-success text-decoration-none" href="single.html">Behind
-                                    the word
-                                    mountains</a></h5>
-                            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia,
-                                there live the blind texts. </p>
-                            <a href="#" class="btn btn-outline-success py-2 px-3">Read more</a>
+                @foreach ($datas as $data)
+                    <div class="col-md-6 col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="0">
+                        <div class="card post-entry">
+                            <a href="/berita/{{ $data->id }}">
+                                <img src="/storage/fotoberita/{{ $data->image }}" class="card-img-top" alt="Image">
+                            </a>
+                            <div class="card-body">
+                                <div>
+                                    <span class="text-uppercase font-weight-bold date">
+                                        {{ $data->created_at->diffForHumans() }}
+                                    </span>
+                                </div>
+                                <h5 class="card-title mb-3">
+                                    <a class="text-success text-decoration-none" title="{{ $data->title }}"
+                                        href="/berita/{{ $data->id }}">{{ strlen($data->title) > 26 ? substr($data->title, 0, 26) . '...' : $data->title }}</a>
+                                </h5>
+                                <div class="card-description mb-5">
+                                    <p>
+                                        {{ App\Helpers\HtmlHelper::strip_tags_and_style($data->description) }}
+                                    </p>
+                                </div>
+                                <a href="/berita/{{ $data->id }}" class="btn btn-outline-success py-2 px-3">Read
+                                    more</a>
+                            </div>
                         </div>
                     </div>
-                </div>
-
-                <div class="col-lg-4">
-                    <div class="card post-entry">
-                        <a href="single.html"><img src="/assets/landing_page/images/img-2.jpg" class="card-img-top"
-                                alt="Image"></a>
-                        <div class="card-body">
-                            <div><span class="text-uppercase font-weight-bold date">Jan 20, 2021</span></div>
-                            <h5 class="card-title"><a class="text-success text-decoration-none" href="single.html">Behind
-                                    the word
-                                    mountains</a></h5>
-                            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia,
-                                there live the blind texts. </p>
-                            <a href="#" class="btn btn-outline-success py-2 px-3">Read more</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-4">
-                    <div class="card post-entry">
-                        <a href="single.html"><img src="/assets/landing_page/images/img-3.jpg" class="card-img-top"
-                                alt="Image"></a>
-                        <div class="card-body">
-                            <div><span class="text-uppercase font-weight-bold date">Jan 20, 2021</span></div>
-                            <h5 class="card-title"><a class="text-success text-decoration-none" href="single.html">Behind
-                                    the word
-                                    mountains</a></h5>
-                            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia,
-                                there live the blind texts. </p>
-                            <a href="#" class="btn btn-outline-success py-2 px-3">Read more</a>
-                        </div>
-                    </div>
-                </div>
-
-
+                @endforeach
             </div>
         </div>
     </div>

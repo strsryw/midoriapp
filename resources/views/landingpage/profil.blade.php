@@ -1,15 +1,19 @@
 @extends('landingpage.index')
 @push('style')
     <style>
-        p,
-        li {
+        p {
+            line-height: 28px;
+            letter-spacing: 1px;
+        }
+
+        .visimisi li {
             line-height: 28px;
             letter-spacing: 1px;
         }
     </style>
 @endpush
 @section('content')
-    <div class="section profil" style="padding-top:120px;padding-bottom:120px;">
+    <div class="section profil" id="profil" style="padding-top:120px;padding-bottom:120px;">
         <div class="container">
             <div class="row">
                 <div class="col-lg-5 offset-lg-1">
@@ -76,7 +80,7 @@
     </div>
 
 
-    <div class="section visimisi bg-light" style="padding-top: 120px; padding-bottom: 120px;">
+    <div class="section visimisi bg-light" id="visi" style="padding-top: 120px; padding-bottom: 120px;">
         <div class="container">
             <div class="row">
                 <div class="col-lg-10 offset-lg-1 col-sm-12">
@@ -91,7 +95,7 @@
         </div>
     </div>
 
-    <div class="section visimisi" style="padding-top: 120px; padding-bottom: 120px;">
+    <div class="section visimisi" id="misi" style="padding-top: 120px; padding-bottom: 120px;">
         <div class="container">
             <div class="row">
                 <div class="col-lg-10 offset-lg-1 col-sm-12">
@@ -111,61 +115,3 @@
         </div>
     </div>
 @endsection
-
-@push('style')
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/orgchart/4.0.1/css/jquery.orgchart.min.css" />
-@endpush
-
-@push('script')
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/orgchart/4.0.1/js/jquery.orgchart.min.js"></script>
-    <script>
-        $(document).ready(function() {
-            let datascource = {
-                'name': 'Suwardi',
-                'title': 'Presiden',
-                'children': [{
-                        'name': 'Joko Pujiwidhiono',
-                        'title': 'Penasihat',
-                        'children': [{
-                                'name': 'Giarti Susanti',
-                                'title': 'Guru',
-                            },
-                            {
-                                'name': 'Hendrik',
-                                'title': 'Guru',
-                            },
-                            {
-                                'name': 'Sutrisno',
-                                'title': 'Guru',
-                            }
-                        ]
-                    },
-                    {
-                        'name': 'Isnaini',
-                        'title': 'Penasihat',
-                        'children': [{
-                                'name': 'Andika Ardi',
-                                'title': 'Staff'
-                            },
-                            {
-                                'name': 'Rosi Nungki',
-                                'title': 'Staff'
-                            },
-                            {
-                                'name': 'Trisno',
-                                'title': 'Staff'
-                            }
-                        ]
-                    },
-                ]
-            };
-
-            $('#chart-container').orgchart({
-                'chartContainer': '#chart-container',
-                'data': datascource,
-                'nodeContent': 'title',
-                'direction': 'l2r'
-            });
-        });
-    </script>
-@endpush

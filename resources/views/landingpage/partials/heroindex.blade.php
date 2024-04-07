@@ -3,9 +3,13 @@
     <div class="container mt-5">
         <div class="row align-items-center justify-content-between pt-5">
             <div class="col-lg-6 text-center text-lg-start pe-lg-5">
-                <h1 class="heading text-white mb-3" data-aos="fade-up">Smart banking for financial freedom.</h1>
-                <p class="text-white mb-5" data-aos="fade-up" data-aos-delay="100">Far far away, behind the word
-                    mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                <h1 class="heading text-white mb-3" data-aos="fade-up">Selamat Datang Di LPK Midori Gakkou.</h1>
+                <p class="text-white" data-aos="fade-up" data-aos-delay="100">Selamat datang di LPK kami, tempat
+                    terbaik untuk mengasah kemampuan bahasa Jepang Anda!</p>
+                <p class="text-white mb-5" data-aos="fade-up" data-aos-delay="100">Di LPK kami, kami menawarkan pelatihan
+                    bahasa Jepang yang mendalam dan terfokus untuk membantu Anda
+                    mencapai tujuan karir Anda.</p>
+
                 <div class="align-items-center mb-5 mm" data-aos="fade-up" data-aos-delay="200">
                     <a href="contact.html" class="btn btn-outline-green-reverse me-4">Contact
                         us</a>
