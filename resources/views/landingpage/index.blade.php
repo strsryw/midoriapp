@@ -26,7 +26,7 @@
         <div class="container">
             <div class="row justify-content-between">
                 <div class="col-lg-7 mb-4 mb-lg-0">
-                    <img src="/assets/landing_page/images/img-3.jpg" alt="Image" class="img-fluid rounded
+                    <img src="/assets/web/img/work.jpg" alt="Image" class="img-fluid rounded
                 ">
                 </div>
                 <div class="col-lg-4 ps-lg-2">
@@ -80,7 +80,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-7 order-lg-2 mb-4 mb-lg-0">
-                    <img src="/assets/landing_page/images/img-1.jpg" alt="Image" class="img-fluid">
+                    <img src="/assets/web/img/school.jpg" alt="Image" class="img-fluid">
                 </div>
                 <div class="col-lg-5 pe-lg-5">
                     <div class="mb-5">
@@ -160,7 +160,7 @@
         <div class="container">
             <div class="row mb-5">
                 <div class="col-lg-5 mx-auto text-center" data-aos="fade-up">
-                    <h2 class="heading text-success">Our Services</h2>
+                    <h2 class="heading text-success">Alur Goes To Japan</h2>
                     <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there
                         live the blind texts. </p>
                 </div>
@@ -170,11 +170,10 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="horizontal-timeline mb-5">
-
                             <ul class="list-inline items">
                                 <li class="list-inline-item items-list">
                                     <div class="px-4">
-                                        <div class="event-date badge bg-info">2 June</div>
+                                        <div class="event-date badge bg-success">Tahap 1</div>
                                         <h5 class="pt-2">Event One</h5>
                                         <p class="text-muted">It will be as simple as occidental in fact it will be
                                             Occidental Cambridge
@@ -184,7 +183,7 @@
                                 </li>
                                 <li class="list-inline-item items-list">
                                     <div class="px-4">
-                                        <div class="event-date badge bg-success">5 June</div>
+                                        <div class="event-date badge bg-success">Tahap 2</div>
                                         <h5 class="pt-2">Event Two</h5>
                                         <p class="text-muted">Everyone realizes why a new common language one could refuse
                                             translators.
@@ -194,7 +193,7 @@
                                 </li>
                                 <li class="list-inline-item items-list">
                                     <div class="px-4">
-                                        <div class="event-date badge bg-danger">7 June</div>
+                                        <div class="event-date badge bg-success">Tahap 3</div>
                                         <h5 class="pt-2">Event Three</h5>
                                         <p class="text-muted">If several languages coalesce the grammar of the resulting
                                             simple and
@@ -204,7 +203,7 @@
                                 </li>
                                 <li class="list-inline-item items-list">
                                     <div class="px-4">
-                                        <div class="event-date badge bg-warning">8 June</div>
+                                        <div class="event-date badge bg-success">Tahap 4</div>
                                         <h5 class="pt-2">Event Four</h5>
                                         <p class="text-muted">Languages only differ in their pronunciation and their most
                                             common words.
@@ -215,51 +214,7 @@
                             </ul>
 
                         </div>
-                        <div class="horizontal-timeline mb-5">
-                            <ul class="list-inline items">
-                                <li class="list-inline-item items-list">
-                                    <div class="px-4">
-                                        <div class="event-date badge bg-info">2 June</div>
-                                        <h5 class="pt-2">Event One</h5>
-                                        <p class="text-muted">It will be as simple as occidental in fact it will be
-                                            Occidental Cambridge
-                                            friend</p>
 
-                                    </div>
-                                </li>
-                                <li class="list-inline-item items-list">
-                                    <div class="px-4">
-                                        <div class="event-date badge bg-success">5 June</div>
-                                        <h5 class="pt-2">Event Two</h5>
-                                        <p class="text-muted">Everyone realizes why a new common language one could refuse
-                                            translators.
-                                        </p>
-
-                                    </div>
-                                </li>
-                                <li class="list-inline-item items-list">
-                                    <div class="px-4">
-                                        <div class="event-date badge bg-danger">7 June</div>
-                                        <h5 class="pt-2">Event Three</h5>
-                                        <p class="text-muted">If several languages coalesce the grammar of the resulting
-                                            simple and
-                                            regular</p>
-
-                                    </div>
-                                </li>
-                                <li class="list-inline-item items-list">
-                                    <div class="px-4">
-                                        <div class="event-date badge bg-warning">8 June</div>
-                                        <h5 class="pt-2">Event Four</h5>
-                                        <p class="text-muted">Languages only differ in their pronunciation and their most
-                                            common words.
-                                        </p>
-
-                                    </div>
-                                </li>
-                            </ul>
-
-                        </div>
                     </div>
                 </div>
 
@@ -277,7 +232,7 @@
                         kami</p>
                 </div>
                 <div class="col-lg-5 text-end" data-aos="fade-up" data-aos-delay="100">
-                    <a href="#" class="btn btn-outline-green-reverse">Contact us</a>
+                    <a href="/kontakkami" class="btn btn-outline-green-reverse">Contact us</a>
                 </div>
             </div>
         </div>
@@ -292,33 +247,35 @@
             </div>
 
             <div class="row">
-                @foreach ($datas as $data)
-                    <div class="col-md-6 col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="0">
-                        <div class="card post-entry">
-                            <a href="/berita/{{ $data->id }}">
-                                <img src="/storage/fotoberita/{{ $data->image }}" class="card-img-top" alt="Image">
-                            </a>
-                            <div class="card-body">
-                                <div>
-                                    <span class="text-uppercase font-weight-bold date">
-                                        {{ $data->created_at->diffForHumans() }}
-                                    </span>
+                @isset($datas)
+                    @foreach ($datas as $data)
+                        <div class="col-md-6 col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="0">
+                            <div class="card post-entry">
+                                <a href="/berita/{{ $data->id }}">
+                                    <img src="/storage/fotoberita/{{ $data->image }}" class="card-img-top" alt="Image">
+                                </a>
+                                <div class="card-body">
+                                    <div>
+                                        <span class="text-uppercase font-weight-bold date">
+                                            {{ $data->created_at->diffForHumans() }}
+                                        </span>
+                                    </div>
+                                    <h5 class="card-title mb-3">
+                                        <a class="text-success text-decoration-none" title="{{ $data->title }}"
+                                            href="/berita/{{ $data->id }}">{{ strlen($data->title) > 26 ? substr($data->title, 0, 26) . '...' : $data->title }}</a>
+                                    </h5>
+                                    <div class="card-description mb-5">
+                                        <p>
+                                            {{ App\Helpers\HtmlHelper::strip_tags_and_style($data->description) }}
+                                        </p>
+                                    </div>
+                                    <a href="/berita/{{ $data->id }}" class="btn btn-outline-success py-2 px-3">Read
+                                        more</a>
                                 </div>
-                                <h5 class="card-title mb-3">
-                                    <a class="text-success text-decoration-none" title="{{ $data->title }}"
-                                        href="/berita/{{ $data->id }}">{{ strlen($data->title) > 26 ? substr($data->title, 0, 26) . '...' : $data->title }}</a>
-                                </h5>
-                                <div class="card-description mb-5">
-                                    <p>
-                                        {{ App\Helpers\HtmlHelper::strip_tags_and_style($data->description) }}
-                                    </p>
-                                </div>
-                                <a href="/berita/{{ $data->id }}" class="btn btn-outline-success py-2 px-3">Read
-                                    more</a>
                             </div>
                         </div>
-                    </div>
-                @endforeach
+                    @endforeach
+                @endisset
             </div>
         </div>
     </div>

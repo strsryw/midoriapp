@@ -11,10 +11,8 @@
                     mencapai tujuan karir Anda.</p>
 
                 <div class="align-items-center mb-5 mm" data-aos="fade-up" data-aos-delay="200">
-                    <a href="contact.html" class="btn btn-outline-green-reverse me-4">Contact
+                    <a href="/kontakkami" class="btn btn-outline-green-reverse me-4">Contact
                         us</a>
-                    <a href="https://www.youtube.com/watch?v=Mb1zrW_zra4" class="text-white glightbox">Watch the
-                        video</a>
                 </div>
             </div>
             <div class="col-lg-6" data-aos="fade-up" data-aos-delay="300">

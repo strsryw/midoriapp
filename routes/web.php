@@ -34,12 +34,8 @@ Route::get('/artikel/{id}', [LandingpageArtikelController::class, 'singlePage'])
 
 Route::get('/gallery', [galleryLandingPage::class, 'index'])->name('landingpage.gallery');
 
-Route::get('/kontakkami', function () {
-    return view(
-        'landingpage.kontakkami',
-        ['hero' => 'Kontak Kami']
-    );
-});
+Route::get('/kontakkami', [LandingPageController::class, 'kontakkami']);
+Route::post('/kontakkami/post', [LandingPageController::class, 'sendMessage'])->name('landingpage.kontakkami');
 // Route - Login
 Route::middleware('guest')->group(function () {
     Route::get('/login', [AuthController::class, 'index'])->name('login');
