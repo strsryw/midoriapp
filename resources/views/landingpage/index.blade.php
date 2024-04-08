@@ -156,68 +156,140 @@
             </div>
         </div>
     </div>
-    <div class="section">
+    <div class="section sec-services">
         <div class="container">
             <div class="row mb-5">
                 <div class="col-lg-5 mx-auto text-center" data-aos="fade-up">
-                    <h2 class="heading text-success">Alur Goes To Japan</h2>
-                    <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there
-                        live the blind texts. </p>
+                    <h2 class="heading text-success">Goes to Japan</h2>
+                    <p>Alur Pengiriman Trainee Praktek Kerja Indonesia</p>
                 </div>
             </div>
 
-            <div class="container-fluid py-5">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="horizontal-timeline mb-5">
-                            <ul class="list-inline items">
-                                <li class="list-inline-item items-list">
-                                    <div class="px-4">
-                                        <div class="event-date badge bg-success">Tahap 1</div>
-                                        <h5 class="pt-2">Event One</h5>
-                                        <p class="text-muted">It will be as simple as occidental in fact it will be
-                                            Occidental Cambridge
-                                            friend</p>
-
-                                    </div>
-                                </li>
-                                <li class="list-inline-item items-list">
-                                    <div class="px-4">
-                                        <div class="event-date badge bg-success">Tahap 2</div>
-                                        <h5 class="pt-2">Event Two</h5>
-                                        <p class="text-muted">Everyone realizes why a new common language one could refuse
-                                            translators.
-                                        </p>
-
-                                    </div>
-                                </li>
-                                <li class="list-inline-item items-list">
-                                    <div class="px-4">
-                                        <div class="event-date badge bg-success">Tahap 3</div>
-                                        <h5 class="pt-2">Event Three</h5>
-                                        <p class="text-muted">If several languages coalesce the grammar of the resulting
-                                            simple and
-                                            regular</p>
-
-                                    </div>
-                                </li>
-                                <li class="list-inline-item items-list">
-                                    <div class="px-4">
-                                        <div class="event-date badge bg-success">Tahap 4</div>
-                                        <h5 class="pt-2">Event Four</h5>
-                                        <p class="text-muted">Languages only differ in their pronunciation and their most
-                                            common words.
-                                        </p>
-
-                                    </div>
-                                </li>
-                            </ul>
+            <div class="row d-flex justify-content-center">
+                <div class="col-12 col-sm-6 col-md-6 col-lg-3" data-aos="fade-up">
+                    <div class="service text-center">
+                        <img src="/assets/web/img/contract.png" class="img-fluid" style="max-width: 100px;" alt="">
+                        <div>
+                            <span class="badge bg-success mb-3">Tahap 1</span>
+                            <h3>Informasi Penerimaan Perusahaan</h3>
 
                         </div>
+                    </div>
 
+                </div>
+                <div class="col-12 col-sm-6 col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
+                    <div class="service text-center">
+                        <img src="/assets/web/img/job-interview1.png" class="img-fluid" style="max-width: 100px;"
+                            alt="">
+                        <div>
+                            <span class="badge bg-success mb-3">Tahap 2</span>
+                            <h3>Wawancara Lembaga Pelatihan (LPK)</h3>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
+                    <div class="service text-center">
+                        <img src="/assets/web/img/medical-history.png" class="img-fluid" style="max-width: 100px;"
+                            alt="">
+                        <div>
+                            <span class="badge bg-success mb-3">Tahap 3</span>
+                            <h3 style="height:43.19px;">Pramedical</h3>
+
+                        </div>
                     </div>
                 </div>
 
+                <div class="col-12 col-sm-6 col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
+
+                    <div class="service text-center">
+                        <img src="/assets/web/img/job-interview2.png" class="img-fluid" style="max-width: 100px;"
+                            alt="">
+                        <div>
+                            <span class="badge bg-success mb-3">Tahap 4</span>
+                            <h3 style="height:43.19px;">Wawancara Perusahaan Jepang</h3>
+
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-12 col-sm-6 col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
+                    <div class="service text-center">
+                        <img src="/assets/web/img/x-rays.png" class="img-fluid" style="max-width: 100px;"
+                            alt="">
+                        <div>
+                            <span class="badge bg-success mb-3">Tahap 5</span>
+                            <h3 style="height:43.19px;">Medical Check Up</h3>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
+                    <div class="service text-center">
+                        <img src="/assets/web/img/documentation.png" class="img-fluid" style="max-width: 100px;"
+                            alt="">
+                        <div>
+                            <span class="badge bg-success mb-3">Tahap 6</span>
+                            <h3 style="height:43.19px;">Pengumpulan Dokumen</h3>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
+                    <div class="service text-center">
+                        <img src="/assets/web/img/passport.png" class="img-fluid" style="max-width: 100px;"
+                            alt="">
+                        <div>
+                            <span class="badge bg-success mb-3">Tahap 7</span>
+                            <h3 style="height:43.19px;">Pembuatan Passport</h3>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
+                    <div class="service text-center">
+                        <img src="/assets/web/img/studying.png" class="img-fluid" style="max-width: 100px;"
+                            alt="">
+                        <div>
+                            <span class="badge bg-success mb-3">Tahap 8</span>
+                            <h3 style="height:43.19px;">Pelatihan Bahasa & Kebudayaan Jepang</h3>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
+                    <div class="service text-center">
+                        <img src="/assets/web/img/competence.png" class="img-fluid" style="max-width: 100px;"
+                            alt="">
+                        <div>
+                            <span class="badge bg-success mb-3">Tahap 9</span>
+                            <h3 style="height:43.19px;">Pembuatan Eligibility</h3>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
+                    <div class="service text-center">
+                        <img src="/assets/web/img/travel.png" class="img-fluid" style="max-width: 100px;"
+                            alt="">
+                        <div>
+                            <span class="badge bg-success mb-3">Tahap 10</span>
+                            <h3 style="height:43.19px;">Pembuatan Visa</h3>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
+                    <div class="service text-center">
+                        <img src="/assets/web/img/travelling.png" class="img-fluid" style="max-width: 100px;"
+                            alt="">
+                        <div>
+                            <span class="badge bg-success mb-3">Tahap 11</span>
+                            <h3 style="height:43.19px;">Berangkat ke Jepang</h3>
+
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

@@ -3,6 +3,7 @@
 use App\Http\Controllers\admin\BeritaController;
 use App\Http\Controllers\admin\ArtikelController;
 use App\Http\Controllers\admin\GalleryController;
+use App\Http\Controllers\admin\KontakKamiController;
 use App\Http\Controllers\admin\OrganizationController;
 use App\Http\Controllers\admin\SettingController;
 use Illuminate\Support\Facades\Route;
@@ -76,6 +77,17 @@ Route::get('admin/gallery', function () {
     );
 });
 
+
+
 // Route backend gallery
 Route::resource('/admin/gallery/ajax', GalleryController::class);
 Route::post('/admin/gallery/update', [GalleryController::class, 'updateGallery']);
+
+
+Route::get('admin/kontakkami', function () {
+    return view(
+        'admin.kontakkami',
+        ['title' => 'Kontak Kami']
+    );
+});
+Route::get('/admin/kontakkami/ajax', [KontakKamiController::class, 'index'])->name('kontakkami.index');

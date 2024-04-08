@@ -17,7 +17,7 @@
             </div>
             <div class="col-lg-6" data-aos="fade-up" data-aos-delay="300">
                 <div class="img-wrap">
-                    <img src="/assets/landing_page/images/img-1.jpg" alt="Image" class="img-fluid rounded">
+                    <img src="/assets/web/img/heroimg.jpg" class="img-fluid" alt="">
                 </div>
             </div>
         </div>
