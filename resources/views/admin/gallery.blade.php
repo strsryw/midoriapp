@@ -1,164 +1,127 @@
 @extends('admin.layouts.main')
 
 @push('css')
-    {{-- https://cdn.datatables.net/2.0.2/css/dataTables.bootstrap5.css --}}
     <link href="https://cdn.datatables.net/v/bs5/dt-2.0.2/datatables.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.datatables.net/2.0.2/css/dataTables.bootstrap5.css">
-    <link rel="stylesheet" href="https://cdn.datatables.net/rowreorder/1.5.0/css/rowReorder.dataTables.css">
-    <link rel="stylesheet" href="https://cdn.datatables.net/responsive/3.0.0/css/responsive.dataTables.css">
-    <style>
-        /* Override CSS Paging DataTables */
-        .dataTables_paginate .paginate_button:hover {
-            /* Tambahkan properti CSS sesuai dengan gaya Tabler */
-            background-color: #007bff;
-            color: #fff;
-        }
-    </style>
 @endpush
+
 @section('content')
     <!-- START FORM -->
-
     <div class="page-header d-print-none">
         <div class="container-xl">
             <div class="row g-2 align-items-center">
                 <div class="col">
-                    <!-- Page pre-title -->
                     <h2 class="page-title">
                         {{ $title }}
                     </h2>
                 </div>
-                <!-- Page title actions -->
             </div>
         </div>
     </div>
     <div class="page-body">
-        <div class="container">
-            <div class="my-3 p-3 card rounded shadow-sm">
-                <h1 class="text-center my-3 p-3" id="titleForm">Tambah Gallery</h1>
-                <div class="card-body">
-                    <input type="hidden" name="idGallery" id="idGallery">
-                    <div class="mb-3 row">
-                        <div class="col-md-2 col-sm-12">
-                            <label for="nama" class="form-label">Judul</label>
-                        </div>
-                        <div class="col-md-10 col-sm-12">
-                            <input type="text" class="form-control" name='judul' id="judul">
-                        </div>
-                    </div>
-                    <div class="mb-3 row">
-                        <div class="col-md-2 col-sm-12">
-                            <label for="foto" class="form-label">Foto</label>
-                        </div>
-                        <div class="col-md-10 col-sm-12">
-                            <input type="hidden" id="oldImage">
-                            <input class="form-control" type="file" id="foto" onchange="selectFoto()">
-                        </div>
-                    </div>
-                    <div class="mb-3 row d-none" id="rowRiviewImg">
-                        <div class="col-md-2 col-sm-12">
+        <div class="container-xl">
+            <div class="row">
+                <div class="col-lg-5 col-md-12 mb-3">
+                    <div class="row row-cards">
+                        <div class="col-12">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h1 class="card-title text-center" id="titleForm">Tambah Galeri</h1>
+                                </div>
+                                <div class="card-body">
+                                    <input type="hidden" name="idGallery" id="idGallery">
+                                    <div class="mb-3 row">
+                                        <div class="col-md-2 col-sm-12">
+                                            <label for="nama" class="form-label">Judul</label>
+                                        </div>
+                                        <div class="col-md-10 col-sm-12">
+                                            <input type="text" class="form-control" name='judul' id="judul">
+                                        </div>
+                                    </div>
+                                    <div class="mb-3 row">
+                                        <div class="col-md-2 col-sm-12">
+                                            <label for="foto" class="form-label">Foto</label>
+                                        </div>
+                                        <div class="col-md-10 col-sm-12">
+                                            <input type="hidden" id="oldImage">
+                                            <input class="form-control" type="file" id="foto">
+                                        </div>
+                                    </div>
+                                    <div class="mb-3 row" id="rowRiviewImg">
+                                        <div class="col-md-2 col-sm-12">
 
-                        </div>
-                        <div class="col-md-10 col-sm-12">
-                            <img src="" class="img-thumbnail" alt="Image" id="reviewImg"
-                                style="max-height: 300px; width:auto;">
-                        </div>
-                    </div>
-                    <div class="mb-3 row">
-                        <div class="col-md-2 col-sm-12">
-                            <label for="deskripsi" class="form-label">Deskripsi</label>
-                        </div>
-                        <div class="col-md-10 col-sm-12">
-                            <textarea type="text" class="form-control" name='deskripsi' id="deskripsi"></textarea>
-                        </div>
-                    </div>
-                    <div class="mb-3">
-                        <button type="button" class="btn btn-primary d-none" id="btnUpdate" name="button"
-                            onclick="updateData()">
-                            <i class="ti ti-device-floppy"></i>
-                            Update
-                        </button>
+                                        </div>
+                                        <div class="col-md-10 col-sm-12">
+                                            <img src="https://placehold.co/300x200?text=RiviewImage" class="img-thumbnail"
+                                                alt="Image" id="reviewImg" style="max-height: 200px; width:auto;">
+                                        </div>
+                                    </div>
+                                    <div class="mb-3 row">
+                                        <div class="col-md-2 col-sm-12">
+                                            <label for="deskripsi" class="form-label">Deskripsi</label>
+                                        </div>
+                                        <div class="col-md-10 col-sm-12">
+                                            <textarea type="text" class="form-control" name='deskripsi' id="deskripsi"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-footer">
+                                    <div class="">
+                                        <button type="button" class="btn btn-primary d-none" id="btnUpdate" name="button"
+                                            onclick="updateData()">
+                                            <i class="ti ti-device-floppy"></i>
+                                            Update
+                                        </button>
 
-                        <button type="button" class="btn btn-primary" id="btnInsert" name="button" onclick="simpanData()">
-                            <i class="ti ti-device-floppy"></i>
-                            Simpan
-                        </button>
+                                        <button type="button" class="btn btn-primary" id="btnInsert" name="button">
+                                            <i class="ti ti-device-floppy"></i>
+                                            Simpan
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <!-- AKHIR FORM -->
-
-            <!-- START DATA -->
-            <div class="my-3 p-3 card">
-                <h1 class="text-center my-3 p-3">Daftar Gallery</h1>
-                <div class="card-body">
-                    <!-- TOMBOL TAMBAH DATA -->
-                    {{-- <div class="pb-3">
-                        <button class="btn btn-primary" onclick="showModal()"><i class="ti ti-user-plus"></i>Tambah
-                            Data</button>
-                    </div> --}}
-                    <div class="table-responsive p-1">
-                        <div class="alert alert-success alert-dismissible fade show d-none" role="alert" id="alert">
-                            <i class="ti ti-checks"></i> <strong id="alertText">Data inserted successfully</strong>
-                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                <div class="col-lg-7 col-md-12">
+                    <div class="row row-cards">
+                        <div class="col-12">
+                            <div class="card">
+                                <div class="card-header d-flex justify-content-between">
+                                    <h3 class="card-title">Data Galeri</h3>
+                                </div>
+                                <table class="table table-striped card-table table-vcenter table-responsive"
+                                    id="table-galleries">
+                                    <thead class="text-start">
+                                        <tr>
+                                            <th class="text-center">No</th>
+                                            <th>Judul</th>
+                                            <th>Foto</th>
+                                            <th>Deskripsi</th>
+                                            <th>Aksi</th>
+                                        </tr>
+                                    </thead>
+                                </table>
+                            </div>
                         </div>
-                        <table class="table table-striped table-bordered" id="myTable" style="width: 100%;">
-                            <thead>
-                                <tr>
-                                    <th class="text-center">No</th>
-                                    <th class="text-center col-md-3">Judul</th>
-                                    <th class="text-center col-md-3">Foto</th>
-                                    <th class="text-center col-md-3">Deskripsi</th>
-                                    <th class="text-center col-md-2">Aksi</th>
-                                </tr>
-                            </thead>
-                            {{-- <tbody>
-                                <tr>
-                                    <td>1.</td>
-                                    <td>Anton</td>
-                                    <td>anton@gmail.com</td>
-                                    <td class="text-center">
-                                        <button type="button" class="btn btn-warning"><i class="ti ti-edit"></i></button>
-                                        <button type="button" class="btn btn-danger"><i class="ti ti-trash"></i></button>
-                                    </td>
-                                </tr>
-                            </tbody> --}}
-                        </table>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
     <!-- AKHIR DATA -->
 @endsection
+
 @push('script')
-    <script
-        src="
-                                                                                                                                                                                                            https://cdn.jsdelivr.net/npm/sweetalert2@11.10.7/dist/sweetalert2.all.min.js
-                                                                                                                                                                                                            ">
-    </script>
-    {{-- <script src="//cdn.datatables.net/2.0.2/js/dataTables.min.js"></script> --}}
+    <script src=" https://cdn.jsdelivr.net/npm/sweetalert2@11.10.7/dist/sweetalert2.all.min.js"></script>
     <script src="https://cdn.datatables.net/v/bs5/dt-2.0.2/datatables.min.js"></script>
-    {{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script> --}}
     <script src="https://cdn.datatables.net/2.0.2/js/dataTables.bootstrap5.js"></script>
-    <script src="https://cdn.datatables.net/responsive/3.0.0/js/dataTables.responsive.js"></script>
-    <script src=" https://cdn.datatables.net/responsive/3.0.0/js/responsive.dataTables.js"></script>
     <script>
         $(document).ready(function() {
-            $("#myTable").dataTable({
-                responsive: true,
-                rowReorder: {
-                    selector: "td:nth-child(2)",
-                },
-                language: {
-                    lengthMenu: "Tampil _MENU_ data",
-                    search: "Cari",
-                    emptyTable: "Tidak ada data",
-                    info: "Tampilkan _START_ ke _END_ dari _TOTAL_ data",
-                },
+            $("#table-galleries").dataTable({
                 processing: true,
                 serverside: true,
-                ajax: "/admin/gallery/ajax",
+                ajax: "{{ route('admin.galeri.index') }}",
                 columns: [{
                         data: "DT_RowIndex",
                         name: "DT_RowIndex",
@@ -182,170 +145,211 @@
                         name: "Action",
                     },
                 ],
+                language: {
+                    lengthMenu: "Tampil _MENU_ data",
+                    search: "Cari",
+                    emptyTable: "Tidak ada data",
+                    info: "Tampilkan _START_ ke _END_ dari _TOTAL_ data",
+                },
+                columnDefs: [{
+                        width: '0%',
+                        className: 'text-center',
+                        targets: 0
+                    },
+                    {
+                        width: '20%',
+                        targets: 1
+                    },
+                    {
+                        width: '20%',
+                        targets: 2
+                    },
+                    {
+                        width: '40%',
+                        targets: 3
+                    },
+                    {
+                        width: '20%',
+                        targets: 4
+                    }
+                ],
+                dom: `<"card-body border-bottom py-3"<"d-flex"<"text-secondary"l><"ms-auto text-secondary"<"ms-2 d-inline-block"f>>>><"table-responsive"t><"card-footer d-flex align-items-center"<"m-0 text-secondary"i><"pagination m-0 ms-auto"p>>>`,
             });
-            $("#myTable_filter").addClass("pb-3");
-            document.getElementById("dt-search-0").classList.remove("form-control-sm");
-            document.getElementById("dt-length-0").classList.remove("form-select-sm");
-        });
+            $('#dt-length-1').removeClass('form-select-sm').addClass('form-select-md');
+            $('#dt-search-1').removeClass('form-control-sm').addClass('form-control-md');
 
-        function simpanData() {
-            var judul = document.getElementById("judul").value;
-            var deskripsi = document.getElementById("deskripsi").value;
-            var foto = document.getElementById("foto").files[0]; // Mendapatkan file foto yang dipilih
-            var formData = new FormData(); // Buat objek FormData
-            formData.append("judul", judul);
-            formData.append("deskripsi", deskripsi);
-            formData.append("foto", foto);
-            $.ajax({
-                url: "/admin/gallery/ajax",
-                type: "post",
-                data: formData,
-                contentType: false,
-                processData: false, // Set processData menjadi false agar FormData tidak diproses secara otomatis
-                success: function(response) {
-                    document.getElementById('rowRiviewImg').classList.add('d-none');
-                    $("#judul").val('');
-                    $("#deskripsi").val('');
-                    $('#foto').val('');
-                    if (response.status == true) {
-                        Swal.fire({
-                            icon: "success",
-                            title: "Data berhasil disimpan",
-                            showConfirmButton: false,
-                            timer: 1500
-                        });
-                    } else {
-                        Swal.fire({
-                            icon: "error",
-                            title: "Data gagal disimnpan",
-                            timer: 1500
+            $('#btnInsert').on('click', function(e) {
+                e.preventDefault();
+
+                var judul = document.getElementById("judul").value;
+                var deskripsi = document.getElementById("deskripsi").value;
+                var foto = document.getElementById("foto").files[0];
+                var formData = new FormData();
+                formData.append("judul", judul);
+                formData.append("deskripsi", deskripsi);
+                formData.append("foto", foto);
+
+                $.ajax({
+                    url: "{{ route('admin.galeri.store') }}",
+                    type: "POST",
+                    data: formData,
+                    contentType: false,
+                    processData: false,
+                    success: function(response) {
+                        document.getElementById('rowRiviewImg').classList.add('d-none');
+                        $("#judul").val('');
+                        $("#deskripsi").val('');
+                        $('#foto').val('');
+                        if (response.status) {
+                            Swal.fire({
+                                icon: "success",
+                                title: "Data berhasil disimpan",
+                                showConfirmButton: false,
+                                timer: 1500
+                            });
+                        } else {
+                            Swal.fire({
+                                icon: "error",
+                                title: "Data gagal disimnpan",
+                                timer: 1500
+                            });
+                        }
+                        $('#table-galleries').DataTable().ajax.reload();
+                    },
+                    error: function(xhr, status, error) {
+
+                    },
+                });
+            });
+
+            $(document).on('click', '#btnEdit', function(e) {
+                e.preventDefault();
+
+                var id = $(this).data('id');
+                var url = "{{ route('admin.galeri.edit', ':id') }}".replace(':id', id);
+
+                $.ajax({
+                    url: url,
+                    type: 'GET',
+                    success: function(response) {
+                        $('#rowRiviewImg').removeClass('d-none');
+                        $('#btnInsert').addClass('d-none');
+                        $('#btnUpdate').removeClass('d-none');
+                        document.getElementById('reviewImg').style.display = 'block';
+                        $('#idGallery').val(response.data.id);
+                        $('#titleForm').text('Edit Galeri');
+                        $('#judul').val(response.data.title);
+                        $('#deskripsi').val(response.data.description);
+                        $('#oldImage').val(response.data.image);
+                        var reviewImg = $('#reviewImg').attr('src', '/storage/foto_gallery/' +
+                            response.data
+                            .image);
+                        $('#foto').change(function() {
+                            if (this.files && this.files[0]) {
+                                var reader = new FileReader();
+                                reader.onload = function(e) {
+                                    $('#reviewImg').attr('src', e.target.result);
+                                }
+                                reader.readAsDataURL(this.files[0]);
+                                console.log($('#foto')[0].files[0]);
+                            }
                         });
                     }
-                    // Tindakan setelah permintaan berhasil
-                    $('#myTable').DataTable().ajax.reload();
-                },
-                error: function(xhr, status, error) {
-                    // Tindakan jika terjadi kesalahan
-                },
-            });
-        }
-
-        function editData(id) {
-            $.ajax({
-                url: '/admin/gallery/ajax/' + id + '/edit',
-                type: 'get',
-                success: function(response) {
-                    $('#rowRiviewImg').removeClass('d-none');
-                    $('#btnInsert').addClass('d-none');
-                    $('#btnUpdate').removeClass('d-none');
-                    document.getElementById('reviewImg').style.display = 'block';
-                    $('#idGallery').val(response.data.id);
-                    $('#titleForm').text('Edit Gallery');
-                    $('#judul').val(response.data.title);
-                    $('#deskripsi').val(response.data.description);
-                    $('#oldImage').val(response.data.image);
-                    var reviewImg = $('#reviewImg').attr('src', '/storage/fotogallery/' + response.data
-                        .image);
-                    $('#foto').change(function() {
-                        if (this.files && this.files[0]) {
-                            var reader = new FileReader();
-                            reader.onload = function(e) {
-                                $('#reviewImg').attr('src', e.target.result);
-                            }
-                            reader.readAsDataURL(this.files[0]);
-                            console.log($('#foto')[0].files[0]);
-                        }
-                    });
-                }
+                });
             })
-        }
 
-        function updateData() {
-            const id = $('#idGallery').val();
+            $('#btnUpdate').on('click', function(e) {
+                var id = $('#idGallery').val();
+                var url = "{{ route('admin.galeri.update', ':id') }}".replace(':id', id);
 
-            var formData = new FormData();
-            formData.append('id', id);
-            formData.append('title', $('#judul').val());
-            formData.append('description', $('#deskripsi').val());
-            formData.append('oldImage', $('#oldImage').val());
-            // if ($('#foto')[0].files[0]) {
-            formData.append('image', document.getElementById("foto").files[0]);
-            // } else {
-            //     var image = $('#foto')[0].src;
-            //     var result = image.split('/');
-            //     var dataImg = result[8];
-            //     formData.append('image', dataImg);
-            // }
 
-            $.ajax({
-                url: "/admin/gallery/update",
-                type: "POST",
-                data: formData,
-                contentType: false,
-                processData: false,
-                success: function(response) {
-                    $("#judul").val('');
-                    $("#deskripsi").val('');
-                    $('#foto').val('');
-                    document.getElementById('reviewImg').style.display = 'none';
-                    if (response.status == true) {
-                        Swal.fire({
-                            icon: "success",
-                            title: "Data berhasil diupdate",
-                            showConfirmButton: false,
-                            timer: 1500
-                        });
-                    } else {
-                        Swal.fire({
-                            icon: "error",
-                            title: "Data gagal diupdate",
-                            timer: 1500
-                        });
-                    }
-                    $('#myTable').DataTable().ajax.reload();
-                }
-            });
-        }
+                var formData = new FormData();
+                formData.append('_method', 'PUT');
+                formData.append('title', $('#judul').val());
+                formData.append('description', $('#deskripsi').val());
+                formData.append('oldImage', $('#oldImage').val());
+                formData.append('image', document.getElementById("foto").files[0]);
 
-        function deleteData(id) {
-            Swal.fire({
-                title: "Apakah anda yakin ingin menghapus ?",
-                showDenyButton: true,
-                showCancelButton: true,
-                confirmButtonText: "Iya",
-                denyButtonText: `Tidak`
-            }).then((result) => {
-                /* Read more about isConfirmed, isDenied below */
-                if (result.isConfirmed) {
-                    $.ajax({
-                        url: '/admin/gallery/ajax/' + id,
-                        type: 'delete',
-                        data: {},
-                        success: function(response) {
-                            console.log(response);
-                            if (response.status == '1') {
-                                Swal.fire({
-                                    icon: "success",
-                                    title: "Data berhasil dihapus",
-                                    showConfirmButton: false,
-                                    timer: 1500
-                                });
-
-                            } else if (response.status = '0') {
-                                Swal.fire({
-                                    icon: "error",
-                                    title: "Data gagal dihapus",
-                                    timer: 1500
-                                });
-                            }
-                            $('#myTable').DataTable().ajax.reload();
+                $.ajax({
+                    url: url,
+                    type: "POST",
+                    data: formData,
+                    contentType: false,
+                    processData: false,
+                    success: function(response) {
+                        $('#titleForm').text('Tambah Galeri');
+                        $("#judul").val('');
+                        $('#foto').val('');
+                        $('#reviewImg').attr('src',
+                            `https://placehold.co/300x200?text=ReviewImage`);
+                        $("#deskripsi").val('');
+                        if (response.status == true) {
+                            Swal.fire({
+                                icon: "success",
+                                title: "Data berhasil diupdate",
+                                showConfirmButton: false,
+                                timer: 1500
+                            });
+                        } else {
+                            Swal.fire({
+                                icon: "error",
+                                title: "Data gagal diupdate",
+                                timer: 1500
+                            });
                         }
-                    });
-                } else if (result.isDenied) {
-                    Swal.fire("Changes are not saved", "", "info");
-                }
+                        $('#table-galleries').DataTable().ajax.reload();
+                    }
+                });
             });
-        }
+
+            $(document).on('click', '#btnDelete', function(e) {
+
+                var id = $(this).data('id');
+                var url = "{{ route('admin.galeri.destroy', ':id') }}".replace(':id', id);
+
+                Swal.fire({
+                    title: "Apakah anda yakin ingin menghapus ?",
+                    showDenyButton: true,
+                    showCancelButton: true,
+                    confirmButtonText: "Iya",
+                    denyButtonText: `Tidak`
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        $.ajax({
+                            url: url,
+                            type: 'DELETE',
+                            data: {},
+                            success: function(response) {
+                                console.log(response);
+                                if (response.status == '1') {
+                                    Swal.fire({
+                                        icon: "success",
+                                        title: "Data berhasil dihapus",
+                                        showConfirmButton: false,
+                                        timer: 1500
+                                    });
+
+                                } else if (response.status = '0') {
+                                    Swal.fire({
+                                        icon: "error",
+                                        title: "Data gagal dihapus",
+                                        timer: 1500
+                                    });
+                                }
+                                $('#table-galleries').DataTable().ajax.reload();
+                            }
+                        });
+                    } else if (result.isDenied) {
+                        Swal.fire("Changes are not saved", "", "info");
+                    }
+                });
+            });
+
+            $('#foto').on('change', function(e) {
+                e.preventDefault();
+                selectFoto()
+            });
+        });
 
         function selectFoto() {
             var input = document.getElementById('foto');

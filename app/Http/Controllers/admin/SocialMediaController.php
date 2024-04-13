@@ -1,12 +1,11 @@
 <?php
 
-namespace App\Http\Controllers\landingpage;
+namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\Artikels;
 use Illuminate\Http\Request;
 
-class ArtikelController extends Controller
+class SocialMediaController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,11 +14,7 @@ class ArtikelController extends Controller
      */
     public function index()
     {
-        $artikel = Artikels::latest()->paginate(6);
-        return view('landingpage.artikel', [
-            'hero' => 'Artikel',
-            'datas' => $artikel
-        ]);
+        //
     }
 
     /**
@@ -86,18 +81,5 @@ class ArtikelController extends Controller
     public function destroy($id)
     {
         //
-    }
-    public function singlePage($id)
-    {
-        $content = Artikels::findOrFail($id);
-        $previous = Artikels::where('id', '<', $content->id)->orderBy('id', 'desc')->first();
-        $next = Artikels::where('id', '>', $content->id)->orderBy('id', 'asc')->first();
-        return view('landingpage.detailArtikel', [
-            'hero' => $content->title,
-            'date' => $content->created_at->format('M d, Y'),
-            'data' => $content,
-            'prev' => $previous,
-            'next' => $next
-        ]);
     }
 }

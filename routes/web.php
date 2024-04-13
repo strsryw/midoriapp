@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\admin\BeritaController;
 use App\Http\Controllers\admin\ArtikelController;
+use App\Http\Controllers\admin\DashboardController;
 use App\Http\Controllers\admin\GalleryController;
 use App\Http\Controllers\admin\KontakKamiController;
 use App\Http\Controllers\admin\SettingController;
@@ -30,34 +31,11 @@ Route::middleware('guest')->group(function () {
 
 // Route - Admin
 Route::middleware('auth')->prefix('/admin')->name('admin.')->group(function () {
-    Route::get('/dashboard', function () {
-        return view('admin.dashboard');
-    })->name('dashboard');
+    Route::get('/dashboard', DashboardController::class)->name('dashboard');
     Route::resource('/setting', SettingController::class);
     Route::resource('/berita', BeritaController::class)->except(['show']);
     Route::resource('/artikel', ArtikelController::class)->except(['show']);
+    Route::resource('/galeri', GalleryController::class)->except(['show']);
+    Route::get('/kontak-kami', KontakKamiController::class)->name('kontak-kami');
     Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 });
-
-// Route - admin gallery
-Route::get('admin/gallery', function () {
-    return view(
-        'admin.gallery',
-        ['title' => 'Gallery']
-    );
-});
-
-
-
-// Route backend gallery
-Route::resource('/admin/gallery/ajax', GalleryController::class);
-Route::post('/admin/gallery/update', [GalleryController::class, 'updateGallery']);
-
-
-Route::get('admin/kontakkami', function () {
-    return view(
-        'admin.kontakkami',
-        ['title' => 'Kontak Kami']
-    );
-});
-Route::get('/admin/kontakkami/ajax', [KontakKamiController::class, 'index'])->name('kontakkami.index');

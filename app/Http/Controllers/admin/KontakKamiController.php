@@ -11,11 +11,15 @@ use Yajra\DataTables\Facades\DataTables;
 class KontakKamiController extends Controller
 {
 
-    public function index()
+    public function __invoke(Request $request)
     {
-        $data = KontakKami::all();
-        return DataTables::of($data)
-            ->addIndexColumn()
-            ->make(true);
+        if ($request->ajax()) {
+            $data = KontakKami::all();
+            return DataTables::of($data)
+                ->addIndexColumn()
+                ->make(true);
+        }
+        $title = 'Kontak Kami';
+        return view('admin.kontakkami', compact('title'));
     }
 }

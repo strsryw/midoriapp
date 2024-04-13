@@ -56,11 +56,10 @@ class LandingPageController extends Controller
 
     public function gallery()
     {
-
         $gallery = Galleries::latest()->paginate(6)->onEachSide(1);
         $setting_web = SettingWeb::first();
         return view('landingpage.gallery', [
-            'hero' => 'Gallery',
+            'hero' => 'Galeri',
             'setting' => $setting_web,
             'datas' => $gallery
         ]);

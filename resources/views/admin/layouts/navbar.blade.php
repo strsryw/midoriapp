@@ -21,10 +21,8 @@
                         </a>
                     </li>
                     <li class="nav-item {{ Request::is('admin/berita*', 'admin/berita/action*') ? 'active' : '' }}">
-                        {{-- 'admin/berita/action' --}}
                         <a class="nav-link " href="/admin/berita">
-                            <span
-                                class="nav-link-icon d-md-none d-lg-inline-block"><!-- Download SVG icon from http://tabler-icons.io/i/home -->
+                            <span class="nav-link-icon d-md-none d-lg-inline-block">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                     viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                                     stroke-linecap="round" stroke-linejoin="round"
@@ -45,8 +43,7 @@
                     <li class="nav-item {{ Request::is('admin/artikel*') ? 'active' : '' }}">
 
                         <a class="nav-link " href="/admin/artikel">
-                            <span
-                                class="nav-link-icon d-md-none d-lg-inline-block"><!-- Download SVG icon from http://tabler-icons.io/i/home -->
+                            <span class="nav-link-icon d-md-none d-lg-inline-block">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                     viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                                     stroke-linecap="round" stroke-linejoin="round"
@@ -65,8 +62,8 @@
                         </a>
                     </li>
 
-                    <li class="nav-item {{ Request::is('admin/gallery') ? 'active' : '' }}">
-                        <a class="nav-link " href="/admin/gallery">
+                    <li class="nav-item {{ Request::is('admin/galeri*') ? 'active' : '' }}">
+                        <a class="nav-link " href="{{ route('admin.galeri.index') }}">
                             <span class="nav-link-icon d-md-none d-lg-inline-block">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                     viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
@@ -81,12 +78,12 @@
                                 </svg>
                             </span>
                             <span class="nav-link-title">
-                                Gallery
+                                Galeri
                             </span>
                         </a>
                     </li>
-                    <li class="nav-item {{ Request::is('admin/kontakkami') ? 'active' : '' }}">
-                        <a class="nav-link " href="/admin/kontakkami">
+                    <li class="nav-item {{ Request::is('admin/kontak-kami') ? 'active' : '' }}">
+                        <a class="nav-link" href="{{ route('admin.kontak-kami') }}">
                             <span class="nav-link-icon d-md-none d-lg-inline-block">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                     viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
@@ -107,9 +104,6 @@
                             </span>
                         </a>
                     </li>
-
-
-
                     <li class="nav-item {{ Route::is('admin.setting*') ? 'active' : '' }}">
                         <a class="nav-link " href="{{ route('admin.setting.index') }}">
                             <span class="nav-link-icon d-md-none d-lg-inline-block">
