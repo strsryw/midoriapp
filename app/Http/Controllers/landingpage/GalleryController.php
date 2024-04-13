@@ -10,11 +10,5 @@ class GalleryController extends Controller
 {
     public function index()
     {
-        $data = Galleries::latest()->paginate(6)->onEachSide(1);
-
-        return view('landingpage.gallery', [
-            'hero' => 'Gallery',
-            'datas' => $data
-        ]);
     }
 }

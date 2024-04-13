@@ -3,10 +3,7 @@
     <div class="section">
         <div class="container">
             <div class="row">
-                <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1981.0801377457315!2d111.02630303435639!3d-6.750299014854017!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e70d24945b1c719%3A0x41941cd5d44e9d79!2sJl.%20RonggoWarsito%20No.6%2C%20Puri%2C%20Kec.%20Pati%2C%20Kabupaten%20Pati%2C%20Jawa%20Tengah%2059113!5e0!3m2!1sid!2sid!4v1712329574107!5m2!1sid!2sid"
-                    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+                {!! $setting->google_maps !!}
             </div>
         </div>
     </div>
@@ -19,28 +16,30 @@
                         <div class="address mt-2">
                             <i class="text-white icon-room"></i>
                             <h4 class="mb-2">Location:</h4>
-                            <p>43 Raymouth Rd. Baltemoer,<br> London 3910</p>
+                            <p>{{ $setting->company_address }}</p>
                         </div>
 
                         <div class="open-hours mt-4">
                             <i class="text-white icon-clock-o"></i>
                             <h4 class="mb-2">Open Hours:</h4>
                             <p>
-                                Sunday-Friday:<br>
-                                11:00 AM - 2300 PM
+                                Senin - Sabtu<br>
+                                09:00 - 17:00
                             </p>
                         </div>
 
                         <div class="email mt-4">
                             <i class="text-white icon-envelope"></i>
                             <h4 class="mb-2">Email:</h4>
-                            <p>info@Untree.co</p>
+                            <p>{{ $setting->email }}</p>
                         </div>
 
                         <div class="phone mt-4">
                             <i class="text-white icon-phone"></i>
                             <h4 class="mb-2">Call:</h4>
-                            <p>+1 1234 55488 55</p>
+                            <p>
+                                {{ substr($setting->number_phone, 0, 2) == '62' ? '0' . substr($setting->number_phone, 2) : $setting->number_phone }}
+                            </p>
                         </div>
 
                     </div>
@@ -60,7 +59,6 @@
                             <div class="col-12 mb-3">
                                 <textarea name="" id="pesan" cols="30" rows="7" class="form-control" placeholder="Message"></textarea>
                             </div>
-
                             <div class="col-12">
                                 <input type="button" value="Send Message" class="btn btn-success" onclick="sendMessage();">
                             </div>
@@ -84,8 +82,8 @@
             var pesan = $('#pesan').val();
             const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
             $.ajax({
-                url: "{{ route('landingpage.kontakkami') }}",
-                type: 'post',
+                url: "{{ route('landing-page.kontak-kami') }}",
+                type: 'POST',
                 data: {
                     nama,
                     email,
@@ -98,17 +96,17 @@
                     $('#email').val('');
                     $('#subjek').val('');
                     $('#pesan').val('');
-                    if (response.status == true) {
+                    if (response.status) {
                         Swal.fire({
                             icon: "success",
-                            title: "Data berhasil disimpan",
+                            title: response.message,
                             showConfirmButton: false,
                             timer: 1500
                         });
                     } else {
                         Swal.fire({
                             icon: "error",
-                            title: "Data gagal disimnpan",
+                            title: response.message,
                             timer: 1500
                         });
                     }

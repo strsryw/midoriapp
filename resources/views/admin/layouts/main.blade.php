@@ -46,8 +46,8 @@
     <script src="/assets/web/js/jquery-3.7.1.min.js"></script>
     <script src="/assets/web/js/script.js"></script>
     <script src="
-        https://cdn.jsdelivr.net/npm/sweetalert2@11.10/dist/sweetalert2.all.min.js
-        "></script>
+            https://cdn.jsdelivr.net/npm/sweetalert2@11.10/dist/sweetalert2.all.min.js
+            "></script>
     @stack('script')
 </body>
 

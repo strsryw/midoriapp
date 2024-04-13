@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\admin;
 
 use App\Models\Artikels;
+use App\Models\SettingWeb;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -123,12 +124,14 @@ class ArtikelController extends Controller
         $content = Artikels::findOrFail($id);
         $previous = Artikels::where('id', '<', $content->id)->orderBy('id', 'desc')->first();
         $next = Artikels::where('id', '>', $content->id)->orderBy('id', 'asc')->first();
+        $setting_web = SettingWeb::first();
         return view('landingpage.detailArtikel', [
             'hero' => $content->title,
             'date' => $content->created_at->format('M d, Y'),
             'data' => $content,
             'prev' => $previous,
-            'next' => $next
+            'next' => $next,
+            'setting' => $setting_web
         ]);
     }
 

@@ -39,7 +39,9 @@
                                 </div>
                                 <h5 class="card-title mb-3">
                                     <a class="text-success text-decoration-none" title="{{ $data->title }}"
-                                        href="/artikel/{{ $data->id }}">{{ strlen($data->title) > 26 ? substr($data->title, 0, 26) . '...' : $data->title }}</a>
+                                        href="{{ route('landing-page.detail-artikel', $data->id) }}">
+                                        {{ strlen($data->title) > 26 ? substr($data->title, 0, 26) . '...' : $data->title }}
+                                    </a>
                                 </h5>
                                 <div class="card-description mb-5">
                                     <p>

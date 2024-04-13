@@ -3,13 +3,17 @@
 namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\SettingWeb;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Storage;
 
 class SettingController extends Controller
 {
     public function index()
     {
-        return view('admin.setting');
+        $setting_web = SettingWeb::first();
+        return view('admin.setting', compact('setting_web'));
     }
 
     public function create()

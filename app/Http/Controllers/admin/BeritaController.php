@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers\admin;
 
-use App\Http\Controllers\Controller;
 use App\Models\Beritas;
+use App\Models\SettingWeb;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Storage;
 use Yajra\DataTables\Facades\DataTables;
 
@@ -122,7 +123,19 @@ class BeritaController extends Controller
      */
     public function show($id)
     {
-        //
+        $content = Beritas::findorFail($id);
+        $previous = Beritas::where('id', '<', $content->id)->orderBy('id', 'desc')->first();
+        $next = Beritas::where('id', '>', $content->id)->orderBy('id', 'asc')->first();
+        $setting_web = SettingWeb::first();
+
+        return view('landingpage.detailBerita', [
+            'hero' => $content->title,
+            'date' => $content->created_at->format('M d, Y'),
+            'data' => $content,
+            'prev' => $previous,
+            'next' => $next,
+            'setting' => $setting_web
+        ]);
     }
 
     /**

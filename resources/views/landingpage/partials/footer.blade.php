@@ -1,18 +1,20 @@
 <div class="site-footer">
     <div class="container">
         <div class="row">
-            <div class="col-lg-4">
+            <div class="col-lg-4 ">
                 <div class="widget">
                     <h3>About</h3>
-                    <p>Di LPK kami, kami menawarkan pelatihan
-                        bahasa Jepang yang mendalam dan terfokus untuk membantu Anda
-                        mencapai tujuan karir Anda.</p>
+                    {{ $setting->about }}
                 </div>
                 <div class="widget">
-                    <address>43 Raymouth Rd. Baltemoer, <br> London 3910</address>
+                    <address>{{ $setting->company_address }}</address>
                     <ul class="list-unstyled links">
-                        <li><a href="http://">081299459042</a></li>
-                        <li><a href="mailto:info@mydomain.com">info@mydomain.com</a></li>
+                        <li>
+                            <a href="http://wa.me/{{ $setting->number_phone }}"
+                                target="_blank">{{ $setting->number_phone }}
+                            </a>
+                        </li>
+                        <li><a href="mailto:{{ $setting->email }}">{{ $setting->email }}</a></li>
                     </ul>
                 </div>
             </div>
@@ -39,16 +41,13 @@
                     <ul class="list-unstyled links mb-4">
                         <li><a href="#">Kontak Kami</a></li>
                     </ul>
-
-                    <h3>Social</h3>
-                    <ul class="list-unstyled social">
-                        <li><a href="#"><span class="icon-instagram "></span></a></li>
-                        {{-- <li><a href="#"><span class="icon-twitter"></span></a></li> --}}
-                        <li><a href="#"><span class="icon-facebook"></span></a></li>
-                        {{-- <li><a href="#"><span class="icon-linkedin"></span></a></li>
-                        <li><a href="#"><span class="icon-pinterest"></span></a></li>
-                        <li><a href="#"><span class="icon-dribbble"></span></a></li> --}}
-                    </ul>
+                    @isset($social_medias)
+                        <h3>Social Media</h3>
+                        <ul class="list-unstyled social">
+                            <li><a href="#"><span class="icon-instagram"></span></a></li>
+                            <li><a href="#"><span class="icon-facebook"></span></a></li>
+                        </ul>
+                    @endisset
                 </div> <!-- /.widget -->
             </div> <!-- /.col-lg-4 -->
         </div> <!-- /.row -->

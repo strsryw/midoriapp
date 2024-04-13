@@ -34,6 +34,34 @@
     </div>
 
     <div class="page-body">
+        <div class="container-xl">
+            <div class="row row-cards">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-header d-flex justify-content-between">
+                            <h3 class="card-title">Data Berita</h3>
+                            <a href="{{ route('admin.berita.create') }}" class="btn btn-primary">
+                                Tambah Berita
+                            </a>
+                        </div>
+                        <table class="table table-striped card-table table-vcenter table-responsive" id="table-beritas">
+                            <thead class="text-start">
+                                <tr>
+                                    <th>No</th>
+                                    <th>Judul</th>
+                                    <th>Thumbnail</th>
+                                    <th>Deskripsi</th>
+                                    <th>Aksi</th>
+                                </tr>
+                            </thead>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {{-- <div class="page-body">
         <div class="container">
             <div class="my-3 card">
                 <div class="card-header d-flex justify-content-center align-items-center">
@@ -42,9 +70,9 @@
                 <div class="card-body">
                     <!-- TOMBOL TAMBAH DATA -->
                     <div class="mb-4 mt-4">
-                        <a href="{{ route('admin.berita.create') }}" class="btn btn-primary"><i
-                                class="ti ti-user-plus"></i>Tambah
-                            Berita</a>
+                        <a href="{{ route('admin.berita.create') }}" class="btn btn-primary">
+                            <i class="ti ti-user-plus"></i>
+                            Tambah Berita</a>
                     </div>
                     <div class="table-responsive p-1">
                         <div class="alert alert-success alert-dismissible fade show d-none" role="alert" id="alert">
@@ -66,24 +94,19 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
 
     <!-- AKHIR DATA -->
 @endsection
 @push('script')
-    {{-- <script src="//cdn.datatables.net/2.0.2/js/dataTables.min.js"></script> --}}
     <script src="https://cdn.datatables.net/v/bs5/dt-2.0.2/datatables.min.js"></script>
-    {{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script> --}}
     <script src="https://cdn.datatables.net/2.0.2/js/dataTables.bootstrap5.js"></script>
-    <script src="https://cdn.datatables.net/responsive/3.0.0/js/dataTables.responsive.js"></script>
-    <script src=" https://cdn.datatables.net/responsive/3.0.0/js/responsive.dataTables.js"></script>
+    {{-- <script src="https://cdn.datatables.net/responsive/3.0.0/js/dataTables.responsive.js"></script>
+    <script src=" https://cdn.datatables.net/responsive/3.0.0/js/responsive.dataTables.js"></script> --}}
     <script>
         $(document).ready(function() {
-            $("#myTable").dataTable({
+            $("#table-beritas").dataTable({
                 responsive: true,
-                rowReorder: {
-                    selector: "td:nth-child(2)",
-                },
                 language: {
                     lengthMenu: "Tampil _MENU_ data",
                     search: "Cari",
@@ -116,10 +139,33 @@
                         name: "Action",
                     },
                 ],
+                columnDefs: [{
+                        width: '0%',
+                        className: 'text-center',
+                        targets: 0
+                    },
+                    {
+                        width: '20%',
+                        targets: 1
+                    },
+                    {
+                        width: '20%',
+                        targets: 2
+                    },
+                    {
+                        width: '40%',
+                        targets: 3
+                    },
+                    {
+                        width: '20%',
+                        targets: 4
+                    }
+                ],
+                dom: `<"card-body border-bottom py-3"<"d-flex"<"text-secondary"l><"ms-auto text-secondary"<"ms-2 d-inline-block"f>>>><"table-responsive"t><"card-footer d-flex align-items-center"<"m-0 text-secondary"i><"pagination m-0 ms-auto"p>>>`,
             });
-            $("#myTable_filter").addClass("pb-3");
-            document.getElementById("dt-search-0").classList.remove("form-control-sm");
-            document.getElementById("dt-length-0").classList.remove("form-select-sm");
+            $("#table-beritas").addClass("pb-3");
+            $('#dt-length-1').removeClass('form-select-sm').addClass('form-select-md');
+            $('#dt-search-1').removeClass('form-control-sm').addClass('form-control-md');
         });
 
 
