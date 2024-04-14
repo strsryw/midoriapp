@@ -11,7 +11,7 @@
                     mencapai tujuan karir Anda.</p>
 
                 <div class="align-items-center mb-5 mm" data-aos="fade-up" data-aos-delay="200">
-                    <a href="/kontakkami" class="btn btn-outline-green-reverse me-4">Contact
+                    <a href="{{ route('landing-page.kontak-kami') }}" class="btn btn-outline-green-reverse me-4">Contact
                         us</a>
                 </div>
             </div>

@@ -1,4 +1,5 @@
-@extends('landingpage.index')
+@extends('landingpage.layouts.main')
+@section('title', 'Profil - ')
 @push('style')
     <style>
         p {
@@ -22,21 +23,12 @@
                 <div class="col-lg-5">
                     <p><span class="fw-bold mb-3 text-success fs-2">Apa itu LPK Midori Gakkou ?</span>
                     <p style="text-align: justify;">
-                        <span class="fw-bold">LPK. Midori Gakkou</span> adalah
-                        Lembaga
-                        Pendidikan
-                        Bahasa Jepang
-                        sekaligus
-                        lembaga pembimbingan dan
-                        pendampingan
-                        untuk Program Pemagangan ke Jepang yang berdiri sejak Tahun 2018 di Kab.Pati – Jawa Tengah dengan
-                        Pemimpin
-                        Bapak suwardi dan sudah memiliki izin dari BINA LATTAS sebagai Lembaga Pengirim atau Sending
-                        Organization
-                        (SO) sejak Tahun 2019, yang berarti kami sudah mendapat kepercayaan dari Pemerintah Daerah
-                        dan Pusat
-                        untuk
-                        melaksanakan program pemagangan ke Jepang.
+                        <span class="fw-bold">LPK. Midori Gakkou</span> adalah Lembaga Pendidikan Bahasa Jepang sekaligus
+                        lembaga pembimbingan dan pendampingan untuk Program Pemagangan ke Jepang yang berdiri sejak Tahun
+                        2018 di Kab.Pati – Jawa Tengah dengan Pemimpin Bapak suwardi dan sudah memiliki izin dari BINA
+                        LATTAS sebagai Lembaga Pengirim atau Sending Organization (SO) sejak Tahun 2019, yang berarti kami
+                        sudah mendapat kepercayaan dari Pemerintah Daerah dan Pusat untuk melaksanakan program pemagangan ke
+                        Jepang.
                     </p>
                 </div>
             </div>

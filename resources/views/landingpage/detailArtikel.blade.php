@@ -1,5 +1,7 @@
 @extends('landingpage.layouts.main')
 
+@section('title', $data->title . ' - ')
+
 @push('style')
     <style>
         img {

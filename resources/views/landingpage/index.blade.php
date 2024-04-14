@@ -304,7 +304,7 @@
                         kami</p>
                 </div>
                 <div class="col-lg-5 text-end" data-aos="fade-up" data-aos-delay="100">
-                    <a href="/kontakkami" class="btn btn-outline-green-reverse">Contact us</a>
+                    <a href="{{ route('landing-page.kontak-kami') }}" class="btn btn-outline-green-reverse">Contact us</a>
                 </div>
             </div>
         </div>
@@ -319,12 +319,19 @@
             </div>
 
             <div class="row">
-                @isset($datas)
+                @if ($datas->isEmpty())
+                    <div class="text-center">
+                        <img src="{{ asset('assets/web/img/no-content.png') }}" alt="" class="mb-3"
+                            style="max-width: 200px">
+                        <h1 class="fw-bold">Tidak Ada Informasi</h1>
+                    </div>
+                @else
                     @foreach ($datas as $data)
                         <div class="col-md-6 col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="0">
                             <div class="card post-entry">
                                 <a href="/berita/{{ $data->id }}">
-                                    <img src="/storage/fotoberita/{{ $data->image }}" class="card-img-top" alt="Image">
+                                    <img src="/storage/fotoberita/{{ $data->image }}" class="card-img-top"
+                                        alt="Image">
                                 </a>
                                 <div class="card-body">
                                     <div>
@@ -347,7 +354,7 @@
                             </div>
                         </div>
                     @endforeach
-                @endisset
+                @endif
             </div>
         </div>
     </div>

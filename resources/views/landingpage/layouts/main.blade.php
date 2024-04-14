@@ -37,7 +37,7 @@
     " rel="stylesheet">
     @stack('style')
 
-    <title>Home - LPK MIDORI</title>
+    <title>@yield('title') LPK MIDORI</title>
 </head>
 
 <body>

@@ -1,4 +1,5 @@
 @extends('landingpage.layouts.main')
+@section('title', 'Galeri - ')
 @push('style')
     <style>
         .card-img-top {
@@ -14,43 +15,36 @@
     <div class="section sec-news" id="sec-news">
         <div class="container">
             <div class="row">
-                @foreach ($datas as $data)
-                    <div class="col-sm-6 col-lg-4">
-                        <div class="card card-sm mb-3">
-                            <a href="{{ asset('storage/foto_gallery/' . $data->image) }}" class="d-block glightbox">
-                                <img src="{{ asset('storage/foto_gallery/' . $data->image) }}" alt="image"
-                                    class="card-img-top" />
-                            </a>
-                            <div class="card-body px-2 py-4">
-                                <div class="d-flex align-items-center">
-                                    <div class="mx-3">
-                                        <div class="fw-bold">
-                                            {{ strlen($data->title) > 25 ? substr($data->title, 0, 25) . '...' : $data->title }}
+                @if ($datas->isEmpty())
+                    <div class="text-center">
+                        <img src="{{ asset('assets/web/img/no-content.png') }}" alt="" class="mb-3"
+                            style="max-width: 200px">
+                        <h1 class="fw-bold">Tidak Ada Gambar</h1>
+                    </div>
+                @else
+                    @foreach ($datas as $data)
+                        <div class="col-sm-6 col-lg-4">
+                            <div class="card card-sm mb-3">
+                                <a href="{{ asset('storage/foto_gallery/' . $data->image) }}" class="d-block glightbox">
+                                    <img src="{{ asset('storage/foto_gallery/' . $data->image) }}" alt="image"
+                                        class="card-img-top" />
+                                </a>
+                                <div class="card-body px-2 py-4">
+                                    <div class="d-flex align-items-center">
+                                        <div class="mx-3">
+                                            <div class="fw-bold">
+                                                {{ strlen($data->title) > 25 ? substr($data->title, 0, 25) . '...' : $data->title }}
+                                            </div>
+                                            <div class="text-secondary">{{ $data->created_at->diffForHumans() }}</div>
                                         </div>
-                                        <div class="text-secondary">{{ $data->created_at->diffForHumans() }}</div>
-                                    </div>
-                                    <div class="ms-auto">
-                                        <a href="#" class="text-secondary">
-                                            <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24"
-                                                height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"
-                                                fill="none" stroke-linecap="round" stroke-linejoin="round">
-                                                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                                                <path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0"></path>
-                                                <path
-                                                    d="M21 12c-2.4 4 -5.4 6 -9 6c-3.6 0 -6.6 -2 -9 -6c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6">
-                                                </path>
-                                            </svg>
-                                            467
-                                        </a>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                @endforeach
+                    @endforeach
+                @endif
+                {{ $datas->links('vendor.pagination.custom-landing-page') }}
             </div>
-
-            {{ $datas->links('vendor.pagination.custom-landing-page') }}
         </div>
     </div>
 @endsection

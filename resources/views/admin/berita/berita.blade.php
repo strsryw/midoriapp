@@ -199,7 +199,7 @@
                                     timer: 1500
                                 });
                             }
-                            $('#myTable').DataTable().ajax.reload();
+                            $('#table-beritas').DataTable().ajax.reload();
                         }
                     });
                 } else if (result.isDenied) {

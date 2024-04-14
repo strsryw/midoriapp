@@ -1,4 +1,5 @@
-@extends('landingpage.index')
+@extends('landingpage.layouts.main')
+@section('title', 'Kontak Kami - ')
 @section('content')
     <div class="section">
         <div class="container">

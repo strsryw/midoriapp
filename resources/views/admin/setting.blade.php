@@ -22,69 +22,69 @@
                             <h3 class="card-title">Form Setting</h3>
                         </div>
                         <div class="card-body">
-                            <div class="row row-cards">
-                                <input type="hidden" name="id_setting" id="id_setting" value="{{ $setting_web->id }}">
-                                <div class="col-auto">
-                                    <div class="mb-3">
-                                        @if ($setting_web->logo)
-                                            <img src="{{ asset('storage/landing_page/' . $setting_web->logo) }}"
-                                                alt="img-thumbnail" class="img-thumbnail" style="max-width: 100px">
-                                        @else
-                                            <img src="https://placehold.co/100x100" alt="img-thumbnail"
-                                                class="img-thumbnail">
-                                        @endif
-
+                            <form enctype="multipart/form-data" name="formEditSetting" id="formEditSetting">
+                                <div class="row row-cards">
+                                    <input type="hidden" name="old_img" id="old_img" value="{{ $setting_web->logo }}">
+                                    <div class="col-auto">
+                                        <div class="mb-3">
+                                            @if ($setting_web->logo)
+                                                <img src="{{ asset('storage/landing_page/' . $setting_web->logo) }}"
+                                                    alt="img-thumbnail" class="img-thumbnail" style="max-width: 100px">
+                                            @else
+                                                <img src="https://placehold.co/100x100" alt="img-thumbnail"
+                                                    class="img-thumbnail">
+                                            @endif
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="mb-3">
+                                            <label class="form-label">Logo Website</label>
+                                            <input type="file" class="form-control" id="logo" name="logo">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="mb-3">
+                                            <label class="form-label">Alternatif Logo</label>
+                                            <input type="text" class="form-control" id="alt-logo" name="alt-logo"
+                                                value="{{ $setting_web->alt_logo }}">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="mb-3">
+                                            <label class="form-label">Tentang Kami</label>
+                                            <textarea name="about" class="form-control" id="about" cols="30" rows="3">{{ $setting_web->about }}</textarea>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="mb-3">
+                                            <label class="form-label">Alamat Kantor</label>
+                                            <textarea name="company-address" id="company-address" class="form-control" cols="30" rows="3">{{ $setting_web->company_address }}</textarea>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="mb-3">
+                                            <label class="form-label">Google Maps</label>
+                                            <textarea name="google-maps" id="google-maps" cols="30" rows="3" class="form-control">
+                                                {{ $setting_web->google_maps }}
+                                            </textarea>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="mb-3">
+                                            <label class="form-label">No Handphone</label>
+                                            <input type="text" class="form-control" name="number_phone" id="number_phone"
+                                                value="{{ $setting_web->number_phone }}">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="mb-3">
+                                            <label class="form-label">Alamat Email</label>
+                                            <input type="email" class="form-control" name="email" id="email"
+                                                value="{{ $setting_web->email }}">
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="col-md-6">
-                                    <div class="mb-3">
-                                        <label class="form-label">Logo Website</label>
-                                        <input type="file" class="form-control" id="logo" name="logo"
-                                            value="{{ $setting_web->alt_logo }}">
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="mb-3">
-                                        <label class="form-label">Alternatif Logo</label>
-                                        <input type="text" class="form-control" id="alt-logo" name="alt-logo"
-                                            value="{{ $setting_web->alt_logo }}">
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="mb-3">
-                                        <label class="form-label">Tentang Kami</label>
-                                        <textarea name="about" class="form-control" id="about" cols="30" rows="3">{{ $setting_web->about }}</textarea>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="mb-3">
-                                        <label class="form-label">Alamat Kantor</label>
-                                        <textarea name="company-address" id="company-address" class="form-control" cols="30" rows="3">{{ $setting_web->company_address }}</textarea>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="mb-3">
-                                        <label class="form-label">Google Maps</label>
-                                        <textarea name="google-maps" id="google-maps" cols="30" rows="3" class="form-control">
-                                            {{ $setting_web->google_maps }}
-                                        </textarea>
-                                    </div>
-                                </div>
-                                <div class="col-md-3">
-                                    <div class="mb-3">
-                                        <label class="form-label">No Handphone</label>
-                                        <input type="text" class="form-control" name="number_phone" id="number_phone"
-                                            value="{{ $setting_web->number_phone }}">
-                                    </div>
-                                </div>
-                                <div class="col-md-3">
-                                    <div class="mb-3">
-                                        <label class="form-label">Alamat Email</label>
-                                        <input type="email" class="form-control" name="email" id="email"
-                                            value="{{ $setting_web->email }}">
-                                    </div>
-                                </div>
-                            </div>
+                            </form>
                         </div>
                         <div class="card-footer">
                             <button class="btn btn-primary" id="btnSimpan">Simpan</button>
@@ -121,7 +121,8 @@
         </div>
     </div>
 
-    <div class="modal modal-blur fade" id="modal-social-media" tabindex="-1" style="display: none;" aria-hidden="true">
+    <div class="modal modal-blur fade" id="modal-social-media" tabindex="-1" style="display: none;"
+        aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -165,6 +166,39 @@
     <script src="https://cdn.datatables.net/2.0.2/js/dataTables.bootstrap5.js"></script>
     <script>
         $(document).ready(function() {
+            $('#btnSimpan').on('click', function(e) {
+                var formData = new FormData($("#formEditSetting")[0]);
+                formData.append('_method', 'PUT');
+
+                $.ajax({
+                    type: "POST",
+                    url: "{{ route('admin.setting.update', $setting_web->id) }}",
+                    data: formData,
+                    dataType: "JSON",
+                    contentType: false,
+                    processData: false,
+                    success: function(response) {
+                        if (response.status) {
+                            Swal.fire({
+                                icon: "success",
+                                title: "Data berhasil disimpan",
+                                showConfirmButton: false,
+                                timer: 1500
+                            }).then(() => {
+                                window.location.href = response.redirect;
+                            });
+                        } else {
+                            Swal.fire({
+                                icon: "error",
+                                title: "Data gagal disimnpan",
+                                timer: 1500
+                            });
+                        }
+                    }
+                });
+
+            });
+
             $("#table-social-medias").dataTable({
                 processing: true,
                 serverside: true,
@@ -302,6 +336,7 @@
                     }
                 });
             })
+
         });
     </script>
 @endpush

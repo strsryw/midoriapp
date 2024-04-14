@@ -6,7 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>MIDORI - Login</title>
+    <link rel="shortcut icon" href="{{ asset('assets/web/img/favicon.ico') }}" type="image/x-icon">
+    <link rel="icon" href="{{ asset('assets/web/img/favicon.ico') }}" type="image/x-icon">
+    <title>Login - LPK MIDORI</title>
 
     <!-- CSS files -->
     <link href="/assets/admin/dist/css/tabler.min.css?1692870487" rel="stylesheet" />

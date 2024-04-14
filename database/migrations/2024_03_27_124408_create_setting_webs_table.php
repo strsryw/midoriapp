@@ -19,8 +19,9 @@ return new class extends Migration
             $table->string('alt_logo');
             $table->text('about');
             $table->string('company_address');
-            $table->integer('number_phone');
+            $table->string('number_phone');
             $table->string('email');
+            $table->text('google_maps');
             $table->timestamps();
         });
     }

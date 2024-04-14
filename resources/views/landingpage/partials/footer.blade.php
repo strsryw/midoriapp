@@ -41,18 +41,19 @@
                     <ul class="list-unstyled links mb-4">
                         <li><a href="#">Kontak Kami</a></li>
                     </ul>
-                    @isset($social_medias)
+                    @if (!$social_medias->isEmpty())
                         <h3>Social Media</h3>
                         <ul class="list-unstyled social">
                             @foreach ($social_medias as $item)
                                 <li>
-                                    <a href="{{ $item->link }}" target="_blank" class="align-content-center text-center">
+                                    <a href="{{ $item->link }}" target="_blank"
+                                        class="align-content-center text-center">
                                         {!! $item->class_icon !!}
                                     </a>
                                 </li>
                             @endforeach
                         </ul>
-                    @endisset
+                    @endif
                 </div>
             </div>
         </div>
