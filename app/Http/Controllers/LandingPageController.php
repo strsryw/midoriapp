@@ -7,6 +7,7 @@ use App\Models\Artikels;
 use App\Models\Galleries;
 use App\Models\KontakKami;
 use App\Models\SettingWeb;
+use App\Models\SocialMedia;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
@@ -16,9 +17,11 @@ class LandingPageController extends Controller
     {
         $berita = Beritas::latest()->limit(3)->get();
         $setting_web = SettingWeb::first();
+        $social_medias = SocialMedia::get();
         return view('landingpage.index', [
             'hero' => 'index',
             'setting' => $setting_web,
+            'social_medias' => $social_medias,
             'datas' => $berita
         ]);
     }

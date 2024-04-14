@@ -33,8 +33,8 @@
                         <li><a href="/berita">Berita</a></li>
                         <li><a href="/artikel">Artikel</a></li>
                     </ul>
-                </div> <!-- /.widget -->
-            </div> <!-- /.col-lg-4 -->
+                </div>
+            </div>
             <div class="col-lg-4">
                 <div class="widget">
                     <h3>Navigation</h3>
@@ -44,29 +44,25 @@
                     @isset($social_medias)
                         <h3>Social Media</h3>
                         <ul class="list-unstyled social">
-                            <li><a href="#"><span class="icon-instagram"></span></a></li>
-                            <li><a href="#"><span class="icon-facebook"></span></a></li>
+                            @foreach ($social_medias as $item)
+                                <li>
+                                    <a href="{{ $item->link }}" target="_blank" class="align-content-center text-center">
+                                        {!! $item->class_icon !!}
+                                    </a>
+                                </li>
+                            @endforeach
                         </ul>
                     @endisset
-                </div> <!-- /.widget -->
-            </div> <!-- /.col-lg-4 -->
-        </div> <!-- /.row -->
+                </div>
+            </div>
+        </div>
 
         <div class="row mt-5">
             <div class="col-12 text-center">
-                <!--
-              **==========
-              NOTE:
-              Please don't remove this copyright link unless you buy the license here https://untree.co/license/
-              **==========
-            -->
-
-                <p>Copyright &copy;
+                <p>Copyright &copy; LPK Midori Gakko
                     <script>
                         document.write(new Date().getFullYear());
-                    </script>. All Rights Reserved. &mdash; Designed with
-                    love by <a href="https://untree.co">Untree.co</a> Distributed By <a
-                        href="https://themewagon.com">ThemeWagon</a><!-- License information: https://untree.co/license/ -->
+                    </script>.
                 </p>
             </div>
         </div>
