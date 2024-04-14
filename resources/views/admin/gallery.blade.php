@@ -66,7 +66,7 @@
                                     </div>
                                 </div>
                                 <div class="card-footer">
-                                    <div class="">
+                                    <div class="col-12 text-end">
                                         <button type="button" class="btn btn-primary d-none" id="btnUpdate" name="button"
                                             onclick="updateData()">
                                             <i class="ti ti-device-floppy"></i>

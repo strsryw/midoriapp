@@ -202,7 +202,7 @@
             $("#table-social-medias").dataTable({
                 processing: true,
                 serverside: true,
-                ajax: "{{ route('admin.setting.index') }}",
+                ajax: "{{ route('admin.social_media.index') }}",
                 columns: [{
                         data: "DT_RowIndex",
                         name: "DT_RowIndex",
@@ -271,7 +271,7 @@
 
                 $.ajax({
                     type: "POST",
-                    url: "{{ route('admin.setting.store') }}",
+                    url: "{{ route('admin.social_media.store') }}",
                     data: data,
                     dataType: "JSON",
                     success: function(response) {
@@ -300,7 +300,7 @@
             $(document).on('click', '#btnDelete', function(e) {
                 e.preventDefault();
                 var id = $(this).data('id');
-                var url = "{{ route('admin.setting.destroy', ':id') }}".replace(':id', id);
+                var url = "{{ route('admin.social_media.destroy', ':id') }}".replace(':id', id);
 
                 Swal.fire({
                     title: "Apakah anda yakin ingin menghapus?",

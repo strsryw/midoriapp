@@ -4,62 +4,69 @@
         <div class="container-xl">
             <div class="row g-2 align-items-center">
                 <div class="col">
-                    <!-- Page pre-title -->
-                    <h2 class="page-title">
-                        {{ $title }}
-                    </h2>
+                    <h2 class="page-title">{{ $title }}</h2>
                 </div>
-                <!-- Page title actions -->
             </div>
         </div>
     </div>
 
     <div class="page-body">
-        <div class="container">
-            <div class="my-3 card">
-                <div class="card-header d-flex justify-content-center align-items-center">
-                    <h1 class="text-center my-3">Tambah Berita</h1>
-                </div>
-                <div class="card-body">
-                    <div class="mb-3 row">
-                        <div class="col-md-2 col-sm-12">
-                            <label for="nama" class="form-label">Judul</label>
+        <div class="container-xl">
+            <div class="row row-cards">
+                <div class="col-12">
+                    <div class="mb-3 card">
+                        <div class="card-header">
+                            <h3 class="card-title">Tambah Berita</h3>
                         </div>
-                        <div class="col-md-10 col-sm-12">
-                            <input type="text" class="form-control" name='judul' id="judul">
-                        </div>
-                    </div>
-                    <div class="mb-3 row">
-                        <div class="col-md-2 col-sm-12">
-                            <label for="foto" class="form-label">Foto</label>
-                        </div>
-                        <div class="col-md-10 col-sm-12">
-                            <input type="hidden" id="oldImage">
-                            <input class="form-control" type="file" id="foto" onchange="selectFoto()">
-                        </div>
-                    </div>
-                    <div class="mb-3 row d-none" id="rowRiviewImg">
-                        <div class="col-md-2 col-sm-12">
+                        <div class="card-body">
+                            <div class="mb-3 row">
+                                <div class="col-md-2 col-sm-12">
+                                    <label for="nama" class="form-label">Judul</label>
+                                </div>
+                                <div class="col-md-10 col-sm-12">
+                                    <input type="text" class="form-control" name='judul' id="judul">
+                                </div>
+                            </div>
+                            <div class="mb-3 row">
+                                <div class="col-md-2 col-sm-12">
+                                    <label for="foto" class="form-label">Foto</label>
+                                </div>
+                                <div class="col-md-10 col-sm-12">
+                                    <input type="hidden" id="oldImage">
+                                    <input class="form-control" type="file" id="foto" onchange="selectFoto()">
+                                </div>
+                            </div>
+                            <div class="mb-3 row d-none" id="rowRiviewImg">
+                                <div class="col-md-2 col-sm-12">
 
-                        </div>
-                        <div class="col-md-10 col-sm-12">
-                            <img src="" class="img-thumbnail" alt="Image" id="reviewImg"
-                                style="max-height: 300px; width:auto;">
-                        </div>
-                    </div>
+                                </div>
+                                <div class="col-md-10 col-sm-12">
+                                    <img src="" class="img-thumbnail" alt="Image" id="reviewImg"
+                                        style="max-height: 300px; width:auto;">
+                                </div>
+                            </div>
 
-                    <div class="mb-3 row">
-                        <div class="col-md-2 col-sm-12">
-                            <label for="content" class="form-label">Deskripsi</label>
+                            <div class="mb-3 row">
+                                <div class="col-md-2 col-sm-12">
+                                    <label for="content" class="form-label">Deskripsi</label>
+                                </div>
+                                <div class="col-md-10 col-sm-12">
+                                    <textarea type="text" class="form-control" name='deskripsi' id="deskripsi"></textarea>
+                                </div>
+                            </div>
                         </div>
-                        <div class="col-md-10 col-sm-12">
-                            <textarea type="text" class="form-control" name='deskripsi' id="deskripsi"></textarea>
+                        <div class="card-footer">
+                            <div class="row">
+                                <div class="col-6">
+                                    <a href="{{ route('admin.berita.index') }}" class="btn btn-danger">Cancel</a>
+                                </div>
+                                <div class="col-6 text-end">
+                                    <button class="btn btn-primary" id="btnInsert" onclick="simpanData()">Simpan
+                                        Berita</button>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="card-footer d-flex justify-content-end">
-                    <button class="btn btn-primary" id="btnInsert" onclick="simpanData()">
-                        Simpan</button>
                 </div>
             </div>
         </div>

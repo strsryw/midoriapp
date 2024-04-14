@@ -82,10 +82,9 @@ class BeritaController extends Controller
      */
     public function create()
     {
-        return view(
-            'admin.berita.tambah',
-            ['title' => 'Berita']
-        );
+        return view('admin.berita.tambah', [
+            'title' => 'Berita'
+        ]);
     }
 
     /**
@@ -162,13 +161,6 @@ class BeritaController extends Controller
         );
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, $id)
     {
         $data = [];
@@ -204,12 +196,6 @@ class BeritaController extends Controller
         ], 400);
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function destroy($id)
     {
         // Hapus data dari database

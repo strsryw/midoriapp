@@ -6,6 +6,7 @@ use App\Http\Controllers\admin\DashboardController;
 use App\Http\Controllers\admin\GalleryController;
 use App\Http\Controllers\admin\KontakKamiController;
 use App\Http\Controllers\admin\SettingController;
+use App\Http\Controllers\admin\SocialMediaController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\LandingPageController;
@@ -33,6 +34,7 @@ Route::middleware('guest')->group(function () {
 Route::middleware('auth')->prefix('/admin')->name('admin.')->group(function () {
     Route::get('/dashboard', DashboardController::class)->name('dashboard');
     Route::resource('/setting', SettingController::class);
+    Route::resource('/social_media', SocialMediaController::class);
     Route::resource('/berita', BeritaController::class)->except(['show']);
     Route::resource('/artikel', ArtikelController::class)->except(['show']);
     Route::resource('/galeri', GalleryController::class)->except(['show']);
