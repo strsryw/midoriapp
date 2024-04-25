@@ -33,7 +33,8 @@ class LandingPageController extends Controller
         return view('landingpage.profil', [
             'hero' => 'Profil LPK',
             'social_medias' => $social_medias,
-            'setting' => $setting_web
+            'setting' => $setting_web,
+            'background' => '2.jpeg'
         ]);
     }
 
@@ -46,7 +47,8 @@ class LandingPageController extends Controller
             'hero' => 'Berita',
             'setting' => $setting_web,
             'social_medias' => $social_medias,
-            'datas' => $berita
+            'datas' => $berita,
+            'background' => '1.jpeg'
         ]);
     }
 
@@ -59,7 +61,8 @@ class LandingPageController extends Controller
             'hero' => 'Artikel',
             'setting' => $setting_web,
             'social_medias' => $social_medias,
-            'datas' => $artikel
+            'datas' => $artikel,
+            'background' => '3.jpg'
         ]);
     }
 
@@ -72,7 +75,8 @@ class LandingPageController extends Controller
             'hero' => 'Galeri',
             'setting' => $setting_web,
             'social_medias' => $social_medias,
-            'datas' => $gallery
+            'datas' => $gallery,
+            'background' => '4.jpeg'
         ]);
     }
 
