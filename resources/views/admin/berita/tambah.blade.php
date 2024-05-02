@@ -73,7 +73,7 @@
     </div>
 @endsection
 @push('script')
-    <script src="https://cdn.tiny.cloud/1/7zdw7wouyd7q3o67u5jr3miejmlahrnpaocg7kifgdofnyzx/tinymce/7/tinymce.min.js"
+    <script src="https://cdn.tiny.cloud/1/yb1azwrff076d702t5wix7se8nbyv63n98so6aheoy9sdjj6/tinymce/7/tinymce.min.js"
         referrerpolicy="origin"></script>
     <script>
         $(document).ready(function() {
