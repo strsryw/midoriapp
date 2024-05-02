@@ -77,7 +77,7 @@
                     },
                     {
                         data: "limitDescription",
-                        name: "Description",
+                        name: "description",
                     },
                     {
                         data: "action",

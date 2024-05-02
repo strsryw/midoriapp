@@ -330,7 +330,7 @@
                         <div class="col-md-6 col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="0">
                             <div class="card post-entry">
                                 <a href="/berita/{{ $data->id }}">
-                                    <img src="/storage/fotoberita/{{ $data->image }}" class="card-img-top"
+                                    <img src="/storage/foto_berita/{{ $data->image }}" class="card-img-top"
                                         alt="Image">
                                 </a>
                                 <div class="card-body">
@@ -348,7 +348,7 @@
                                             {{ App\Helpers\HtmlHelper::strip_tags_and_style($data->description) }}
                                         </p>
                                     </div>
-                                    <a href="/berita/{{ $data->id }}" class="btn btn-outline-success py-2 px-3">Read
+                                    <a href="/berita/{{ $data->slug }}" class="btn btn-outline-success py-2 px-3">Read
                                         more</a>
                                 </div>
                             </div>

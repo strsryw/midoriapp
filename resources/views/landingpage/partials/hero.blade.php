@@ -3,7 +3,7 @@
            background: -webkit-linear-gradient(302deg, #73cd79 0%, #026f48 100%);
            background: -o-linear-gradient(310deg, #306ee8 0%, #3038e8 100%);
            background: linear-gradient(180deg, #84f18b 0%, #026f48 100%);
-           background-image: url("{{ asset("assets/web/img/background/$background") }}");
+           @if (isset($background)) background-image: url("{{ asset('assets/web/img/background/' . $background) }}"); @endif
            background-size: cover;
            background-position: center;
            background-repeat: no-repeat;

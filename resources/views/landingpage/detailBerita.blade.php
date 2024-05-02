@@ -33,7 +33,7 @@
                 <article class="col-lg-8 order-lg-2 px-lg-5">
                     <div class="row">
                         <div class="col-lg-6 offset-lg-3 bungkus">
-                            <img src="/storage/fotoberita/{{ $data->image }}" class="img-fluid rounded" alt="Image">
+                            <img src="/storage/foto_berita/{{ $data->image }}" class="img-fluid rounded" alt="Image">
                             <div id="overlay">
                                 <a class="text-white">{{ date('d - m - Y', strtotime($data->created_at)) }}</a>
                             </div>

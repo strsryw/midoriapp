@@ -4,23 +4,20 @@ namespace App\Http\Controllers\admin;
 
 use App\Models\Beritas;
 use App\Models\SettingWeb;
+use App\Models\SocialMedia;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Storage;
 use Yajra\DataTables\Facades\DataTables;
+use Illuminate\Support\Facades\Validator;
 
 class BeritaController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index(Request $request)
     {
         if ($request->ajax()) {
             $data = Beritas::latest()->get();
-            // $data = pegawai::all();
             return DataTables::of($data)
                 ->addIndexColumn()
                 ->addColumn('action', function ($data) {
@@ -38,7 +35,7 @@ class BeritaController extends Controller
                         ';
                 })
                 ->addColumn('image', function ($data) {
-                    $url = asset('storage/fotoberita/' . $data->image);
+                    $url = asset('storage/foto_berita/' . $data->image);
                     return '<div class="text-center"><img src="' . $url . '" border="0" width="75" class="img-rounded" /></div>';
                 })
                 ->addColumn('limitDescription', function ($data) {
@@ -69,17 +66,11 @@ class BeritaController extends Controller
                 ->rawColumns(['action', 'image'])
                 ->make(true);
         }
-        return view(
-            'admin.berita.berita',
-            ['title' => 'Berita']
-        );
+        return view('admin.berita.berita', [
+            'title' => 'Berita'
+        ]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
         return view('admin.berita.tambah', [
@@ -87,48 +78,51 @@ class BeritaController extends Controller
         ]);
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
-        $foto = $request->file('foto');
-        $namaFoto = $foto->getClientOriginalName(); // Mendapatkan nama asli file
-        $foto->storeAs('public/fotoberita', $namaFoto); // Simpan foto ke penyimpanan
+        $validated = Validator::make($request->only('judul', 'deskripsi', 'foto'), [
+            'judul' => 'required|unique:beritas,title',
+            'foto' => 'required|image|mimes:png,jpg,jpeg|max:2048',
+            'deskripsi' => 'required'
+        ]);
 
-        // Simpan data ke database
-        $berita = new Beritas();
-        $berita->title = $request->judul;
-        $berita->image = $namaFoto;
-        $berita->description = $request->deskripsi;
+        if ($validated->fails()) {
+            return response()->json([
+                'status' => false,
+                'errors' => $validated->errors()
+            ], 400);
+        }
 
+        $nameImage = Str::random(30) . '.' . $request->file('foto')->getClientOriginalExtension();
+        $request->file('foto')->storeAs('public/foto_berita/', $nameImage);
 
-        // Simpan nama foto ke dalam kolom 'foto' di tabel
-        $berita->save();
+        $beritas = Beritas::create([
+            'title' => $request->input('judul'),
+            'slug' => Str::slug($request->input('judul')),
+            'description' => $request->input('deskripsi'),
+            'image' => $nameImage
+        ]);
 
-        if ($berita) {
+        if ($beritas) {
             return response()->json([
                 'status' => true,
-                'message' => 'Data Berhasil di Insert'
+                'message' => 'Data Berhasil disimpan'
             ], 200);
         }
+
+        return response()->json([
+            'status' => false,
+            'message' => 'Data Gagal disimpan'
+        ], 200);
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
+    public function show($slug)
     {
-        $content = Beritas::findorFail($id);
+        $content = Beritas::where('slug', $slug)->first();
         $previous = Beritas::where('id', '<', $content->id)->orderBy('id', 'desc')->first();
         $next = Beritas::where('id', '>', $content->id)->orderBy('id', 'asc')->first();
         $setting_web = SettingWeb::first();
+        $social_medias = SocialMedia::get();
 
         return view('landingpage.detailBerita', [
             'hero' => $content->title,
@@ -136,22 +130,15 @@ class BeritaController extends Controller
             'data' => $content,
             'prev' => $previous,
             'next' => $next,
+            'social_medias' => $social_medias,
             'setting' => $setting_web
         ]);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function edit($id)
     {
 
         $data = Beritas::find($id);
-        // //
-        // // dd($id);
         return view(
             'admin.berita.edit',
             [
@@ -167,12 +154,12 @@ class BeritaController extends Controller
         $foto = $request->file('foto');
         if ($foto) {
             if ($request->input('oldImage')) {
-                Storage::delete('public/fotoberita/' . $request->input('oldImage'));
+                Storage::delete('public/foto_berita/' . $request->input('oldImage'));
             }
 
             // Simpan file dengan nama unik menggunakan storeAs()
             $imageName = time() . '_' . $foto->getClientOriginalName();
-            $foto->storeAs('public/fotoberita/', $imageName);
+            $foto->storeAs('public/foto_berita/', $imageName);
 
             // Simpan nama file ke dalam $data
             $data['image'] = $imageName;
@@ -205,18 +192,11 @@ class BeritaController extends Controller
         }
 
         // Hapus foto dari direktori
-        Storage::delete('public/fotoberita/' . $berita->image);
+        Storage::delete('public/foto_berita/' . $berita->image);
 
         // Hapus entri dari database
         $berita->delete();
 
         return response()->json(['status' => '1']);
-    }
-
-    public function imageUpload(Request $request)
-    {
-        // $foto->storeAs('public/fotoberita', $namaFoto);
-        $imgpath = $request->file('file')->store('content_img_berita', 'public');
-        return response()->json(['location' => "/storage/$imgpath"]);
     }
 }

@@ -109,9 +109,7 @@
                     $("#judul").val('');
                     $('#foto').val('');
                     tinyMCE.activeEditor.setContent('');
-                    // console.log(response);
                     document.getElementById('rowRiviewImg').classList.add('d-none');
-                    // return
                     if (response.status == true) {
                         Swal.fire({
                             icon: "success",
@@ -128,7 +126,31 @@
                     }
                 },
                 error: function(xhr, status, error) {
-                    // Tindakan jika terjadi kesalahan
+                    var response = xhr.responseJSON.errors
+                    if (response.judul) {
+                        $('#judul').addClass('is-invalid');
+
+                        var invalidFeedback =
+                            '<div class="custon-invalid-feedback text-danger d-block mb-2"><small>' +
+                            response.judul[0] + '</small></div>';
+                        $('#judul').after(invalidFeedback);
+                    }
+
+                    if (response.foto) {
+                        $('#foto').addClass('is-invalid');
+
+                        var invalidFeedback =
+                            '<div class="custon-invalid-feedback text-danger d-block mb-2"><small>' +
+                            response.foto[0] + '</small></div>';
+                        $('#foto').after(invalidFeedback);
+                    }
+
+                    if (response.deskripsi) {
+                        var invalidFeedback =
+                            '<div class="custon-invalid-feedback text-danger d-block mb-2"><small>' +
+                            response.deskripsi[0] + '</small></div>';
+                        $('.tox-tinymce').after(invalidFeedback);
+                    }
                 },
             });
         }

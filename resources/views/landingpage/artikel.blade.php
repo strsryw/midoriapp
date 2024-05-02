@@ -59,7 +59,7 @@
                                             {{ App\Helpers\HtmlHelper::strip_tags_and_style($data->description) }}
                                         </p>
                                     </div>
-                                    <a href="/artikel/{{ $data->id }}" class="btn btn-outline-success py-2 px-3">Read
+                                    <a href="/artikel/{{ $data->slug }}" class="btn btn-outline-success py-2 px-3">Read
                                         more</a>
                                 </div>
                             </div>

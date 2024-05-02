@@ -4,6 +4,7 @@ namespace App\Http\Controllers\admin;
 
 use App\Models\Artikels;
 use App\Models\SettingWeb;
+use App\Models\SocialMedia;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -76,10 +77,9 @@ class ArtikelController extends Controller
 
     public function create()
     {
-        return view(
-            'admin.artikel.tambah',
-            ['title' => 'Artikel']
-        );
+        return view('admin.artikel.tambah', [
+            'title' => 'Artikel'
+        ]);
     }
 
     public function store(Request $request)
@@ -102,6 +102,7 @@ class ArtikelController extends Controller
 
         $artikel = Artikels::create([
             'title' => $request->input('judul'),
+            'slug' => Str::slug($request->input('judul')),
             'description' => $request->input('deskripsi'),
             'image' => $nameImage
         ]);
@@ -119,18 +120,20 @@ class ArtikelController extends Controller
         ], 200);
     }
 
-    public function show($id)
+    public function show($slug)
     {
-        $content = Artikels::findOrFail($id);
+        $content = Artikels::where('slug', $slug)->first();
         $previous = Artikels::where('id', '<', $content->id)->orderBy('id', 'desc')->first();
         $next = Artikels::where('id', '>', $content->id)->orderBy('id', 'asc')->first();
         $setting_web = SettingWeb::first();
+        $social_medias = SocialMedia::get();
         return view('landingpage.detailArtikel', [
             'hero' => $content->title,
             'date' => $content->created_at->format('M d, Y'),
             'data' => $content,
             'prev' => $previous,
             'next' => $next,
+            'social_medias' => $social_medias,
             'setting' => $setting_web
         ]);
     }

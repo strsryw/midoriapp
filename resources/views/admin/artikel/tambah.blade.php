@@ -51,7 +51,7 @@
                                     <label for="deskripsi" class="form-label">Deskripsi</label>
                                 </div>
                                 <div class="col-md-10 col-sm-12">
-                                    <textarea type="text" class="form-control" name='deskripsi' id="deskripsi"></textarea>
+                                    <textarea type="text" class="form-control is-invalid" name='deskripsi' id="deskripsi"></textarea>
                                 </div>
                             </div>
                         </div>
@@ -93,6 +93,9 @@
                 var foto = document.getElementById("foto").files[0];
                 var formData = new FormData();
 
+                $('input').removeClass('is-invalid');
+                $('.custon-invalid-feedback').remove();
+
                 formData.append("judul", judul);
                 formData.append("deskripsi", deskripsi);
                 formData.append("foto", foto);
@@ -125,7 +128,31 @@
                         }
                     },
                     error: function(xhr, status, error) {
-                        // Tindakan jika terjadi kesalahan
+                        var response = xhr.responseJSON.errors
+                        if (response.judul) {
+                            $('#judul').addClass('is-invalid');
+
+                            var invalidFeedback =
+                                '<div class="custon-invalid-feedback text-danger d-block mb-2"><small>' +
+                                response.judul[0] + '</small></div>';
+                            $('#judul').after(invalidFeedback);
+                        }
+
+                        if (response.foto) {
+                            $('#foto').addClass('is-invalid');
+
+                            var invalidFeedback =
+                                '<div class="custon-invalid-feedback text-danger d-block mb-2"><small>' +
+                                response.foto[0] + '</small></div>';
+                            $('#foto').after(invalidFeedback);
+                        }
+
+                        if (response.deskripsi) {
+                            var invalidFeedback =
+                                '<div class="custon-invalid-feedback text-danger d-block mb-2"><small>' +
+                                response.deskripsi[0] + '</small></div>';
+                            $('.tox-tinymce').after(invalidFeedback);
+                        }
                     },
                 });
             });
