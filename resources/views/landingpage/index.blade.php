@@ -26,8 +26,8 @@
         <div class="container">
             <div class="row justify-content-between">
                 <div class="col-lg-7 mb-4 mb-lg-0">
-                    <img src="/assets/web/img/work.jpg" alt="Image" class="img-fluid rounded
-                ">
+                    <img src="/assets/web/img/hero_index_2.jpg" alt="Image" class="rounded"
+                        style="object-fit: cover; height: 100%; width: 100%">
                 </div>
                 <div class="col-lg-4 ps-lg-2">
                     <div class="mb-5">
@@ -80,12 +80,65 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-7 order-lg-2 mb-4 mb-lg-0">
-                    <img src="/assets/web/img/school.jpg" alt="Image" class="img-fluid">
+                    <img src="/assets/web/img/hero_index_3.jpg" alt="Image" class="img-fluid">
                 </div>
                 <div class="col-lg-5 pe-lg-5">
                     <div class="mb-5">
                         <h2 class="text-black h4">Program LPK Midori Gakkou</h2>
                     </div>
+
+                    <div class="d-flex mb-3 service-alt">
+                        <div>
+                            <span class="bi- text-success me-4">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    class="icon icon-tabler icons-tabler-outline icon-tabler-messages">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                    <path d="M21 14l-3 -3h-7a1 1 0 0 1 -1 -1v-6a1 1 0 0 1 1 -1h9a1 1 0 0 1 1 1v10" />
+                                    <path d="M14 15v2a1 1 0 0 1 -1 1h-7l-3 3v-10a1 1 0 0 1 1 -1h2" />
+                                </svg>
+                            </span>
+                        </div>
+                        <div>
+                            <h3>Program Ginou Jisshusei</h3>
+                            <p>
+                                Program ini adalah pelatihan kerja di Jepang yang hanya memiliki masa kerja 3 tahun dalam
+                                pengawasan kerjanya dibimbing oleh staf yang lebih berpengalaman dalam proses produksi
+                                barang dan jasa pada perusahaan.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="d-flex mb-3 service-alt">
+                        <div>
+                            <span class="bi- text-success me-4">
+                                <span class="bi- text-success me-4"><svg xmlns="http://www.w3.org/2000/svg" width="24"
+                                        height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                        class="icon icon-tabler icons-tabler-outline icon-tabler-vocabulary">
+                                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                        <path
+                                            d="M10 19h-6a1 1 0 0 1 -1 -1v-14a1 1 0 0 1 1 -1h6a2 2 0 0 1 2 2a2 2 0 0 1 2 -2h6a1 1 0 0 1 1 1v14a1 1 0 0 1 -1 1h-6a2 2 0 0 0 -2 2a2 2 0 0 0 -2 -2z" />
+                                        <path d="M12 5v16" />
+                                        <path d="M7 7h1" />
+                                        <path d="M7 11h1" />
+                                        <path d="M16 7h1" />
+                                        <path d="M16 11h1" />
+                                        <path d="M16 15h1" />
+                                    </svg></span>
+                            </span>
+                        </div>
+                        <div>
+                            <h3>Program Tokute Ginou</h3>
+                            <p>
+                                Tokute Ginou Visa SSW/ TG adalah Visa Bekerja bukan Magang/ Kenshusei, Pekerja yang
+                                menggunakan visa kerja Tokutei Ginou akan disamakan statusnya dengan pekerja Jepang baik
+                                dari segi gaji, asuransi dan lain-lain.
+                            </p>
+                        </div>
+                    </div>
+
                     <div class="d-flex mb-3 service-alt">
                         <div>
                             <span class="bi- text-success me-4">
@@ -106,50 +159,6 @@
                             <h3>Kursus Bahasa Jepang</h3>
                             <p>Dari dasar hingga tingkat lanjutan, kami menawarkan kursus yang sesuai dengan kebutuhan dan
                                 tingkat kemampuan Anda.</p>
-                        </div>
-                    </div>
-
-                    <div class="d-flex mb-3 service-alt">
-                        <div>
-                            <span class="bi- text-success me-4">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                    class="icon icon-tabler icons-tabler-outline icon-tabler-messages">
-                                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                                    <path d="M21 14l-3 -3h-7a1 1 0 0 1 -1 -1v-6a1 1 0 0 1 1 -1h9a1 1 0 0 1 1 1v10" />
-                                    <path d="M14 15v2a1 1 0 0 1 -1 1h-7l-3 3v-10a1 1 0 0 1 1 -1h2" />
-                                </svg>
-                            </span>
-                        </div>
-                        <div>
-                            <h3>Kelas Konversasi</h3>
-                            <p>Belajarlah berbicara bahasa Jepang secara lancar melalui kelas konversasi interaktif kami.
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="d-flex mb-3 service-alt">
-                        <div>
-                            <span class="bi- text-success me-4"><svg xmlns="http://www.w3.org/2000/svg" width="24"
-                                    height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                    stroke-linecap="round" stroke-linejoin="round"
-                                    class="icon icon-tabler icons-tabler-outline icon-tabler-vocabulary">
-                                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                                    <path
-                                        d="M10 19h-6a1 1 0 0 1 -1 -1v-14a1 1 0 0 1 1 -1h6a2 2 0 0 1 2 2a2 2 0 0 1 2 -2h6a1 1 0 0 1 1 1v14a1 1 0 0 1 -1 1h-6a2 2 0 0 0 -2 2a2 2 0 0 0 -2 -2z" />
-                                    <path d="M12 5v16" />
-                                    <path d="M7 7h1" />
-                                    <path d="M7 11h1" />
-                                    <path d="M16 7h1" />
-                                    <path d="M16 11h1" />
-                                    <path d="M16 15h1" />
-                                </svg></span>
-                        </div>
-                        <div>
-                            <h3>Persiapan Ujian</h3>
-                            <p>Kami membantu Anda mempersiapkan diri untuk ujian sertifikasi bahasa Jepang yang diakui
-                                secara internasional.</p>
                         </div>
                     </div>
                 </div>

@@ -120,7 +120,7 @@
         $(document).ready(function() {
             $("#table-galleries").dataTable({
                 processing: true,
-                serverside: true,
+                serverSide: true,
                 ajax: "{{ route('admin.galeri.index') }}",
                 columns: [{
                         data: "DT_RowIndex",
@@ -143,6 +143,8 @@
                     {
                         data: "action",
                         name: "Action",
+                        orderable: false,
+                        searchable: false,
                     },
                 ],
                 language: {

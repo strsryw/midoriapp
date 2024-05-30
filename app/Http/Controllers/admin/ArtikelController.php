@@ -18,8 +18,8 @@ class ArtikelController extends Controller
     public function index(Request $request)
     {
         if ($request->ajax()) {
-            $data = Artikels::latest()->get();
-            return DataTables::of($data)
+            $data = Artikels::latest();
+            return DataTables::eloquent($data)
                 ->addIndexColumn()
                 ->addColumn('action', function ($data) {
                     return '<div class="text-lg-center">

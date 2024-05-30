@@ -15,7 +15,7 @@ class GalleryController extends Controller
     public function index(Request $request)
     {
         if ($request->ajax()) {
-            $data = Galleries::latest()->get();
+            $data = Galleries::latest();
             return DataTables::of($data)
                 ->addIndexColumn()
                 ->addColumn('action', function ($data) {
