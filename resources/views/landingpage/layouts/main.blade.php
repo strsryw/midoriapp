@@ -32,7 +32,7 @@
     <link rel="stylesheet" href="/assets/web/css/bootstrap-icons.min.css">
     @stack('style')
 
-    <title>@yield('title') LPK MIDORI</title>
+    <title>@yield('title') LPK MIDORI GAKKOU</title>
 </head>
 
 <body>
