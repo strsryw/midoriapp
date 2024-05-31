@@ -14,6 +14,22 @@
     <meta name="keywords"
         content="LPK Terbaik di Pati, LPK MIDORI GAKKOU, LPK Pati, Lembaga Pelatihan Kerja Pati, Pelatihan Kerja Terbaik Pati, Kursus Kerja Pati, Pelatihan Bahasa Jepang Pati, LPK Jepang Pati, Sekolah Bahasa Jepang Pati, Pelatihan Tenaga Kerja Pati, Program Pelatihan Pati, LPK Berkualitas Pati">
 
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.lpkmidorigakkou.com/" />
+    <meta property="og:title" content=" LPK MIDORI GAKKOU" />
+    <meta property="og:description"
+        content="Bergabunglah dengan LPK Midori Gakko untuk pelatihan profesional unggulan. Kami membantu Anda mencapai kesuksesan karir dengan keterampilan dan pengetahuan industri yang komprehensif." />
+    <meta property="og:image" content="/assets/web/img/company_logo.png" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://www.lpkmidorigakkou.com/" />
+    <meta property="twitter:title" content=" LPK MIDORI GAKKOU" />
+    <meta property="twitter:description"
+        content="Bergabunglah dengan LPK Midori Gakko untuk pelatihan profesional unggulan. Kami membantu Anda mencapai kesuksesan karir dengan keterampilan dan pengetahuan industri yang komprehensif." />
+    <meta property="twitter:image" content="/assets/web/img/company_logo.png" />
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;600;700&display=swap" rel="stylesheet">
