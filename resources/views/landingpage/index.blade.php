@@ -332,7 +332,7 @@
                     <div class="text-center">
                         <img src="{{ asset('assets/web/img/no-content.png') }}" alt="" class="mb-3"
                             style="max-width: 200px">
-                        <h1 class="fw-bold">Tidak Ada Informasi</h1>
+                        <h5 class="fw-bold">Tidak Ada Informasi</h5>
                     </div>
                 @else
                     @foreach ($datas as $data)

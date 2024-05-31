@@ -10,20 +10,16 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="title" content="Pelatihan Profesional Terbaik untuk Masa Depan Sukses - LPK Midori Gakko">
     <meta name="description"
-        content="LPK Midori Gakko adalah penyedia pelatihan profesional unggulan yang dirancang untuk membantu Anda mencapai kesuksesan karir. Dengan fokus pada pengembangan keterampilan dan pengetahuan industri, kami menawarkan pelatihan komprehensif untuk membentuk masa depan Anda yang cerah. Bergabunglah dengan kami dan mulailah perjalanan menuju kesuksesan Anda hari ini.">
+        content="Bergabunglah dengan LPK Midori Gakko untuk pelatihan profesional unggulan. Kami membantu Anda mencapai kesuksesan karir dengan keterampilan dan pengetahuan industri yang komprehensif.">
     <meta name="keywords"
-        content="LPK Midori Gakko, pelatihan profesional, karir sukses, keterampilan industri, pengembangan diri, pelatihan unggulan, program pelatihan, kursus profesional, pelatihan karir, pelatihan keterampilan, pendidikan dan pelatihan, LPK terbaik, pelatihan berkualitas, pelatihan Jepang, pelatihan sertifikasi">
-
+        content="LPK Terbaik di Pati, LPK MIDORI GAKKOU, LPK Pati, Lembaga Pelatihan Kerja Pati, Pelatihan Kerja Terbaik Pati, Kursus Kerja Pati, Pelatihan Bahasa Jepang Pati, LPK Jepang Pati, Sekolah Bahasa Jepang Pati, Pelatihan Tenaga Kerja Pati, Program Pelatihan Pati, LPK Berkualitas Pati">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
     <link rel="stylesheet" href="/assets/landing_page/fonts/icomoon/style.css">
     <link rel="stylesheet" href="/assets/landing_page/fonts/flaticon/font/flaticon.css">
-
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
 
     <link rel="stylesheet" href="/assets/landing_page/css/tiny-slider.css">
     <link rel="stylesheet" href="/assets/landing_page/css/aos.css">
@@ -32,9 +28,8 @@
 
     <link rel="stylesheet" href="/assets/landing_page/css/flatpickr.min.css">
     <link rel="stylesheet" href="/assets/web/css/style.css">
-    <link href="
-    https://cdn.jsdelivr.net/npm/sweetalert2@11.10/dist/sweetalert2.min.css
-    " rel="stylesheet">
+    <link rel="stylesheet" href="/assets/web/css/sweetalert2.min.css">
+    <link rel="stylesheet" href="/assets/web/css/bootstrap-icons.min.css">
     @stack('style')
 
     <title>@yield('title') LPK MIDORI</title>
@@ -72,7 +67,7 @@
     <script src="/assets/landing_page/js/counter.js"></script>
     <script src="/assets/landing_page/js/custom.js"></script>
     <script src="/assets/web/js/jquery-3.7.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.10/dist/sweetalert2.all.min.js"></script>
+    <script src="/assets/web/js/sweetalert2.all.min.js"></script>
     @stack('script')
 </body>
 

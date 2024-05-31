@@ -15,9 +15,7 @@
     <link href="/assets/admin/dist/css/tabler-payments.min.css" rel="stylesheet" />
     <link href="/assets/admin/dist/css/tabler-vendors.min.css" rel="stylesheet" />
     <link href="/assets/admin/dist/css/demo.min.css" rel="stylesheet" />
-    <link href="
-    https://cdn.jsdelivr.net/npm/sweetalert2@11.10/dist/sweetalert2.min.css
-    " rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.10/dist/sweetalert2.min.css" rel="stylesheet">
     {{-- Style Font --}}
     <link rel="stylesheet" href="/assets/web/css/style.css">
 
@@ -47,7 +45,7 @@
     <script src="/assets/admin/dist/js/demo.min.js"></script>
     <script src="/assets/web/js/jquery-3.7.1.min.js"></script>
     <script src="/assets/web/js/script.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.10/dist/sweetalert2.all.min.js"></script>
+    <script src="/assets/web/js/sweetalert2.all.min.js"></script>
     @stack('script')
 </body>
 
