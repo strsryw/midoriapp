@@ -80,5 +80,19 @@ class SocialMediaController extends Controller
 
     public function destroy($id)
     {
+        $socialMedia = SocialMedia::find($id);
+        if (!$socialMedia) {
+            return response()->json([
+                'status' => false,
+                'message' => 'Gagal menghapus Social Media'
+            ], 404);
+        }
+
+        $socialMedia->delete();
+
+        return response()->json([
+            'status' => true,
+            'message' => 'Berhasil menghapus Social Media'
+        ], 200);
     }
 }
