@@ -29,7 +29,7 @@
     <link rel="stylesheet" href="/assets/landing_page/css/flatpickr.min.css">
     <link rel="stylesheet" href="/assets/web/css/style.css">
     <link rel="stylesheet" href="/assets/web/css/sweetalert2.min.css">
-    <link rel="stylesheet" href="/assets/web/css/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     @stack('style')
 
     <title>@yield('title') LPK MIDORI GAKKOU</title>
