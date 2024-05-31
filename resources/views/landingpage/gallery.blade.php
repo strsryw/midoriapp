@@ -33,7 +33,7 @@
                                     <div class="d-flex align-items-center">
                                         <div class="mx-3">
                                             <div class="fw-bold">
-                                                {{ strlen($data->title) > 25 ? substr($data->title, 0, 25) . '...' : $data->title }}
+                                                {{ strlen($data->title) > 50 ? substr($data->title, 0, 50) . '...' : $data->title }}
                                             </div>
                                             <div class="text-secondary">{{ $data->created_at->diffForHumans() }}</div>
                                         </div>
