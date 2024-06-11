@@ -23,7 +23,7 @@ class ArtikelController extends Controller
                 ->addIndexColumn()
                 ->addColumn('action', function ($data) {
                     return '<div class="text-lg-center">
-                        <a href="' . route('landing-page.detail-artikel', $data->id) . '" class="btn btn-primary btn-icon">
+                        <a href="' . route('landing-page.detail-artikel', $data->slug) . '" class="btn btn-primary btn-icon">
                             <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-eye"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" /><path d="M21 12c-2.4 4 -5.4 6 -9 6c-3.6 0 -6.6 -2 -9 -6c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6" /></svg>
                         </a>
                         <a href="' . route('admin.artikel.edit', $data->id) . '">
@@ -155,16 +155,14 @@ class ArtikelController extends Controller
                 Storage::delete('public/foto_artikel/' . $request->input('old-image'));
             }
 
-            $nameImage = Str::random(30) . '.' . $request->file('foto')->getClientOriginalExtension();
-            $request->file('foto')->storeAs('public/foto_artikel', $nameImage);
+            $nameImage = Str::random(30) . '.' . $request->file('image')->getClientOriginalExtension();
+            $request->file('image')->storeAs('public/foto_artikel', $nameImage);
 
             $data['image'] = $nameImage;
         }
 
-        $data = [
-            'title' => $request->input('title'),
-            'description' => $request->input('description')
-        ];
+        $data['title'] = $request->input('title');
+        $data['description'] = $request->input('description');
 
         $artikel = Artikels::where('id', $id)->update($data);
 

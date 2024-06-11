@@ -45,13 +45,13 @@
                     </div>
                     <div class="post-single-navigation d-flex align-items-stretch mt-5">
                         @if ($prev)
-                            <a href="/artikel/{{ $prev->id }}" class="mr-auto w-50 pr-4 text-success">
+                            <a href="/artikel/{{ $prev->slug }}" class="mr-auto w-50 pr-4 text-success">
                                 <span class="d-block fw-bold text-success">Previous Post</span>
                                 {{ $prev->title }}
                             </a>
                         @endif
                         @if ($next)
-                            <a href="/artikel/{{ $next->id }}" class="ml-auto w-50 text-right pl-4 text-success">
+                            <a href="/artikel/{{ $next->slug }}" class="ml-auto w-50 text-right pl-4 text-success">
                                 <span class="d-block fw-bold text-success">Next Post</span>
                                 {{ $next->title }}
                             </a>

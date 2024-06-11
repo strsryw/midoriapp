@@ -48,7 +48,7 @@
 
                                     </div>
                                     <div class="col-md-10 col-sm-12">
-                                        <img src="/storage/fotoberita/{{ $data->image }}" class="img-thumbnail"
+                                        <img src="/storage/foto_berita/{{ $data->image }}" class="img-thumbnail"
                                             alt="Image" id="reviewImg" name="reviewImg"
                                             style="max-height: 300px; width:auto;">
                                     </div>

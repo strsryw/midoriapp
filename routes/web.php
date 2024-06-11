@@ -16,9 +16,9 @@ Route::name('landing-page.')->group(function () {
     Route::get('/', [LandingPageController::class, 'index'])->name('index');
     Route::get('/profil', [LandingPageController::class, 'profile'])->name('profile');
     Route::get('/berita', [LandingPageController::class, 'news'])->name('berita');
-    Route::get('/berita/{id}', [BeritaController::class, 'show'])->name('detail-berita');
+    Route::get('/berita/{slug}', [BeritaController::class, 'show'])->name('detail-berita');
     Route::get('/artikel', [LandingPageController::class, 'article'])->name('artikel');
-    Route::get('/artikel/{id}', [ArtikelController::class, 'show'])->name('detail-artikel');
+    Route::get('/artikel/{slug}', [ArtikelController::class, 'show'])->name('detail-artikel');
     Route::get('/galeri', [LandingPageController::class, 'gallery'])->name('galeri');
     Route::get('/kontak-kami', [LandingPageController::class, 'contactUs'])->name('kontak-kami');
     Route::post('/kontak-kami', [LandingPageController::class, 'sendMessage']);
