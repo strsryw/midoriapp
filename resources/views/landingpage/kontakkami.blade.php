@@ -81,7 +81,6 @@
             var email = $('#email').val();
             var subjek = $('#subjek').val();
             var pesan = $('#pesan').val();
-            const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
             $.ajax({
                 url: "{{ route('landing-page.kontak-kami') }}",
                 type: 'POST',
@@ -90,7 +89,6 @@
                     email,
                     subjek,
                     pesan,
-                    _token: csrfToken
                 },
                 success: function(response) {
                     $('#nama').val('');

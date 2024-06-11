@@ -83,6 +83,7 @@
     <script src="/assets/landing_page/js/counter.js"></script>
     <script src="/assets/landing_page/js/custom.js"></script>
     <script src="/assets/web/js/jquery-3.7.1.min.js"></script>
+    <script src="/assets/web/js/script.js"></script>
     <script src="/assets/web/js/sweetalert2.all.min.js"></script>
     @stack('script')
 </body>

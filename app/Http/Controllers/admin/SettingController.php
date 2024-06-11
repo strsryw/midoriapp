@@ -47,7 +47,7 @@ class SettingController extends Controller
             $data['logo'] = $nameImage;
         }
 
-        $data = [
+        $data += [
             'alt_logo' => $request->input('alt-logo'),
             'about' => $request->input('about'),
             'company_address' => $request->input('company-address'),
